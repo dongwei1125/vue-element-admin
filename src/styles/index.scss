@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,4 +10,10 @@ body {
 
 #app {
   height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
