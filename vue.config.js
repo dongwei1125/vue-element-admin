@@ -5,6 +5,13 @@ const resolve = dir => path.join(__dirname, dir)
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  configureWebpack: {
+    resolve: {
+      fallback: {
+        path: require.resolve('path-browserify'),
+      },
+    },
+  },
   chainWebpack: config => {
     config.module.rule('svg').exclude.add(resolve('src/icons')).end()
     config.module
