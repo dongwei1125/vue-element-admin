@@ -13,20 +13,24 @@
       />
     </el-submenu>
 
-    <el-menu-item v-else :index="resolvePath(item.path)">
-      <item :title="item.title" :icon="item.icon" />
-    </el-menu-item>
+    <item-link v-else :to="resolvePath(item.path)">
+      <el-menu-item :index="resolvePath(item.path)">
+        <item :title="item.title" :icon="item.icon" />
+      </el-menu-item>
+    </item-link>
   </div>
 </template>
 
 <script>
 import path from 'path'
+import { isExternal } from '@/utils'
 
 import Item from './Item.vue'
+import ItemLink from './ItemLink.vue'
 
 export default {
   name: 'SidebarItem',
-  components: { Item },
+  components: { Item, ItemLink },
   props: {
     item: {
       type: Object,
@@ -39,6 +43,10 @@ export default {
   },
   methods: {
     resolvePath(routePath) {
+      if (isExternal(routePath)) {
+        return routePath
+      }
+
       return path.resolve(this.basePath, routePath)
     },
   },
