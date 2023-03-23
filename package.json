@@ -9,7 +9,9 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "element-ui": "^2.15.13",
+    "js-cookie": "^3.0.1",
     "normalize.css": "^8.0.1",
+    "path-browserify": "^1.0.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
@@ -23,7 +25,6 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
-    "path-browserify": "^1.0.1",
     "prettier": "^2.8.4",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",

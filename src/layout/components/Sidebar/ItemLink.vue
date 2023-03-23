@@ -2,7 +2,7 @@
 import { isExternal } from '@/utils'
 
 export default {
-  name: 'ALink',
+  name: 'ItemLink',
   functional: true,
   props: {
     to: {
