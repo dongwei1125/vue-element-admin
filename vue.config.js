@@ -5,6 +5,8 @@ const resolve = dir => path.join(__dirname, dir)
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  productionSourceMap: false,
+  publicPath: './',
   configureWebpack: {
     resolve: {
       fallback: {
