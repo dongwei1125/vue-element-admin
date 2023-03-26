@@ -13,7 +13,7 @@ export default [
       {
         name: 'Dashboard',
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/dashboard'),
         meta: {
           title: '首页',
           icon: 'el-icon-pie-chart',

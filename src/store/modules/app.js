@@ -1,10 +1,9 @@
 import { getCookies, setCookies } from '@/utils/cookies'
-
-const key = 'SIDEBAR_STATUS'
+import { SideBarKey } from '@/utils/const'
 
 const state = {
   sidebar: {
-    opened: getCookies(key) ? !!+getCookies(key) : true,
+    opened: getCookies(SideBarKey) ? !!+getCookies(SideBarKey) : true,
     show: true,
     logo: true,
     title: 'Vue Element Admin',
@@ -15,7 +14,7 @@ const mutations = {
   TOGGLE_SIDEBAR(state) {
     state.sidebar.opened = !state.sidebar.opened
 
-    setCookies(key, +state.sidebar.opened)
+    setCookies(SideBarKey, +state.sidebar.opened)
   },
 }
 
