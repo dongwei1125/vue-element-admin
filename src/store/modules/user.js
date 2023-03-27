@@ -1,16 +1,24 @@
-import { getCookies, setCookies } from '@/utils/cookies'
-import { TokenKey } from '@/utils/const'
+import { getToken, setToken } from '@/utils/auth'
 
 const state = {
-  token: getCookies(TokenKey),
+  token: getToken(),
   roles: [],
+  info: {},
 }
 
 const mutations = {
   SET_TOKEN(state, token) {
     state.token = token
 
-    setCookies(TokenKey, token)
+    setToken(token)
+  },
+
+  SET_ROLES(state, roles) {
+    state.roles = roles
+  },
+
+  SET_INFO(state, info) {
+    state.info = info
   },
 }
 
@@ -20,6 +28,22 @@ const actions = {
       setTimeout(() => {
         commit('SET_TOKEN', 'token')
         resolve()
+      }, 1000)
+    })
+  },
+
+  getInfo({ commit }) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const data = {
+          roles: ['admin', 'user'],
+          name: 'admin',
+        }
+        const { roles } = data
+
+        commit('SET_ROLES', roles)
+        commit('SET_INFO', data)
+        resolve(data)
       }, 1000)
     })
   },

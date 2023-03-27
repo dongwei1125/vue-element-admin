@@ -76,7 +76,13 @@ const state = {
 
 const mutations = {}
 
-const actions = {}
+const actions = {
+  generateRoutes({ commit }, roles) {
+    return new Promise(resolve => {
+      resolve([])
+    })
+  },
+}
 
 export default {
   namespaced: true,

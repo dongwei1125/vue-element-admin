@@ -11,7 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
 import './icons'
-import './router/permission'
+import './permission'
 
 Vue.config.productionTip = false
 

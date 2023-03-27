@@ -1,5 +1,6 @@
 import { getCookies, setCookies } from '@/utils/cookies'
-import { SideBarKey } from '@/utils/const'
+
+const SideBarKey = 'SidebarStatus'
 
 const state = {
   sidebar: {
