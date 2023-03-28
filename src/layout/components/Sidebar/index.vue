@@ -1,21 +1,12 @@
 <template>
-  <div
-    :class="[
-      'sidebar',
-      {
-        'sidebar--collapse': isCollapse,
-        'sidebar--hidden': hidden,
-        'sidebar--hidden-logo': hiddenLogo,
-      },
-    ]"
-  >
+  <div :class="['sidebar', classes]">
     <logo :collapse="isCollapse">
       <img slot="icon" src="@/assets/logo.png" />
       <template slot="title">{{ title }}</template>
     </logo>
 
     <el-scrollbar>
-      <el-menu :collapse="isCollapse" :collapse-transition="false" :default-active="activeRoute">
+      <el-menu :collapse="isCollapse" :collapse-transition="false" :default-active="activeMenu">
         <sidebar-item v-for="route in routes" :key="route.path" :item="route" base-path="/" />
       </el-menu>
     </el-scrollbar>
@@ -45,8 +36,17 @@ export default {
     title() {
       return this.sidebar.title
     },
-    activeRoute() {
-      return this.$route.path
+    classes() {
+      return {
+        'sidebar--collapse': this.isCollapse,
+        'sidebar--hidden': this.hidden,
+        'sidebar--hidden-logo': this.hiddenLogo,
+      }
+    },
+    activeMenu() {
+      const { meta, path } = this.$route
+
+      return meta?.activeMenu || path
     },
   },
 }

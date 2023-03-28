@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-if="!item.meta?.hidden">
     <el-submenu v-if="item.children && item.children.length" :index="resolvePath(item.path)">
       <template slot="title">
-        <item :title="item.title" :icon="item.icon" />
+        <item :title="item.meta?.title" :icon="item.meta?.icon" />
       </template>
 
       <sidebar-item
@@ -15,7 +15,7 @@
 
     <item-link v-else :to="resolvePath(item.path)">
       <el-menu-item :index="resolvePath(item.path)">
-        <item :title="item.title" :icon="item.icon" />
+        <item :title="item.meta?.title" :icon="item.meta?.icon" />
       </el-menu-item>
     </item-link>
   </div>

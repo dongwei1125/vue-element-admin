@@ -87,7 +87,7 @@
 .sidebar--collapse {
   width: 54px;
 
-  &+.app-main {
+  +.app-main {
     margin-left: 54px;
   }
 

@@ -1,10 +1,21 @@
 import router from './router'
 import store from './store'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 import { getToken } from './utils/auth'
 
+NProgress.configure({ showSpinner: false })
+
+/**
+ * @param {Object} to
+ * @param {Object} from
+ * @param {Function} next
+ */
 async function handleHasToken(to, from, next) {
   if (to.path === '/login') {
-    return next({ path: '/' })
+    next({ path: '/' })
+    NProgress.done()
+    return
   }
 
   const hasRoles = store.getters.roles?.length > 0
@@ -17,12 +28,19 @@ async function handleHasToken(to, from, next) {
 
     router.addRoutes(accessRoutes)
 
-    next()
+    next({ ...to, replace: true })
   } catch (error) {
+    await store.dispatch('user/removeToken')
+
     next(`/login?redirect=${to.path}`)
   }
 }
 
+/**
+ * @param {Object} to
+ * @param {Object} from
+ * @param {Function} next
+ */
 function handleNoToken(to, from, next) {
   if (to.path === '/login') {
     next()
@@ -32,11 +50,17 @@ function handleNoToken(to, from, next) {
 }
 
 router.beforeEach(async (to, from, next) => {
-  const hasToken = !!getToken()
+  NProgress.start()
+
+  const hasToken = getToken()
 
   if (hasToken) {
     await handleHasToken(to, from, next)
   } else {
     handleNoToken(to, from, next)
   }
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })

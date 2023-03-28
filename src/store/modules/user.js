@@ -47,6 +47,15 @@ const actions = {
       }, 1000)
     })
   },
+
+  removeToken({ commit }) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        commit('SET_TOKEN', '')
+        resolve()
+      }, 1000)
+    })
+  },
 }
 
 export default {
