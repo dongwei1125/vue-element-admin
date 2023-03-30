@@ -36,11 +36,11 @@ export default {
 
 .sidebar-logo {
   background-color: $logoBackgroundColor;
-  width: 100%;
   height: 50px;
   line-height: 50px;
   text-align: center;
-  overflow: hidden;
+  position: relative;
+  z-index: 5;
 
   > .router-link-active {
     display: inline-block;

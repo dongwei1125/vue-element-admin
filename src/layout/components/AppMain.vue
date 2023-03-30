@@ -16,7 +16,6 @@ export default {
 .app-main {
   min-height: 100%;
   margin-left: $sideBarWidth;
-  position: relative;
   transition: margin-left 0.28s;
 }
 </style>

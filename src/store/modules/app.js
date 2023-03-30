@@ -7,21 +7,60 @@ const state = {
     opened: getCookies(SideBarKey) ? !!+getCookies(SideBarKey) : true,
     show: true,
     logo: true,
+    withoutAnimation: false,
     title: 'Vue Element Admin',
   },
+  device: 'desktop',
 }
 
 const mutations = {
   TOGGLE_SIDEBAR(state) {
     state.sidebar.opened = !state.sidebar.opened
+    state.sidebar.withoutAnimation = false
 
     setCookies(SideBarKey, +state.sidebar.opened)
+  },
+
+  CLOSE_SIDEBAR(state) {
+    state.sidebar.opened = false
+    state.sidebar.withoutAnimation = true
+
+    setCookies(SideBarKey, +state.sidebar.opened)
+  },
+
+  DISPLAY_SIDEBAR(state, boolean) {
+    state.sidebar.show = boolean
+    state.sidebar.withoutAnimation = true
+  },
+
+  DISPLAY_SIDEBAR_LOGO(state, boolean) {
+    state.sidebar.logo = boolean
+  },
+
+  UPDATE_DEVICE(state, device) {
+    state.device = device
   },
 }
 
 const actions = {
   toggleSideBar({ commit }) {
     commit('TOGGLE_SIDEBAR')
+  },
+
+  closeSideBar({ commit }) {
+    commit('CLOSE_SIDEBAR')
+  },
+
+  displaySideBar({ commit }, boolean) {
+    commit('DISPLAY_SIDEBAR', boolean)
+  },
+
+  displaySideBarLogo({ commit }, boolean) {
+    commit('DISPLAY_SIDEBAR_LOGO', boolean)
+  },
+
+  updateDevice({ commit }, device) {
+    commit('UPDATE_DEVICE', device)
   },
 }
 

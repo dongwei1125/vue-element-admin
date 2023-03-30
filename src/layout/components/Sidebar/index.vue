@@ -10,11 +10,14 @@
         <sidebar-item v-for="route in routes" :key="route.path" :item="route" base-path="/" />
       </el-menu>
     </el-scrollbar>
+
+    <div class="sidebar-mask" @click="handleClickOutside" />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import resize from './mixins/resize'
 
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
@@ -22,8 +25,9 @@ import SidebarItem from './SidebarItem.vue'
 export default {
   name: 'Sidebar',
   components: { Logo, SidebarItem },
+  mixins: [resize],
   computed: {
-    ...mapGetters(['sidebar', 'routes']),
+    ...mapGetters(['app', 'sidebar', 'routes']),
     isCollapse() {
       return !this.sidebar.opened
     },
@@ -33,20 +37,35 @@ export default {
     hiddenLogo() {
       return !this.sidebar.logo
     },
+    withoutAnimation() {
+      return this.sidebar.withoutAnimation
+    },
     title() {
       return this.sidebar.title
     },
+    device() {
+      return this.app.device
+    },
     classes() {
-      return {
-        'sidebar--collapse': this.isCollapse,
-        'sidebar--hidden': this.hidden,
-        'sidebar--hidden-logo': this.hiddenLogo,
-      }
+      return [
+        `sidebar-${this.device}`,
+        {
+          'sidebar--collapse': this.isCollapse,
+          'sidebar--hidden': this.hidden,
+          'sidebar--hidden-logo': this.hiddenLogo,
+          'sidebar--without-animation': this.withoutAnimation,
+        },
+      ]
     },
     activeMenu() {
       const { meta, path } = this.$route
 
       return meta?.activeMenu || path
+    },
+  },
+  methods: {
+    handleClickOutside() {
+      this.$store.dispatch('app/closeSideBar')
     },
   },
 }
