@@ -1,7 +1,10 @@
+import Layout from '@/layout'
+
 export default [
   {
     name: 'Example',
     path: '/example',
+    component: Layout,
     meta: {
       title: '例子',
       icon: 'el-icon-s-help',
@@ -15,14 +18,15 @@ export default [
           icon: 'el-icon-notebook-2',
         },
       },
-      {
-        name: 'Tree',
-        path: 'tree',
-        meta: {
-          title: '树',
-          icon: 'el-icon-finished',
-        },
-      },
+      // {
+      //   name: 'Tree',
+      //   path: 'tree',
+      //   meta: {
+      //     title: '树',
+      //     icon: 'el-icon-finished',
+      //     hidden: true,
+      //   },
+      // },
     ],
   },
   {

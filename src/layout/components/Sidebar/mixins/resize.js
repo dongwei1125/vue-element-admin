@@ -1,6 +1,4 @@
-import store from '@/store'
-
-const WIDTH = 992
+const MOBILE_WIDTH = 992
 
 export default {
   beforeMount() {
@@ -16,16 +14,16 @@ export default {
     $_isMobile() {
       const { width } = document.body.getBoundingClientRect()
 
-      return width - 1 < WIDTH
+      return width - 1 < MOBILE_WIDTH
     },
 
     $_resizeHandler() {
       const isMobile = this.$_isMobile()
 
-      store.dispatch('app/updateDevice', isMobile ? 'mobile' : 'desktop')
+      this.$store.dispatch('app/updateDevice', isMobile ? 'mobile' : 'desktop')
 
       if (isMobile) {
-        store.dispatch('app/closeSideBar')
+        this.$store.dispatch('app/closeSideBar')
       }
     },
   },

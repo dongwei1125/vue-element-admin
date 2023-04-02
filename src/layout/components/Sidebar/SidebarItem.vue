@@ -1,6 +1,10 @@
 <template>
   <div v-if="!item.meta?.hidden">
-    <el-submenu v-if="item.children && item.children.length" :index="resolvePath(item.path)">
+    <el-submenu
+      v-if="item.children && item.children.length"
+      :index="resolvePath(item.path)"
+      popper-append-to-body
+    >
       <template slot="title">
         <item :title="item.meta?.title" :icon="item.meta?.icon" />
       </template>

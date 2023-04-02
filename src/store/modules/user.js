@@ -28,7 +28,7 @@ const actions = {
       setTimeout(() => {
         commit('SET_TOKEN', 'token')
         resolve()
-      }, 1000)
+      }, 20)
     })
   },
 
@@ -44,7 +44,7 @@ const actions = {
         commit('SET_ROLES', roles)
         commit('SET_INFO', data)
         resolve(data)
-      }, 1000)
+      }, 20)
     })
   },
 
