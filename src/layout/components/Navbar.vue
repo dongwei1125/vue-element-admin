@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="isActive" @toggle="toggleSideBar" />
+    <hamburger :is-active="isActive" animation @toggle="toggleSideBar" />
   </div>
 </template>
 

@@ -18,15 +18,14 @@ export default [
           icon: 'el-icon-notebook-2',
         },
       },
-      // {
-      //   name: 'Tree',
-      //   path: 'tree',
-      //   meta: {
-      //     title: '树',
-      //     icon: 'el-icon-finished',
-      //     hidden: true,
-      //   },
-      // },
+      {
+        name: 'Tree',
+        path: 'tree',
+        meta: {
+          title: '树',
+          icon: 'el-icon-finished',
+        },
+      },
     ],
   },
   {

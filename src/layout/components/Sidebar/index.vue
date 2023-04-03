@@ -7,7 +7,7 @@
 
     <el-scrollbar>
       <el-menu :collapse="isCollapse" :collapse-transition="false" :default-active="activeMenu">
-        <sidebar-item v-for="route in routes" :key="route.path" :item="route" base-path="/" />
+        <sidebar-item v-for="route in formattedRoutes" :key="route.path" :item="route" base-path="/" />
       </el-menu>
     </el-scrollbar>
 
@@ -18,6 +18,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import resize from './mixins/resize'
+import { resolvePath } from '@/utils'
 
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
@@ -61,6 +62,28 @@ export default {
       const { meta, path } = this.$route
 
       return meta?.activeMenu || path
+    },
+    formattedRoutes() {
+      const result = []
+
+      this.routes.forEach(route => {
+        const { meta, children, path } = route
+
+        if (!meta?.alwaysShow && !meta?.hidden && children?.length === 1) {
+          const [child] = children
+
+          if (!child.meta?.hidden && !child.children?.length) {
+            return result.push({
+              ...child,
+              path: resolvePath(path, child.path),
+            })
+          }
+        }
+
+        result.push(route)
+      })
+
+      return result
     },
   },
   methods: {
