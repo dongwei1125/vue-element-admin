@@ -7,6 +7,12 @@
   background-color: $menuBackgroundColor;
   transition: width 0.28s;
 
+  +.main {
+    min-height: 100%;
+    margin-left: $sideBarWidth;
+    transition: margin-left 0.28s;
+  }
+
   // menu
   .el-menu {
     border: none;
@@ -104,7 +110,7 @@
 .sidebar--collapse {
   width: 54px;
 
-  +.app-main {
+  +.main {
     margin-left: 54px;
   }
 
@@ -133,7 +139,7 @@
 .sidebar--hidden {
   display: none;
 
-  +.app-main {
+  +.main {
     margin-left: 0;
   }
 }
@@ -153,14 +159,14 @@
 .sidebar--without-animation {
   transition: none !important;
 
-  +.app-main {
+  +.main {
     transition: none !important;
   }
 }
 
 // modile
 .sidebar-mobile {
-  +.app-main {
+  +.main {
     margin-left: 0;
   }
 

@@ -1,23 +1,28 @@
 <template>
-  <div class="app-wapper">
+  <div class="layout">
     <sidebar />
 
-    <app-main />
+    <div class="main">
+      <navbar />
+
+      <main-view />
+    </div>
   </div>
 </template>
 
 <script>
 import Sidebar from './components/Sidebar'
-import AppMain from './components/AppMain.vue'
+import Navbar from './components/Navbar.vue'
+import MainView from './components/MainView.vue'
 
 export default {
   name: 'Layout',
-  components: { Sidebar, AppMain },
+  components: { Sidebar, Navbar, MainView },
 }
 </script>
 
 <style scoped>
-.app-wapper {
+.layout {
   width: 100%;
   height: 100%;
 }
