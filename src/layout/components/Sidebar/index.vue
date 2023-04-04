@@ -17,8 +17,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import resize from './mixins/resize'
 import { resolvePath } from '@/utils'
+import resize from './mixins/resize'
 
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
@@ -69,7 +69,7 @@ export default {
       this.routes.forEach(route => {
         const { meta, children, path } = route
 
-        if (!meta?.alwaysShow && !meta?.hidden && children?.length === 1) {
+        if (!meta?.hidden && !meta?.alwaysShow && children?.length === 1) {
           const [child] = children
 
           if (!child.meta?.hidden && !child.children?.length) {

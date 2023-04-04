@@ -39,6 +39,7 @@ export default [
   {
     name: 'Nested',
     path: '/nested',
+    component: Layout,
     meta: {
       title: '路由嵌套',
       icon: 'el-icon-menu',

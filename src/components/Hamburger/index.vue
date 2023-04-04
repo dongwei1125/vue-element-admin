@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .hamburger {
-  padding: 0 15px;
+  display: inline-block;
 
   svg {
     display: inline-block;

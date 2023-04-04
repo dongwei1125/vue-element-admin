@@ -14,7 +14,6 @@ export default [
     redirect: '/dashboard',
     meta: {
       title: '首页',
-      icon: 'el-icon-pie-chart',
     },
     children: [
       {
@@ -23,6 +22,7 @@ export default [
         component: () => import('@/views/dashboard'),
         meta: {
           title: '工作台',
+          icon: 'el-icon-pie-chart',
         },
       },
     ],

@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login">
     <el-form ref="form" class="login-form" :model="form" :rules="rules">
       <h3 class="title">系统登录</h3>
 
@@ -107,7 +107,7 @@ $background-color: #2d3a4b;
 $dark-gray: #889aa4;
 $light-gray: #eee;
 
-.login-container {
+.login {
   height: 100%;
   background-color: $background-color;
 }

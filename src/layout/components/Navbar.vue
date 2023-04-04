@@ -1,6 +1,8 @@
 <template>
   <div class="navbar">
     <hamburger :is-active="isActive" animation @toggle="toggleSideBar" />
+
+    <breadcrumb />
   </div>
 </template>
 
@@ -8,10 +10,11 @@
 import { mapGetters } from 'vuex'
 
 import Hamburger from '@/components/Hamburger'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
   name: 'Navbar',
-  components: { Hamburger },
+  components: { Hamburger, Breadcrumb },
   computed: {
     ...mapGetters(['sidebar']),
     isActive() {
@@ -27,15 +30,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navbar {
-  height: 50px;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+$height: 50px;
 
-  .hamburger {
-    float: left;
-    height: 100%;
-    padding-top: 15px;
-    cursor: pointer;
-  }
+.navbar {
+  height: $height;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.hamburger {
+  float: left;
+  height: 100%;
+  padding: 14px 15px 0;
+  cursor: pointer;
+}
+
+.breadcrumb {
+  float: left;
+  height: 100%;
+  padding-top: 18px;
+  margin-left: 8px;
 }
 </style>
