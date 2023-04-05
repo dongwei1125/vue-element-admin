@@ -4,7 +4,7 @@
       <transition-group name="fade">
         <el-breadcrumb-item v-for="(route, index) in matchedRoutes" :key="route.path">
           <span v-if="index === matchedRoutes.length - 1">{{ route.meta.title }}</span>
-          <a v-else>{{ route.meta.title }}</a>
+          <a v-else @click="handleLink(route)">{{ route.meta.title }}</a>
         </el-breadcrumb-item>
       </transition-group>
     </el-breadcrumb>
@@ -30,6 +30,10 @@ export default {
   methods: {
     getBreadcrumb() {
       this.matchedRoutes = this.$route.matched.filter(route => route.meta?.title)
+    },
+
+    handleLink(route) {
+      this.$router.push(route.path)
     },
   },
 }

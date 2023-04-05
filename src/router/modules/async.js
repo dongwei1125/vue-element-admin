@@ -5,6 +5,7 @@ export default [
     name: 'Example',
     path: '/example',
     component: Layout,
+    redirect: '/example/table',
     meta: {
       title: '例子',
       icon: 'el-icon-s-help',
@@ -40,6 +41,7 @@ export default [
     name: 'Nested',
     path: '/nested',
     component: Layout,
+    redirect: '/nested/menu1/menu1-1',
     meta: {
       title: '路由嵌套',
       icon: 'el-icon-menu',
@@ -48,6 +50,7 @@ export default [
       {
         name: 'Menu1',
         path: 'menu1',
+        redirect: '/nested/menu1/menu1-1',
         meta: {
           title: '菜单 1',
         },
@@ -62,6 +65,7 @@ export default [
           {
             name: 'Menu1-2',
             path: 'menu1-2',
+            redirect: '/nested/menu1/menu1-2/menu1-2-1',
             meta: {
               title: '菜单 1-2',
             },

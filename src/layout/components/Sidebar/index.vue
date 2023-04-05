@@ -7,7 +7,7 @@
 
     <el-scrollbar>
       <el-menu :collapse="isCollapse" :collapse-transition="false" :default-active="activeMenu">
-        <sidebar-item v-for="route in formattedRoutes" :key="route.path" :item="route" base-path="/" />
+        <sidebar-item v-for="route in compressedRoutes" :key="route.path" :item="route" base-path="/" />
       </el-menu>
     </el-scrollbar>
 
@@ -63,7 +63,7 @@ export default {
 
       return meta?.activeMenu || path
     },
-    formattedRoutes() {
+    compressedRoutes() {
       const result = []
 
       this.routes.forEach(route => {

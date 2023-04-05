@@ -49,7 +49,7 @@ export default {
   }
 
   &.is-active svg {
-    transform: rotate(540deg);
+    transform: rotate(180deg);
   }
 
   &.hamburger--animate svg {

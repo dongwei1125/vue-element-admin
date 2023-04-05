@@ -10,6 +10,11 @@ const state = {
     withoutAnimation: false,
     title: 'Vue Element Admin',
   },
+  header: {
+    show: true,
+    fixed: false,
+    tagsView: true,
+  },
   device: 'desktop',
 }
 
@@ -37,6 +42,10 @@ const mutations = {
     state.sidebar.logo = boolean
   },
 
+  DISPLAY_HEADER(state, boolean) {
+    state.header.show = boolean
+  },
+
   UPDATE_DEVICE(state, device) {
     state.device = device
   },
@@ -57,6 +66,10 @@ const actions = {
 
   displaySideBarLogo({ commit }, boolean) {
     commit('DISPLAY_SIDEBAR_LOGO', boolean)
+  },
+
+  displayHeader({ commit }, boolean) {
+    commit('DISPLAY_HEADER', boolean)
   },
 
   updateDevice({ commit }, device) {

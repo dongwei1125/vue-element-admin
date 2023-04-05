@@ -3,6 +3,9 @@
     <el-button type="primary" @click="displaySideBarLogo">SideBar Logo 显示隐藏</el-button>
     <el-button type="primary" @click="displaySideBar">SideBar 显示隐藏</el-button>
     <el-button type="primary" @click="toggle">SideBar 收起展开</el-button>
+    <br />
+    <br />
+    <el-button type="primary" @click="displayHeader">Header 显示隐藏</el-button>
   </div>
 </template>
 
@@ -20,6 +23,10 @@ export default {
 
     toggle() {
       this.$store.dispatch('app/toggleSideBar')
+    },
+
+    displayHeader() {
+      this.$store.dispatch('app/displayHeader', !this.$store.state.app.header.show)
     },
   },
 }
