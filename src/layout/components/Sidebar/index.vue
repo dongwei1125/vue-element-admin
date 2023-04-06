@@ -11,7 +11,7 @@
       </el-menu>
     </el-scrollbar>
 
-    <div class="sidebar-mask" @click="handleClickOutside" />
+    <div v-if="isMobile" class="sidebar-mask" @click="handleClickOutside" />
   </div>
 </template>
 
@@ -46,6 +46,9 @@ export default {
     },
     device() {
       return this.app.device
+    },
+    isMobile() {
+      return this.device === 'mobile'
     },
     classes() {
       return [
@@ -88,7 +91,7 @@ export default {
   },
   methods: {
     handleClickOutside() {
-      this.$store.dispatch('app/closeSideBar')
+      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
     },
   },
 }

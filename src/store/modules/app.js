@@ -26,9 +26,9 @@ const mutations = {
     setCookies(SideBarKey, +state.sidebar.opened)
   },
 
-  CLOSE_SIDEBAR(state) {
+  CLOSE_SIDEBAR(state, withoutAnimation) {
     state.sidebar.opened = false
-    state.sidebar.withoutAnimation = true
+    state.sidebar.withoutAnimation = withoutAnimation
 
     setCookies(SideBarKey, +state.sidebar.opened)
   },
@@ -46,6 +46,14 @@ const mutations = {
     state.header.show = boolean
   },
 
+  FIXED_HEADER(state, boolean) {
+    state.header.fixed = boolean
+  },
+
+  DISPLAY_TAGS_VIEW(state, boolean) {
+    state.header.tagsView = boolean
+  },
+
   UPDATE_DEVICE(state, device) {
     state.device = device
   },
@@ -56,8 +64,8 @@ const actions = {
     commit('TOGGLE_SIDEBAR')
   },
 
-  closeSideBar({ commit }) {
-    commit('CLOSE_SIDEBAR')
+  closeSideBar({ commit }, { withoutAnimation }) {
+    commit('CLOSE_SIDEBAR', withoutAnimation)
   },
 
   displaySideBar({ commit }, boolean) {
@@ -70,6 +78,14 @@ const actions = {
 
   displayHeader({ commit }, boolean) {
     commit('DISPLAY_HEADER', boolean)
+  },
+
+  fixedHeader({ commit }, boolean) {
+    commit('FIXED_HEADER', boolean)
+  },
+
+  displayTagsView({ commit }, boolean) {
+    commit('DISPLAY_TAGS_VIEW', boolean)
   },
 
   updateDevice({ commit }, device) {

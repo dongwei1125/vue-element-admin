@@ -82,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 $light-gray: #eee;
 
-::v-deep .el-form-item {
+.el-form-item {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.1);
@@ -91,7 +91,7 @@ $light-gray: #eee;
     height: 47px;
     width: 85%;
 
-    input {
+    ::v-deep input {
       background-color: transparent;
       border: none;
       height: inherit;

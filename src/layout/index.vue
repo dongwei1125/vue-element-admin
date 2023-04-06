@@ -32,10 +32,14 @@ export default {
     fixed() {
       return this.header.fixed
     },
+    hiddenTagsView() {
+      return !this.header.tagsView
+    },
     classes() {
       return {
         'header--hidden': this.hidden,
         'header--fixed': this.fixed,
+        'header--hidden-tags-view': this.hiddenTagsView,
       }
     },
   },
@@ -48,12 +52,43 @@ export default {
   height: 100%;
 }
 
+// hidden tagsView
+.header--hidden-tags-view {
+  > .tags-view {
+    display: none;
+  }
+
+  + .main-view {
+    min-height: calc(100vh - 50px);
+  }
+}
+
 // hidden header
 .header--hidden {
   display: none;
 
   + .main-view {
     min-height: 100vh;
+    margin-top: 0 !important;
+  }
+}
+
+// fixed header
+.header--fixed {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  background-color: #fff;
+  transition: left 0.28s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+
+  + .main-view {
+    margin-top: 84px;
+  }
+
+  &.header--hidden-tags-view + .main-view {
+    margin-top: 50px;
   }
 }
 </style>

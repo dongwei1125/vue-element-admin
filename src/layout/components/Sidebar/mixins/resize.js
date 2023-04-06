@@ -7,6 +7,13 @@ export default {
   beforeDestory() {
     window.removeEventListener('resize', this.$_resizeHandler)
   },
+  watch: {
+    $route() {
+      if (this.isMobile && !this.isCollapse) {
+        this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
+      }
+    },
+  },
   mounted() {
     this.$_resizeHandler()
   },
@@ -23,7 +30,7 @@ export default {
       this.$store.dispatch('app/updateDevice', isMobile ? 'mobile' : 'desktop')
 
       if (isMobile) {
-        this.$store.dispatch('app/closeSideBar')
+        this.$store.dispatch('app/closeSideBar', { withoutAnimation: true })
       }
     },
   },

@@ -50,14 +50,14 @@ export default {
   }
 }
 
-::v-deep .sidebar-logo-icon {
+.sidebar-logo-icon {
   display: inline-block;
   width: 32px;
   height: 32px;
   vertical-align: middle;
   margin-right: 12px;
 
-  img {
+  ::v-deep img {
     width: 100%;
     height: 100%;
   }
