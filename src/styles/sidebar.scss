@@ -97,18 +97,6 @@
       right: 0;
     }
   }
-
-  // mask
-  .sidebar-mask {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #000;
-    opacity: 0.3;
-    display: none;
-  }
 }
 
 // collapse
@@ -190,10 +178,6 @@
   &.sidebar--collapse {
     width: 0;
     overflow: hidden;
-  }
-
-  &:not(.sidebar--collapse) .sidebar-mask {
-    display: block;
   }
 }
 

@@ -15,7 +15,7 @@
           <svg-icon icon-class="password" />
         </span>
         <el-input ref="password" v-model="form.password" :type="passwordType" placeholder="密码"></el-input>
-        <span class="icon password" @click="toggle">
+        <span class="password" @click="toggle">
           <svg-icon :icon-class="passwordType === 'password' ? 'eye-close' : 'eye-open'" />
         </span>
       </el-form-item>
@@ -114,6 +114,7 @@ $light-gray: #eee;
 
 .login-form {
   width: 520px;
+  max-width: 100%;
   padding: 160px 35px 0;
   margin: 0 auto;
 
@@ -126,16 +127,20 @@ $light-gray: #eee;
   }
 }
 
-span.icon {
+.icon {
   display: inline-block;
   padding: 5px 0px 4px 15px;
   color: $dark-gray;
+}
 
-  &.password {
-    font-size: 16px;
-    cursor: pointer;
-    user-select: none;
-  }
+.password {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: $dark-gray;
+  cursor: pointer;
+  user-select: none;
 }
 
 .login-btn {

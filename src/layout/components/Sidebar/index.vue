@@ -11,7 +11,7 @@
       </el-menu>
     </el-scrollbar>
 
-    <div v-if="isMobile" class="sidebar-mask" @click="handleClickOutside" />
+    <modal v-if="isMobile" :visible="!isCollapse" />
   </div>
 </template>
 
@@ -22,10 +22,11 @@ import resize from './mixins/resize'
 
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
+import Modal from './Modal.vue'
 
 export default {
   name: 'Sidebar',
-  components: { Logo, SidebarItem },
+  components: { Logo, SidebarItem, Modal },
   mixins: [resize],
   computed: {
     ...mapGetters(['app', 'sidebar', 'routes']),
@@ -87,11 +88,6 @@ export default {
       })
 
       return result
-    },
-  },
-  methods: {
-    handleClickOutside() {
-      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
     },
   },
 }
