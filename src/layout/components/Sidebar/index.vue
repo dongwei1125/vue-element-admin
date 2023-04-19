@@ -1,5 +1,5 @@
 <template>
-  <div :class="['sidebar', classes]">
+  <div class="sidebar" :class="classes">
     <logo :collapse="isCollapse">
       <img slot="icon" src="@/assets/logo.png" />
       <template slot="title">{{ title }}</template>
@@ -52,15 +52,13 @@ export default {
       return this.device === 'mobile'
     },
     classes() {
-      return [
-        `sidebar-${this.device}`,
-        {
-          'sidebar--collapse': this.isCollapse,
-          'sidebar--hidden': this.hidden,
-          'sidebar--hidden-logo': this.hiddenLogo,
-          'sidebar--without-animation': this.withoutAnimation,
-        },
-      ]
+      return {
+        'sidebar-mobile': this.isMobile,
+        'sidebar--collapse': this.isCollapse,
+        'sidebar--hidden': this.hidden,
+        'sidebar--hidden-logo': this.hiddenLogo,
+        'sidebar--without-animation': this.withoutAnimation,
+      }
     },
     activeMenu() {
       const { meta, path } = this.$route

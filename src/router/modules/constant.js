@@ -12,16 +12,13 @@ export default [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    meta: {
-      title: '首页',
-    },
     children: [
       {
         name: 'Dashboard',
         path: 'dashboard',
         component: () => import('@/views/dashboard'),
         meta: {
-          title: '工作台',
+          title: '首页',
           icon: 'el-icon-pie-chart',
         },
       },

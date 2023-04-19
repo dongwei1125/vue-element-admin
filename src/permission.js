@@ -15,6 +15,7 @@ async function handleHasToken(to, from, next) {
   if (to.path === '/login') {
     next({ path: '/' })
     NProgress.done()
+
     return
   }
 

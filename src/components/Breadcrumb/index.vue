@@ -29,7 +29,13 @@ export default {
   },
   methods: {
     getBreadcrumb() {
-      this.matchedRoutes = this.$route.matched.filter(route => route.meta?.title)
+      const matchedRoutes = this.$route.matched.filter(route => {
+        const { title, breadcrumb } = route.meta || {}
+
+        return title && breadcrumb !== false
+      })
+
+      this.matchedRoutes = matchedRoutes
     },
 
     handleLink(route) {

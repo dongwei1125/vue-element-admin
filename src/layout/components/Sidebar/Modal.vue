@@ -14,8 +14,8 @@ export default {
     },
   },
   watch: {
-    visible(val) {
-      if (val) {
+    visible(value) {
+      if (value) {
         this.open()
       } else {
         this.close()

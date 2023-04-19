@@ -1,14 +1,12 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="isActive" animation @toggle="toggleSideBar" />
+    <hamburger :is-active="isActive" @toggle="toggleSideBar" />
 
     <breadcrumb />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 
@@ -16,7 +14,9 @@ export default {
   name: 'Navbar',
   components: { Hamburger, Breadcrumb },
   computed: {
-    ...mapGetters(['sidebar']),
+    sidebar() {
+      return this.$store.getters.sidebar
+    },
     isActive() {
       return this.sidebar.opened
     },

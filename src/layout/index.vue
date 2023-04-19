@@ -3,7 +3,7 @@
     <sidebar />
 
     <div class="main">
-      <div :class="['header', classes]">
+      <div class="header" :class="classes">
         <navbar />
         <tags-view />
       </div>
@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar.vue'
 import TagsView from './components/TagsView.vue'
@@ -25,7 +23,9 @@ export default {
   name: 'Layout',
   components: { Sidebar, Navbar, TagsView, MainView },
   computed: {
-    ...mapGetters(['header']),
+    header() {
+      return this.$store.getters.header
+    },
     hidden() {
       return !this.header.show
     },

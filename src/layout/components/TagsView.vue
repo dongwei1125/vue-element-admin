@@ -2,17 +2,27 @@
   <div class="tags-view">
     <el-scrollbar :vertical="false">
       <ul>
-        <li
-          v-for="i in 10"
-          :key="i"
-          :class="['tags-view-item', { 'is-active': i === active }]"
-          @click="active = i"
+        <router-link
+          v-for="tag in views"
+          :key="tag.path"
+          :to="tag.path"
+          tag="li"
+          class="tags-view-item"
+          :class="{ 'is-active': isActive(tag) }"
+          @contextmenu.prevent.native="openContextMenu($event, tag)"
         >
-          <span>首页</span>
-          <span class="el-icon-close"></span>
-        </li>
+          <span>{{ tag.meta.title }}</span>
+          <span class="el-icon-close" @click.prevent="closeSelectedTag(tag)" />
+        </router-link>
       </ul>
     </el-scrollbar>
+
+    <ul v-show="visible" ref="contextmenu" class="tags-view-contextmenu" :style="styles">
+      <li>刷新</li>
+      <li @click="closeSelectedTag(selectedTag)">关闭</li>
+      <li @click="closeOtherTags(selectedTag)">关闭其它</li>
+      <li @click="closeAllTags">关闭所有</li>
+    </ul>
   </div>
 </template>
 
@@ -21,8 +31,95 @@ export default {
   name: 'TagsView',
   data() {
     return {
-      active: 1,
+      visible: false,
+      left: 0,
+      top: 0,
+      selectedTag: null,
     }
+  },
+  computed: {
+    views() {
+      return this.$store.state.tagsView.views
+    },
+    styles() {
+      return {
+        left: this.left + 'px',
+        top: this.top + 'px',
+      }
+    },
+  },
+  watch: {
+    $route: {
+      handler() {
+        this.addTag()
+      },
+      immediate: true,
+    },
+    visible(value) {
+      if (value) {
+        document.body.addEventListener('click', this.closeContextMenu)
+      } else {
+        document.body.removeEventListener('click', this.closeContextMenu)
+      }
+    },
+  },
+  methods: {
+    isActive(route) {
+      return route.path === this.$route.path
+    },
+
+    addTag() {
+      this.$store.dispatch('tagsView/addView', this.$route)
+    },
+
+    closeSelectedTag(tag) {
+      this.$store.dispatch('tagsView/removeView', tag).then(() => {
+        if (this.isActive(tag)) {
+          this.toLastView()
+        }
+      })
+    },
+
+    closeOtherTags(tag) {
+      this.$router.push(tag)
+      this.$store.dispatch('tagsView/removeOtherViews', tag)
+    },
+
+    closeAllTags() {
+      this.$store.dispatch('tagsView/removeAllViews')
+    },
+
+    toLastView() {
+      const [lastView] = this.views.slice(-1)
+
+      if (lastView) {
+        this.$router.push(lastView)
+      }
+    },
+
+    closeContextMenu() {
+      this.visible = false
+    },
+
+    openContextMenu(event, tag) {
+      const X = event.clientX
+      const Y = event.clientY
+
+      const contextMenuWidth = 80 + 15
+      const offset = 15
+
+      const rect = this.$el.getBoundingClientRect()
+      const offsetLeft = rect.left
+      const offsetTop = rect.top
+      const offsetWidth = this.$el.offsetWidth
+      const maxLeft = offsetWidth - contextMenuWidth
+      const left = X - offsetLeft + offset
+
+      this.left = left > maxLeft ? maxLeft : left
+      this.top = Y - offsetTop
+      this.visible = true
+      this.selectedTag = tag
+    },
   },
 }
 </script>
@@ -31,6 +128,7 @@ export default {
 .tags-view {
   height: 34px;
   border-bottom: 1px solid #d8dce5;
+  position: relative;
 }
 
 .tags-view-item {
@@ -45,7 +143,6 @@ export default {
   margin-top: 4px;
   margin-right: 5px;
   cursor: pointer;
-  transition: all 0.28s;
   position: relative;
 
   &.is-active {
@@ -108,6 +205,27 @@ export default {
 
     .el-scrollbar__wrap {
       height: 49px;
+    }
+  }
+}
+
+.tags-view-contextmenu {
+  position: absolute;
+  padding: 5px 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+  z-index: 3;
+
+  li {
+    font-size: 12px;
+    color: #333;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: background-color 0.28s;
+
+    &:hover {
+      background-color: #eee;
     }
   }
 }
