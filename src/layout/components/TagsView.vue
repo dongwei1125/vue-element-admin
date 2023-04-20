@@ -12,14 +12,14 @@
           @contextmenu.prevent.native="openContextMenu($event, tag)"
         >
           <span>{{ tag.meta.title }}</span>
-          <span class="el-icon-close" @click.prevent="closeSelectedTag(tag)" />
+          <span v-if="!isAffix(tag)" class="el-icon-close" @click.prevent="closeSelectedTag(tag)" />
         </router-link>
       </ul>
     </el-scrollbar>
 
     <ul v-show="visible" ref="contextmenu" class="tags-view-contextmenu" :style="styles">
       <li>刷新</li>
-      <li @click="closeSelectedTag(selectedTag)">关闭</li>
+      <li v-if="!isAffix(selectedTag)" @click="closeSelectedTag(selectedTag)">关闭</li>
       <li @click="closeOtherTags(selectedTag)">关闭其它</li>
       <li @click="closeAllTags">关闭所有</li>
     </ul>
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { resolvePath } from '@/utils'
+
 export default {
   name: 'TagsView',
   data() {
@@ -41,6 +43,9 @@ export default {
     views() {
       return this.$store.state.tagsView.views
     },
+    routes() {
+      return this.$store.getters.routes
+    },
     styles() {
       return {
         left: this.left + 'px',
@@ -49,11 +54,8 @@ export default {
     },
   },
   watch: {
-    $route: {
-      handler() {
-        this.addTag()
-      },
-      immediate: true,
+    $route() {
+      this.addTag()
     },
     visible(value) {
       if (value) {
@@ -63,9 +65,48 @@ export default {
       }
     },
   },
+  mounted() {
+    this.initTags()
+    this.addTag()
+  },
   methods: {
     isActive(route) {
       return route.path === this.$route.path
+    },
+
+    isAffix(tag) {
+      return tag?.meta?.affix
+    },
+
+    filterAffixTags(routes, basePath = '/') {
+      const tags = []
+
+      routes.forEach(route => {
+        if (route.meta?.affix) {
+          tags.push({
+            path: resolvePath(basePath, route.path),
+            meta: { ...route.meta },
+          })
+        }
+
+        if (route.children?.length) {
+          const childrenTags = this.filterAffixTags(route.children, route.path)
+
+          if (childrenTags?.length) {
+            tags.push(...childrenTags)
+          }
+        }
+      })
+
+      return tags
+    },
+
+    initTags() {
+      const tags = this.filterAffixTags(this.routes)
+
+      tags.forEach(tag => {
+        this.$store.dispatch('tagsView/addView', tag)
+      })
     },
 
     addTag() {
@@ -86,7 +127,9 @@ export default {
     },
 
     closeAllTags() {
-      this.$store.dispatch('tagsView/removeAllViews')
+      this.$store.dispatch('tagsView/removeAllViews').then(() => {
+        this.toLastView()
+      })
     },
 
     toLastView() {

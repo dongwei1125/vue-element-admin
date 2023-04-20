@@ -27,6 +27,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         commit('SET_TOKEN', 'token')
+
         resolve()
       }, 20)
     })
@@ -43,6 +44,7 @@ const actions = {
 
         commit('SET_ROLES', roles)
         commit('SET_INFO', data)
+
         resolve(data)
       }, 20)
     })
@@ -52,6 +54,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         commit('SET_TOKEN', '')
+
         resolve()
       }, 1000)
     })

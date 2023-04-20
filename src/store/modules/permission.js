@@ -26,7 +26,7 @@ function filterAsyncRoutes(routes, roles) {
     if (hasPermission(roles, route)) {
       result.push(route)
 
-      if (Array.isArray(route.children)) {
+      if (route.children?.length) {
         route.children = filterAsyncRoutes(route.children, roles)
       }
     }

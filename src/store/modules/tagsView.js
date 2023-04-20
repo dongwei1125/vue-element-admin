@@ -16,11 +16,11 @@ const mutations = {
   },
 
   REMOVE_OTHER_VIEWS(state, view) {
-    state.views = state.views.filter(v => v.path === view.path)
+    state.views = state.views.filter(v => v.meta?.affix || v.path === view.path)
   },
 
   REMOVE_ALL_VIEWS(state) {
-    state.views = []
+    state.views = state.views.filter(v => v.meta?.affix)
   },
 }
 

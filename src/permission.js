@@ -21,7 +21,11 @@ async function handleHasToken(to, from, next) {
 
   const hasRoles = store.getters.roles?.length > 0
 
-  if (hasRoles) return next()
+  if (hasRoles) {
+    next()
+
+    return
+  }
 
   try {
     const { roles } = await store.dispatch('user/getInfo')

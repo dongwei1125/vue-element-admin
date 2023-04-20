@@ -75,10 +75,12 @@ export default {
           const [child] = children
 
           if (!child.meta?.hidden && !child.children?.length) {
-            return result.push({
+            result.push({
               ...child,
               path: resolvePath(path, child.path),
             })
+
+            return
           }
         }
 
