@@ -225,17 +225,6 @@
     max-height: 100vh;
     overflow-y: auto;
 
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(144, 147, 153, .3);
-      border-radius: 3px;
-    }
-
-    &::-webkit-scrollbar-track-piece {
-      background: transparent;
-    }
+    @include scroll
   }
 }

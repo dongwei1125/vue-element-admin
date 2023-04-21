@@ -69,7 +69,7 @@ export default {
 
   + .main-view {
     min-height: 100vh;
-    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }
 
@@ -84,11 +84,12 @@ export default {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
 
   + .main-view {
-    margin-top: 84px;
+    min-height: 100vh;
+    padding-top: 84px;
   }
 
   &.header--hidden-tags-view + .main-view {
-    margin-top: 50px;
+    padding-top: 50px;
   }
 }
 </style>

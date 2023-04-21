@@ -8,6 +8,7 @@
     <el-button type="primary" @click="displayHeader">Header 显示隐藏</el-button>
     <el-button type="primary" @click="displayTagsView">TagsView 显示隐藏</el-button>
     <el-button type="primary" @click="fixedHeader">固定 Header</el-button>
+    <p style="width: 2000px; height: 10px; background-color: red"></p>
     <ul>
       <li>1</li>
       <li>2</li>

@@ -21,7 +21,9 @@ export default {
   },
   watch: {
     $route: {
-      handler() {
+      handler(route) {
+        if (route.path.startsWith('/redirect/')) return
+
         this.getBreadcrumb()
       },
       immediate: true,

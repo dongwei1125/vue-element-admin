@@ -18,7 +18,7 @@
     </el-scrollbar>
 
     <ul v-show="visible" ref="contextmenu" class="tags-view-contextmenu" :style="styles">
-      <li>刷新</li>
+      <li @click="refreshSelectedTag(selectedTag)">刷新</li>
       <li v-if="!isAffix(selectedTag)" @click="closeSelectedTag(selectedTag)">关闭</li>
       <li @click="closeOtherTags(selectedTag)">关闭其它</li>
       <li @click="closeAllTags">关闭所有</li>
@@ -55,6 +55,8 @@ export default {
   },
   watch: {
     $route() {
+      if (this.$route.path.startsWith('/redirect/')) return
+
       this.addTag()
     },
     visible(value) {
@@ -83,8 +85,11 @@ export default {
 
       routes.forEach(route => {
         if (route.meta?.affix) {
+          const tagPath = resolvePath(basePath, route.path)
+
           tags.push({
-            path: resolvePath(basePath, route.path),
+            fullPath: tagPath,
+            path: tagPath,
             meta: { ...route.meta },
           })
         }
@@ -111,6 +116,12 @@ export default {
 
     addTag() {
       this.$store.dispatch('tagsView/addView', this.$route)
+    },
+
+    refreshSelectedTag(tag) {
+      this.$router.replace({
+        path: '/redirect' + tag.fullPath,
+      })
     },
 
     closeSelectedTag(tag) {

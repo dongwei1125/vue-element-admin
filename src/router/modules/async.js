@@ -14,6 +14,7 @@ export default [
       {
         name: 'Table',
         path: 'table',
+        component: () => import('@/views/example/table.vue'),
         meta: {
           title: '表格',
           icon: 'el-icon-notebook-2',
