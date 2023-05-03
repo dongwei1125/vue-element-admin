@@ -3,6 +3,7 @@ import store from './store'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { getToken } from './utils/auth'
+import { getPageTitle } from './utils'
 
 NProgress.configure({ showSpinner: false })
 
@@ -56,6 +57,8 @@ function handleNoToken(to, from, next) {
 
 router.beforeEach(async (to, from, next) => {
   NProgress.start()
+
+  document.title = getPageTitle(to.meta.title)
 
   const hasToken = getToken()
 

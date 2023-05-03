@@ -1,5 +1,5 @@
 <script>
-import { isExternal } from '@/utils'
+import { isExternal } from '@/utils/path'
 
 export default {
   name: 'ItemLink',

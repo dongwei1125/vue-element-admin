@@ -17,7 +17,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { resolvePath } from '@/utils'
+import { resolvePath } from '@/utils/path'
 import resize from './mixins/resize'
 
 import Logo from './Logo.vue'

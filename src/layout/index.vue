@@ -16,7 +16,7 @@
 <script>
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar.vue'
-import TagsView from './components/TagsView.vue'
+import TagsView from './components/TagsView'
 import MainView from './components/MainView.vue'
 
 export default {

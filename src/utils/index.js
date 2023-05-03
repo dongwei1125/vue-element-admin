@@ -1,26 +1,13 @@
-import p from 'path'
-
 /**
- * @param {String} path
- * @returns {Boolean}
- */
-export function isExternal(path) {
-  return /^(https?:|mailto:|tel:|sms:)/.test(path)
-}
-
-/**
- * @param {String} basePath
- * @param {String} path
+ * @param {String} pageTitle
  * @returns {String}
  */
-export function resolvePath(basePath, path) {
-  if (!basePath) {
-    return path
-  }
+export function getPageTitle(pageTitle) {
+  const title = 'Vue Element Admin'
 
-  if (isExternal(path)) {
-    return path
+  if (pageTitle) {
+    return `${pageTitle} - ${title}`
+  } else {
+    return `${title}`
   }
-
-  return p.resolve(basePath, path)
 }

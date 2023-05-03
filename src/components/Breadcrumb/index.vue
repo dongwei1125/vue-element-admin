@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { pathCompile } from '@/utils/path'
+
 export default {
   name: 'Breadcrumb',
   data() {
@@ -41,7 +43,15 @@ export default {
     },
 
     handleLink(route) {
-      this.$router.push(route.path)
+      const { path, redirect } = route
+
+      if (redirect) {
+        this.$router.push(redirect)
+
+        return
+      }
+
+      this.$router.push(pathCompile(path, this.$route.params))
     },
   },
 }

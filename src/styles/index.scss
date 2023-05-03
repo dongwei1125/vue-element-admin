@@ -11,7 +11,7 @@ body {
   height: 100%;
   font-family: Helvetica;
 
-  @include scroll
+  @include scrollbar
 }
 
 #app {

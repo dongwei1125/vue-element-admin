@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { resolvePath } from '@/utils'
+import { resolvePath, isExternal } from '@/utils/path'
 
 import Item from './Item.vue'
 import ItemLink from './ItemLink.vue'
@@ -46,6 +46,14 @@ export default {
   },
   methods: {
     resolvePath(routePath) {
+      if (!this.basePath) {
+        return routePath
+      }
+
+      if (isExternal(routePath)) {
+        return routePath
+      }
+
       return resolvePath(this.basePath, routePath)
     },
   },
