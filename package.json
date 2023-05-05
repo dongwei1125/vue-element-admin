@@ -9,11 +9,14 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "element-ui": "^2.15.13",
+    "fuse.js": "^6.6.2",
     "js-cookie": "^3.0.1",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.1",
+    "process": "^0.11.10",
+    "screenfull": "^6.0.2",
     "vue": "^2.6.14",
     "vue-router": "~3.0.7",
     "vuex": "^3.6.2"

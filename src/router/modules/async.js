@@ -92,6 +92,7 @@ export default [
             path: 'menu1-3',
             meta: {
               title: '菜单 1-3',
+              affix: true,
             },
           },
         ],

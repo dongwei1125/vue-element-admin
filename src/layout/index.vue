@@ -10,18 +10,21 @@
 
       <main-view />
     </div>
+
+    <settings />
   </div>
 </template>
 
 <script>
 import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar.vue'
+import Navbar from './components/Navbar'
 import TagsView from './components/TagsView'
 import MainView from './components/MainView.vue'
+import Settings from './components/Settings'
 
 export default {
   name: 'Layout',
-  components: { Sidebar, Navbar, TagsView, MainView },
+  components: { Sidebar, Navbar, TagsView, MainView, Settings },
   computed: {
     header() {
       return this.$store.getters.header

@@ -138,6 +138,10 @@
 
   +.main {
     margin-left: 0;
+
+    .header--fixed {
+      left: 0;
+    }
   }
 }
 

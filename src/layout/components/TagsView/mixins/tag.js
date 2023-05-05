@@ -19,9 +19,9 @@ export default {
       const tags = []
 
       routes.forEach(route => {
-        if (route.meta?.affix) {
-          const tagPath = resolvePath(basePath, route.path)
+        const tagPath = resolvePath(basePath, route.path)
 
+        if (route.meta?.affix) {
           tags.push({
             fullPath: tagPath,
             path: tagPath,
@@ -30,7 +30,7 @@ export default {
         }
 
         if (route.children?.length) {
-          const childrenTags = this.filterAffixTags(route.children, route.path)
+          const childrenTags = this.filterAffixTags(route.children, tagPath)
 
           if (childrenTags?.length) {
             tags.push(...childrenTags)

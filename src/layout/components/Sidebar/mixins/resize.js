@@ -1,4 +1,4 @@
-const MOBILE_WIDTH = 992
+const MobileWidth = 992
 
 export default {
   beforeMount() {
@@ -21,7 +21,7 @@ export default {
     $_isMobile() {
       const { width } = document.body.getBoundingClientRect()
 
-      return width - 1 < MOBILE_WIDTH
+      return width - 1 < MobileWidth
     },
 
     $_resizeHandler() {

@@ -51,7 +51,7 @@ export default {
   position: absolute;
   padding: 5px 0;
   border-radius: 4px;
-  background: #fff;
+  background-color: #fff;
   box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
   z-index: 3;
 

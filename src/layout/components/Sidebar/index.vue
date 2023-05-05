@@ -7,11 +7,11 @@
 
     <el-scrollbar>
       <el-menu :collapse="isCollapse" :collapse-transition="false" :default-active="activeMenu">
-        <sidebar-item v-for="route in compressedRoutes" :key="route.path" :item="route" base-path="/" />
+        <sidebar-item v-for="route in compressedRoutes" :key="route.path" :item="route" base-path="" />
       </el-menu>
     </el-scrollbar>
 
-    <modal v-if="isMobile" :visible="!isCollapse" />
+    <modal v-if="isMobile" :visible="!isCollapse" @click="closeSideBar" />
   </div>
 </template>
 
@@ -20,9 +20,9 @@ import { mapGetters } from 'vuex'
 import { resolvePath } from '@/utils/path'
 import resize from './mixins/resize'
 
+import Modal from '@/components/Modal'
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
-import Modal from './Modal.vue'
 
 export default {
   name: 'Sidebar',
@@ -88,6 +88,11 @@ export default {
       })
 
       return result
+    },
+  },
+  methods: {
+    closeSideBar() {
+      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
     },
   },
 }

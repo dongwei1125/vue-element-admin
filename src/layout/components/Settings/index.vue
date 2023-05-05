@@ -1,0 +1,120 @@
+<template>
+  <drawer :visible.sync="visible">
+    <div class="settings">
+      <h3 class="settings-title">系统设置</h3>
+
+      <div class="settings-item">
+        <span>主题色</span>
+        <el-color-picker />
+      </div>
+
+      <div class="settings-item">
+        <span>侧边栏</span>
+        <el-switch v-model="sidebar" />
+      </div>
+
+      <div class="settings-item">
+        <span>侧边栏图标</span>
+        <el-switch v-model="sidebarLogo" />
+      </div>
+
+      <div class="settings-item">
+        <span>头部</span>
+        <el-switch v-model="header" />
+      </div>
+
+      <div class="settings-item">
+        <span>固定头部</span>
+        <el-switch v-model="fixedHeader" />
+      </div>
+
+      <div class="settings-item">
+        <span>标签栏</span>
+        <el-switch v-model="tagsView" />
+      </div>
+    </div>
+  </drawer>
+</template>
+
+<script>
+import Drawer from './Drawer.vue'
+
+export default {
+  name: 'Settings',
+  components: { Drawer },
+  data() {
+    return {
+      visible: false,
+    }
+  },
+  computed: {
+    app() {
+      return this.$store.getters.app
+    },
+    sidebar: {
+      get() {
+        return this.app.sidebar.show
+      },
+      set(value) {
+        this.$store.dispatch('app/displaySideBar', value)
+      },
+    },
+    sidebarLogo: {
+      get() {
+        return this.app.sidebar.logo
+      },
+      set(value) {
+        this.$store.dispatch('app/displaySideBarLogo', value)
+      },
+    },
+    header: {
+      get() {
+        return this.app.header.show
+      },
+      set(value) {
+        this.$store.dispatch('app/displayHeader', value)
+      },
+    },
+    fixedHeader: {
+      get() {
+        return this.app.header.fixed
+      },
+      set(value) {
+        this.$store.dispatch('app/fixedHeader', value)
+      },
+    },
+    tagsView: {
+      get() {
+        return this.app.header.tagsView
+      },
+      set(value) {
+        this.$store.dispatch('app/displayTagsView', value)
+      },
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.settings {
+  padding: 24px;
+  height: 100%;
+}
+
+.settings-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  margin: 12px 0;
+}
+
+.settings-item {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 12px 0;
+  text-align: right;
+
+  > span {
+    float: left;
+  }
+}
+</style>
