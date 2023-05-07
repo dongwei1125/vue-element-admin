@@ -1,6 +1,7 @@
 import { getCookies, setCookies } from '@/utils/cookies'
 
 const SideBarKey = 'SidebarStatus'
+const SizeKey = 'Size'
 
 const state = {
   sidebar: {
@@ -16,6 +17,7 @@ const state = {
     tagsView: true,
   },
   device: 'desktop',
+  size: getCookies(SizeKey) || 'medium',
 }
 
 const mutations = {
@@ -57,6 +59,12 @@ const mutations = {
   UPDATE_DEVICE(state, device) {
     state.device = device
   },
+
+  UPDATE_SIZE(state, size) {
+    state.size = size
+
+    setCookies(SizeKey, size)
+  },
 }
 
 const actions = {
@@ -90,6 +98,10 @@ const actions = {
 
   updateDevice({ commit }, device) {
     commit('UPDATE_DEVICE', device)
+  },
+
+  updateSize({ commit }, size) {
+    commit('UPDATE_SIZE', size)
   },
 }
 

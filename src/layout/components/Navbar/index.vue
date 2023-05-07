@@ -8,6 +8,7 @@
       <template v-if="!isMobile">
         <header-search />
         <full-screen />
+        <element-size />
       </template>
     </div>
   </div>
@@ -20,10 +21,11 @@ import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import HeaderSearch from '@/components/HeaderSearch'
 import FullScreen from '@/components/FullScreen'
+import ElementSize from '@/components/ElementSize'
 
 export default {
   name: 'Navbar',
-  components: { Hamburger, Breadcrumb, HeaderSearch, FullScreen },
+  components: { Hamburger, Breadcrumb, HeaderSearch, FullScreen, ElementSize },
   computed: {
     ...mapGetters(['app', 'sidebar']),
     isActive() {
@@ -44,6 +46,15 @@ export default {
 <style lang="scss" scoped>
 $height: 50px;
 
+%hover {
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+}
+
 .navbar {
   height: $height;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
@@ -53,12 +64,8 @@ $height: 50px;
   float: left;
   height: 100%;
   padding: 14px 15px 0;
-  transition: background-color 0.3s;
-  cursor: pointer;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.06);
-  }
+  @extend %hover;
 }
 
 .breadcrumb {
@@ -70,24 +77,37 @@ $height: 50px;
 
 .navbar-menu {
   float: right;
-  height: 100%;
   line-height: $height;
-}
-
-.navbar-menu > div {
-  height: 100%;
-  padding: 0 8px;
-  font-size: 18px;
   color: #5a5e66;
-  transition: background-color 0.3s;
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.06);
-  }
+  font-size: 18px;
 }
 
-.header-search--expand {
-  background-color: initial !important;
+.header-search {
+  padding: 0 8px;
+
+  ::v-deep .el-select {
+    vertical-align: bottom;
+  }
+
+  &.header-search--expand {
+    background-color: unset;
+  }
+
+  @extend %hover;
+}
+
+.full-screen {
+  padding: 0 8px;
+
+  @extend %hover;
+}
+
+.element-size {
+  ::v-deep .el-dropdown > div {
+    padding: 0 8px;
+    font-size: 18px;
+
+    @extend %hover;
+  }
 }
 </style>

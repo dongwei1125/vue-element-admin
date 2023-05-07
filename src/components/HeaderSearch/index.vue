@@ -159,11 +159,15 @@ export default {
   display: inline-block;
 }
 
+.svg-icon {
+  vertical-align: middle;
+}
+
 .el-select {
   width: 0;
   transition: width 0.2s;
   overflow: hidden;
-  vertical-align: bottom;
+  vertical-align: middle;
 
   ::v-deep {
     input {
