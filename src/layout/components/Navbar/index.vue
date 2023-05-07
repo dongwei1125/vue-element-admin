@@ -5,13 +5,17 @@
     <breadcrumb />
 
     <div class="navbar-menu">
-      <header-search />
-      <full-screen />
+      <template v-if="!isMobile">
+        <header-search />
+        <full-screen />
+      </template>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import HeaderSearch from '@/components/HeaderSearch'
@@ -21,11 +25,12 @@ export default {
   name: 'Navbar',
   components: { Hamburger, Breadcrumb, HeaderSearch, FullScreen },
   computed: {
-    sidebar() {
-      return this.$store.getters.sidebar
-    },
+    ...mapGetters(['app', 'sidebar']),
     isActive() {
       return this.sidebar.opened
+    },
+    isMobile() {
+      return this.app.device === 'mobile'
     },
   },
   methods: {
@@ -82,7 +87,7 @@ $height: 50px;
   }
 }
 
-.header-search--expend {
+.header-search--expand {
   background-color: initial !important;
 }
 </style>

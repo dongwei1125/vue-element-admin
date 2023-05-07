@@ -15,7 +15,7 @@ export default {
       return tag?.meta?.affix
     },
 
-    filterAffixTags(routes = [], basePath = '/') {
+    filterAffixTags(routes = [], basePath = '') {
       const tags = []
 
       routes.forEach(route => {

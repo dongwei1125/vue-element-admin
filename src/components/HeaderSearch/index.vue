@@ -1,22 +1,40 @@
 <template>
-  <div class="header-search" :class="{ 'header-search--expend': isExpend }" @click.stop="toggle">
+  <div class="header-search" :class="{ 'header-search--expand': isExpand }" @click.stop="toggle">
     <svg-icon icon-class="search" />
 
-    <el-select ref="select" v-model="keywords" filterable remote placeholder="">
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+    <el-select
+      ref="select"
+      v-model="keywords"
+      :remote-method="handleSearch"
+      filterable
+      default-first-option
+      remote
+      placeholder=""
+      @change="change"
+    >
+      <el-option
+        v-for="item in options"
+        :key="item.path"
+        :label="item.title.join(' / ')"
+        :value="item.path"
+      />
     </el-select>
   </div>
 </template>
 
 <script>
+import Fuse from 'fuse.js'
+import { resolvePath, isExternal } from '@/utils/path'
+
 export default {
   name: 'HeaderSearch',
   data() {
     return {
-      isExpend: false,
-      keyWords: '',
+      isExpand: false,
+      keywords: '',
       options: [],
-      pool: [],
+      optionsPool: [],
+      fuse: null,
     }
   },
   computed: {
@@ -25,8 +43,14 @@ export default {
     },
   },
   watch: {
-    routes() {},
-    isExpend(value) {
+    routes: {
+      handler() {
+        this.initOptionsPool()
+        this.initFuse()
+      },
+      immediate: true,
+    },
+    isExpand(value) {
       if (value) {
         document.body.addEventListener('click', this.close)
       } else {
@@ -35,16 +59,96 @@ export default {
     },
   },
   methods: {
-    toggle() {
-      this.isExpend = !this.isExpend
+    initOptionsPool() {
+      this.optionsPool = this.generateRoutes(this.routes)
+    },
 
-      if (this.isExpend) {
+    generateRoutes(routes, basePath = '', prefixTitles = []) {
+      const result = []
+
+      routes.forEach(route => {
+        const { path, meta, children } = route
+        const { hidden, title } = meta || {}
+
+        if (hidden) return
+
+        const item = {
+          path: isExternal(path) ? path : resolvePath(basePath, path),
+          title: [...prefixTitles, ...(title ? [title] : [])],
+        }
+
+        if (children?.length) {
+          const childrenRoutes = this.generateRoutes(children, item.path, item.title)
+
+          if (childrenRoutes?.length) {
+            result.push(...childrenRoutes)
+          }
+        } else {
+          result.push(item)
+        }
+      })
+
+      return result
+    },
+
+    initFuse() {
+      const options = {
+        threshold: 0.4,
+        keys: [
+          {
+            name: 'title',
+            weight: 0.7,
+          },
+          {
+            name: 'path',
+            weight: 0.3,
+          },
+        ],
+      }
+
+      this.fuse = new Fuse(this.optionsPool, options)
+    },
+
+    handleSearch(value) {
+      if (value) {
+        this.options = this.fuse.search(value).map(({ item }) => item)
+      } else {
+        this.options = []
+      }
+    },
+
+    change(path) {
+      if (isExternal(path)) {
+        this.linkTo(path)
+      } else {
+        this.$router.push(path)
+      }
+
+      this.keywords = ''
+      this.options = []
+      this.isExpand = false
+    },
+
+    linkTo(path) {
+      const link = document.createElement('a')
+      link.href = path
+      link.target = '_blank'
+      link.rel = 'noreferrer noopener'
+
+      link.click()
+    },
+
+    toggle() {
+      this.isExpand = !this.isExpand
+
+      if (this.isExpand) {
         this.$refs.select?.focus()
       }
     },
 
     close() {
-      this.isExpend = false
+      this.isExpand = false
+      this.options = []
     },
   },
 }
@@ -76,8 +180,8 @@ export default {
   }
 }
 
-// expend
-.header-search--expend {
+// expand
+.header-search--expand {
   .el-select {
     width: 210px;
     margin-left: 10px;

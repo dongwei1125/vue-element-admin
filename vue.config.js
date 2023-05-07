@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const { defineConfig } = require('@vue/cli-service')
 
 const resolve = dir => path.join(__dirname, dir)
@@ -8,11 +9,11 @@ module.exports = defineConfig({
   productionSourceMap: false,
   publicPath: './',
   configureWebpack: {
-    resolve: {
-      fallback: {
-        path: require.resolve('path-browserify'),
-      },
-    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+    ],
   },
   chainWebpack: config => {
     config.module.rule('svg').exclude.add(resolve('src/icons')).end()

@@ -7,7 +7,7 @@
         </div>
       </router-link>
 
-      <router-link v-else key="expend" to="/">
+      <router-link v-else key="expand" to="/">
         <div class="sidebar-logo-icon">
           <slot name="icon" />
         </div>

@@ -45,11 +45,8 @@ export default {
     title() {
       return this.sidebar.title
     },
-    device() {
-      return this.app.device
-    },
     isMobile() {
-      return this.device === 'mobile'
+      return this.app.device === 'mobile'
     },
     classes() {
       return {
