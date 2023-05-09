@@ -1,4 +1,5 @@
-import { getToken, setToken } from '@/utils/auth'
+import { getToken, setToken, removeToken } from '@/utils/auth'
+import { resetRouter } from '@/router'
 
 const state = {
   token: getToken(),
@@ -26,7 +27,7 @@ const actions = {
   login({ commit }, form) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        commit('SET_TOKEN', 'token')
+        commit('SET_TOKEN', +new Date())
 
         resolve()
       }, 20)
@@ -50,13 +51,28 @@ const actions = {
     })
   },
 
-  removeToken({ commit }) {
+  logout({ commit, dispatch }) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        commit('SET_TOKEN', '')
+        commit('SET_ROLES', [])
+
+        resetRouter()
+
+        dispatch('removeToken')
+        dispatch('tagsView/removeAllViews', null, { root: true })
 
         resolve()
-      }, 1000)
+      }, 20)
+    })
+  },
+
+  removeToken({ commit }) {
+    return new Promise((resolve, reject) => {
+      commit('SET_TOKEN', '')
+
+      removeToken()
+
+      resolve()
     })
   },
 }

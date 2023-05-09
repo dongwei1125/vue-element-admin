@@ -9,7 +9,10 @@
         <header-search />
         <full-screen />
         <element-size />
+        <language />
       </template>
+
+      <avatar />
     </div>
   </div>
 </template>
@@ -22,10 +25,12 @@ import Breadcrumb from '@/components/Breadcrumb'
 import HeaderSearch from '@/components/HeaderSearch'
 import FullScreen from '@/components/FullScreen'
 import ElementSize from '@/components/ElementSize'
+import Language from '@/components/Language'
+import Avatar from './Avatar.vue'
 
 export default {
   name: 'Navbar',
-  components: { Hamburger, Breadcrumb, HeaderSearch, FullScreen, ElementSize },
+  components: { Hamburger, Breadcrumb, HeaderSearch, FullScreen, ElementSize, Language, Avatar },
   computed: {
     ...mapGetters(['app', 'sidebar']),
     isActive() {
@@ -51,7 +56,7 @@ $height: 50px;
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -77,6 +82,7 @@ $height: 50px;
 
 .navbar-menu {
   float: right;
+  padding-right: 10px;
   line-height: $height;
   color: #5a5e66;
   font-size: 18px;
@@ -102,12 +108,35 @@ $height: 50px;
   @extend %hover;
 }
 
-.element-size {
+.element-size,
+.language {
   ::v-deep .el-dropdown > div {
     padding: 0 8px;
     font-size: 18px;
 
     @extend %hover;
+  }
+}
+
+.avatar {
+  ::v-deep .el-dropdown {
+    vertical-align: bottom;
+
+    > div {
+      padding-left: 8px;
+      padding-right: 28px;
+
+      img {
+        margin-bottom: 5px;
+      }
+
+      i {
+        right: 8px;
+        font-size: 12px;
+      }
+
+      @extend %hover;
+    }
   }
 }
 </style>

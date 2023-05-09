@@ -44,7 +44,6 @@ export default {
       this.$ELEMENT.size = size
       this.$store.dispatch('app/updateSize', size)
       this.refreshView()
-      this.$message.success('切换大小成功')
     },
 
     refreshView() {

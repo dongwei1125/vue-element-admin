@@ -18,6 +18,7 @@ const state = {
   },
   device: 'desktop',
   size: getCookies(SizeKey) || 'medium',
+  language: 'zh',
 }
 
 const mutations = {

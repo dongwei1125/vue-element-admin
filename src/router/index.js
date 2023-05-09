@@ -4,10 +4,19 @@ import constantRoutes from './modules/constant'
 
 Vue.use(VueRouter)
 
-const router = new VueRouter({
-  mode: 'hash',
-  base: process.env.BASE_URL,
-  routes: constantRoutes,
-})
+const createRouter = () =>
+  new VueRouter({
+    mode: 'hash',
+    base: process.env.BASE_URL,
+    routes: constantRoutes,
+  })
+
+const router = createRouter()
+
+export function resetRouter() {
+  const r = createRouter()
+
+  router.matcher = r.matcher
+}
 
 export default router
