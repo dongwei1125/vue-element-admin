@@ -24,6 +24,8 @@
 
 <script>
 import Fuse from 'fuse.js'
+import pinyin from 'pinyin'
+import { mapGetters } from 'vuex'
 import { resolvePath, isExternal } from '@/utils/path'
 
 export default {
@@ -33,22 +35,31 @@ export default {
       isExpand: false,
       keywords: '',
       options: [],
-      optionsPool: [],
+      searchPool: [],
       fuse: null,
     }
   },
   computed: {
-    routes() {
-      return this.$store.getters.routes
+    ...mapGetters(['app', 'routes']),
+    language() {
+      return this.app.language
+    },
+    isChinese() {
+      return this.language === 'zh'
+    },
+    pinyinSearch() {
+      return this.app.pinyinSearch
     },
   },
   watch: {
     routes: {
       handler() {
-        this.initOptionsPool()
-        this.initFuse()
+        this.init()
       },
       immediate: true,
+    },
+    pinyinSearch() {
+      this.initFuse()
     },
     isExpand(value) {
       if (value) {
@@ -59,8 +70,11 @@ export default {
     },
   },
   methods: {
-    initOptionsPool() {
-      this.optionsPool = this.generateRoutes(this.routes)
+    init() {
+      this.searchPool = this.generateRoutes(this.routes)
+
+      this.addPinyinTitle()
+      this.initFuse()
     },
 
     generateRoutes(routes, basePath = '', prefixTitles = []) {
@@ -91,22 +105,25 @@ export default {
       return result
     },
 
+    addPinyinTitle() {
+      const toPinyin = words => pinyin(words, { style: pinyin.STYLE_NORMAL }).join('')
+
+      this.searchPool.forEach(item => {
+        item.pinyinTitle = item.title.map(words => toPinyin(words))
+      })
+    },
+
     initFuse() {
-      const options = {
-        threshold: 0.4,
-        keys: [
-          {
-            name: 'title',
-            weight: 0.7,
-          },
-          {
-            name: 'path',
-            weight: 0.3,
-          },
-        ],
+      const keys = [
+        { name: 'title', weight: 0.7 },
+        { name: 'path', weight: 0.3 },
+      ]
+
+      if (this.isChinese && this.pinyinSearch) {
+        keys.push({ name: 'pinyinTitle', weight: 0.3 })
       }
 
-      this.fuse = new Fuse(this.optionsPool, options)
+      this.fuse = new Fuse(this.searchPool, { keys, threshold: 0.4 })
     },
 
     handleSearch(value) {
@@ -131,6 +148,7 @@ export default {
 
     linkTo(path) {
       const link = document.createElement('a')
+
       link.href = path
       link.target = '_blank'
       link.rel = 'noreferrer noopener'

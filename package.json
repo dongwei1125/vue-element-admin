@@ -15,6 +15,7 @@
     "nprogress": "^0.2.0",
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.1",
+    "pinyin": "~2.11.0",
     "process": "^0.11.10",
     "screenfull": "^6.0.2",
     "vue": "^2.6.14",

@@ -17,6 +17,7 @@ const state = {
     tagsView: true,
   },
   device: 'desktop',
+  pinyinSearch: true,
   size: getCookies(SizeKey) || 'medium',
   language: 'zh',
 }
@@ -66,6 +67,10 @@ const mutations = {
 
     setCookies(SizeKey, size)
   },
+
+  USE_PINYIN_SEARCH(state, boolean) {
+    state.pinyinSearch = boolean
+  },
 }
 
 const actions = {
@@ -103,6 +108,10 @@ const actions = {
 
   updateSize({ commit }, size) {
     commit('UPDATE_SIZE', size)
+  },
+
+  usePinyinSearch({ commit }, boolean) {
+    commit('USE_PINYIN_SEARCH', boolean)
   },
 }
 

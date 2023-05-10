@@ -39,6 +39,7 @@ async function handleHasToken(to, from, next) {
     await store.dispatch('user/removeToken')
 
     next(`/login?redirect=${to.path}`)
+    NProgress.done()
   }
 }
 
@@ -52,6 +53,7 @@ function handleNoToken(to, from, next) {
     next()
   } else {
     next(`/login?redirect=${to.path}`)
+    NProgress.done()
   }
 }
 

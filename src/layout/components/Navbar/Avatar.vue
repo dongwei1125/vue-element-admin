@@ -25,14 +25,16 @@ export default {
   name: 'Avatar',
   methods: {
     async handleLogout() {
-      await this.$confirm('请确认是否退出系统?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning',
-      }).catch(() => {})
-      await this.$store.dispatch('user/logout')
+      try {
+        await this.$confirm('请确认是否退出系统?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+        })
+        await this.$store.dispatch('user/logout')
 
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+        this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      } catch {}
     },
   },
 }

@@ -32,6 +32,11 @@
         <span>标签栏</span>
         <el-switch v-model="tagsView" />
       </div>
+
+      <div v-if="isChinese" class="settings-item">
+        <span>菜单拼音搜索</span>
+        <el-switch v-model="pinyinSearch" />
+      </div>
     </div>
   </drawer>
 </template>
@@ -50,6 +55,12 @@ export default {
   computed: {
     app() {
       return this.$store.getters.app
+    },
+    language() {
+      return this.app.language
+    },
+    isChinese() {
+      return this.language === 'zh'
     },
     sidebar: {
       get() {
@@ -89,6 +100,14 @@ export default {
       },
       set(value) {
         this.$store.dispatch('app/displayTagsView', value)
+      },
+    },
+    pinyinSearch: {
+      get() {
+        return this.app.pinyinSearch
+      },
+      set(value) {
+        this.$store.dispatch('app/usePinyinSearch', value)
       },
     },
   },
