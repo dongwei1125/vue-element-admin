@@ -1,6 +1,6 @@
 import { getCookies, setCookies, removeCookies } from './cookies'
 
-const TokenKey = 'Token'
+const TokenKey = 'token'
 
 /**
  * @returns {String}
@@ -10,10 +10,10 @@ export function getToken() {
 }
 
 /**
- * @param {String} value
+ * @param {String} token
  */
-export function setToken(value) {
-  setCookies(TokenKey, value)
+export function setToken(token) {
+  setCookies(TokenKey, token)
 }
 
 /**

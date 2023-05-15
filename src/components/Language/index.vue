@@ -36,7 +36,10 @@ export default {
     },
   },
   methods: {
-    updateLanguage() {},
+    updateLanguage(language) {
+      this.$i18n.locale = language
+      this.$store.dispatch('app/updateLanguage', language)
+    },
   },
 }
 </script>

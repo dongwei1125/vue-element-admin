@@ -126,9 +126,9 @@ export default {
       this.fuse = new Fuse(this.searchPool, { keys, threshold: 0.4 })
     },
 
-    handleSearch(value) {
-      if (value) {
-        this.options = this.fuse.search(value).map(({ item }) => item)
+    handleSearch(text) {
+      if (text) {
+        this.options = this.fuse.search(text).map(({ item }) => item)
       } else {
         this.options = []
       }

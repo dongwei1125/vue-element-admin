@@ -1,7 +1,7 @@
 import { getCookies, setCookies } from '@/utils/cookies'
+import { getLanguage } from '@/i18n'
 
-const SideBarKey = 'SidebarStatus'
-const SizeKey = 'Size'
+const SideBarKey = 'sidebar-opened'
 
 const state = {
   sidebar: {
@@ -18,8 +18,8 @@ const state = {
   },
   device: 'desktop',
   pinyinSearch: true,
-  size: getCookies(SizeKey) || 'medium',
-  language: 'zh',
+  size: getCookies('size') || 'medium',
+  language: getLanguage(),
 }
 
 const mutations = {
@@ -65,11 +65,17 @@ const mutations = {
   UPDATE_SIZE(state, size) {
     state.size = size
 
-    setCookies(SizeKey, size)
+    setCookies('size', size)
   },
 
   USE_PINYIN_SEARCH(state, boolean) {
     state.pinyinSearch = boolean
+  },
+
+  UPDATE_LANGUAGE(state, language) {
+    state.language = language
+
+    setCookies('language', language)
   },
 }
 
@@ -112,6 +118,10 @@ const actions = {
 
   usePinyinSearch({ commit }, boolean) {
     commit('USE_PINYIN_SEARCH', boolean)
+  },
+
+  updateLanguage({ commit }, language) {
+    commit('UPDATE_LANGUAGE', language)
   },
 }
 
