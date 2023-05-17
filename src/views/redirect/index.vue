@@ -15,8 +15,6 @@ export default {
       })
     },
   },
-  render(h) {
-    return h()
-  },
+  render: h => h(),
 }
 </script>

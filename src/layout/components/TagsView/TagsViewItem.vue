@@ -6,7 +6,7 @@
     :class="{ 'is-active': isActive }"
     @contextmenu.prevent.native="contextmenu($event)"
   >
-    <span>{{ item.meta.title }}</span>
+    <span>{{ $t(item.meta.title) }}</span>
     <span v-if="!isAffix" class="el-icon-close" @click.prevent.stop="close" />
   </router-link>
 </template>

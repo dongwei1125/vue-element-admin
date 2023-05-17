@@ -1,5 +1,5 @@
 <template>
-  <el-tooltip content="元素大小">
+  <el-tooltip :content="$t('size.title')">
     <div class="element-size">
       <el-dropdown trigger="click" @command="updateSize">
         <div>
@@ -13,7 +13,7 @@
             :command="item.value"
             :disabled="item.value === size"
           >
-            {{ item.label }}
+            {{ $t(item.label) }}
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -27,10 +27,10 @@ export default {
   data() {
     return {
       options: [
-        { label: '默认', value: 'default' },
-        { label: '中等', value: 'medium' },
-        { label: '小', value: 'small' },
-        { label: '超小', value: 'mini' },
+        { label: 'size.default', value: 'default' },
+        { label: 'size.medium', value: 'medium' },
+        { label: 'size.small', value: 'small' },
+        { label: 'size.mini', value: 'mini' },
       ],
     }
   },
@@ -42,6 +42,7 @@ export default {
   methods: {
     updateSize(size) {
       this.$ELEMENT.size = size
+
       this.$store.dispatch('app/updateSize', size)
       this.refreshView()
     },

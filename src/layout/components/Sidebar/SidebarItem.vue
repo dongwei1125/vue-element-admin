@@ -6,7 +6,7 @@
       popper-append-to-body
     >
       <template slot="title">
-        <item :title="item.meta?.title" :icon="item.meta?.icon" />
+        <item :title="$t(item.meta?.title)" :icon="item.meta?.icon" />
       </template>
 
       <sidebar-item
@@ -19,7 +19,7 @@
 
     <item-link v-else :to="resolvePath(item.path)">
       <el-menu-item :index="resolvePath(item.path)">
-        <item :title="item.meta?.title" :icon="item.meta?.icon" />
+        <item :title="$t(item.meta?.title)" :icon="item.meta?.icon" />
       </el-menu-item>
     </item-link>
   </div>

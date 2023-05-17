@@ -53,6 +53,7 @@ export default {
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
   z-index: 3;
 
   li {

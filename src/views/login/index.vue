@@ -1,45 +1,51 @@
 <template>
   <div class="login">
     <el-form ref="form" class="login-form" :model="form" :rules="rules">
-      <h3 class="title">系统登录</h3>
+      <div class="title">
+        <h3>{{ $t('login.title') }}</h3>
+        <language />
+      </div>
 
       <el-form-item prop="username">
         <span class="icon">
           <svg-icon icon-class="user" />
         </span>
-        <el-input v-model.trim="form.username" placeholder="用户名"></el-input>
+        <el-input v-model.trim="form.username" :placeholder="$t('login.username')"></el-input>
       </el-form-item>
 
       <el-form-item prop="password">
         <span class="icon">
           <svg-icon icon-class="password" />
         </span>
-        <el-input ref="password" v-model="form.password" :type="passwordType" placeholder="密码"></el-input>
+        <el-input
+          ref="password"
+          v-model="form.password"
+          :type="passwordType"
+          :placeholder="$t('login.password')"
+        ></el-input>
         <span class="password" @click="toggle">
           <svg-icon :icon-class="passwordType === 'password' ? 'eye-close' : 'eye-open'" />
         </span>
       </el-form-item>
 
-      <el-button type="primary" class="login-btn" :loading="loading" @click="handleLogin">登录</el-button>
+      <el-button type="primary" class="login-btn" :loading="loading" @click="handleLogin">{{
+        $t('login.login')
+      }}</el-button>
     </el-form>
   </div>
 </template>
 
 <script>
+import Language from '@/components/Language'
+
 export default {
   name: 'Login',
+  components: { Language },
   data() {
     return {
       form: {
         username: 'admin',
         password: '123456',
-      },
-      rules: {
-        username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-        password: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 6, message: '长度至少为 6 位', trigger: 'blur' },
-        ],
       },
       passwordType: 'password',
       loading: false,
@@ -48,6 +54,15 @@ export default {
   computed: {
     redirect() {
       return this.$route.query.redirect
+    },
+    rules() {
+      return {
+        username: [{ required: true, message: this.$t('login.usernameTips'), trigger: 'blur' }],
+        password: [
+          { required: true, message: this.$t('login.passwordTips'), trigger: 'blur' },
+          { min: 6, message: this.$t('login.passwordMinLengthTips'), trigger: 'blur' },
+        ],
+      }
     },
   },
   methods: {
@@ -117,13 +132,30 @@ $light-gray: #eee;
   max-width: 100%;
   padding: 160px 35px 0;
   margin: 0 auto;
+}
 
-  .title {
+.title {
+  position: relative;
+  margin: 0 0 40px 0;
+
+  h3 {
+    margin: 0;
     font-size: 26px;
     color: $light-gray;
-    margin: 0 0 40px 0;
     text-align: center;
     font-weight: bold;
+  }
+
+  .language {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    cursor: pointer;
+
+    ::v-deep .el-dropdown {
+      color: #fff;
+      font-size: 18px;
+    }
   }
 }
 
@@ -136,7 +168,8 @@ $light-gray: #eee;
 .password {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 16px;
   color: $dark-gray;
   cursor: pointer;

@@ -7,7 +7,7 @@ export default [
     component: Layout,
     redirect: '/example/table',
     meta: {
-      title: '例子',
+      title: 'route.example',
       icon: 'el-icon-s-help',
     },
     children: [
@@ -16,7 +16,7 @@ export default [
         path: 'table',
         component: () => import('@/views/example/table.vue'),
         meta: {
-          title: '表格',
+          title: 'route.table',
           icon: 'el-icon-notebook-2',
         },
       },
@@ -24,7 +24,7 @@ export default [
         name: 'Tree',
         path: 'tree',
         meta: {
-          title: '树',
+          title: 'route.tree',
           icon: 'el-icon-finished',
         },
       },
@@ -34,7 +34,7 @@ export default [
     name: 'Form',
     path: '/form',
     meta: {
-      title: '表单',
+      title: 'route.form',
       icon: 'el-icon-document-copy',
     },
   },
@@ -44,7 +44,7 @@ export default [
     component: Layout,
     redirect: '/nested/menu1/menu1-1',
     meta: {
-      title: '路由嵌套',
+      title: 'route.nested',
       icon: 'el-icon-menu',
     },
     children: [
@@ -53,14 +53,14 @@ export default [
         path: 'menu1',
         redirect: '/nested/menu1/menu1-1',
         meta: {
-          title: '菜单 1',
+          title: 'route.menu1',
         },
         children: [
           {
             name: 'Menu1-1',
             path: 'menu1-1',
             meta: {
-              title: '菜单 1-1',
+              title: 'route.menu1-1',
             },
           },
           {
@@ -68,21 +68,21 @@ export default [
             path: 'menu1-2',
             redirect: '/nested/menu1/menu1-2/menu1-2-1',
             meta: {
-              title: '菜单 1-2',
+              title: 'route.menu1-2',
             },
             children: [
               {
                 name: 'Menu1-2-1',
                 path: 'menu1-2-1',
                 meta: {
-                  title: '菜单 1-2-1',
+                  title: 'route.menu1-2-1',
                 },
               },
               {
                 name: 'Menu1-2-2',
                 path: 'menu1-2-2',
                 meta: {
-                  title: '菜单 1-2-2',
+                  title: 'route.menu1-2-2',
                 },
               },
             ],
@@ -91,7 +91,7 @@ export default [
             name: 'Menu1-3',
             path: 'menu1-3',
             meta: {
-              title: '菜单 1-3',
+              title: 'route.menu1-3',
               affix: true,
             },
           },
@@ -101,7 +101,7 @@ export default [
         name: 'Menu2',
         path: 'menu2',
         meta: {
-          title: '菜单 2',
+          title: 'route.menu2',
         },
       },
     ],
@@ -109,7 +109,7 @@ export default [
   {
     path: 'http://www.baidu.com',
     meta: {
-      title: '外链',
+      title: 'route.link',
       icon: 'el-icon-link',
     },
   },

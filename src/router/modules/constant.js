@@ -31,7 +31,7 @@ export default [
         path: 'dashboard',
         component: () => import('@/views/dashboard'),
         meta: {
-          title: '首页',
+          title: 'route.dashboard',
           icon: 'el-icon-pie-chart',
           affix: true,
         },

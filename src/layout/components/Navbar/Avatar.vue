@@ -8,13 +8,13 @@
 
       <el-dropdown-menu slot="dropdown">
         <router-link to="/profile">
-          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item>{{ $t('navbar.profile') }}</el-dropdown-item>
         </router-link>
         <router-link to="/update">
-          <el-dropdown-item>修改密码</el-dropdown-item>
+          <el-dropdown-item>{{ $t('navbar.updatePassword') }}</el-dropdown-item>
         </router-link>
 
-        <el-dropdown-item divided @click.native="handleLogout">退出登录</el-dropdown-item>
+        <el-dropdown-item divided @click.native="handleLogout">{{ $t('navbar.logOut') }}</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -26,9 +26,9 @@ export default {
   methods: {
     async handleLogout() {
       try {
-        await this.$confirm('请确认是否退出系统?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
+        await this.$confirm(this.$t('avatar.tips'), this.$t('avatar.title'), {
+          confirmButtonText: this.$t('avatar.confirmButtonText'),
+          cancelButtonText: this.$t('avatar.cancelButtonText'),
           type: 'warning',
         })
         await this.$store.dispatch('user/logout')

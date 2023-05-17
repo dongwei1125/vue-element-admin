@@ -52,11 +52,11 @@ export default {
     },
   },
   watch: {
-    routes: {
-      handler() {
-        this.init()
-      },
-      immediate: true,
+    routes() {
+      this.init()
+    },
+    language() {
+      this.init()
     },
     pinyinSearch() {
       this.initFuse()
@@ -69,11 +69,17 @@ export default {
       }
     },
   },
+  mounted() {
+    this.init()
+  },
   methods: {
     init() {
       this.searchPool = this.generateRoutes(this.routes)
 
-      this.addPinyinTitle()
+      if (this.isChinese) {
+        this.addPinyinTitle()
+      }
+
       this.initFuse()
     },
 
@@ -88,7 +94,11 @@ export default {
 
         const item = {
           path: isExternal(path) ? path : resolvePath(basePath, path),
-          title: [...prefixTitles, ...(title ? [title] : [])],
+          title: [...prefixTitles],
+        }
+
+        if (title) {
+          item.title.push(this.$t(title))
         }
 
         if (children?.length) {

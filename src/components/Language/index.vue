@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { getPageTitle } from '@/utils'
+
 export default {
   name: 'Language',
   data() {
@@ -34,10 +36,15 @@ export default {
     language() {
       return this.$store.getters.app.language
     },
+    title() {
+      return this.$route.meta?.title
+    },
   },
   methods: {
     updateLanguage(language) {
       this.$i18n.locale = language
+      document.title = getPageTitle(this.title)
+
       this.$store.dispatch('app/updateLanguage', language)
     },
   },

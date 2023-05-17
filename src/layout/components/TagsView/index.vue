@@ -11,11 +11,11 @@
       />
     </scrollbar>
 
-    <context-menu :visible.sync="visible" :left="left" :top="top">
-      <li @click="refreshTag(selectedTag)">刷新</li>
-      <li v-if="!isAffix(selectedTag)" @click="closeTag(selectedTag)">关闭</li>
-      <li @click="closeOtherTags(selectedTag)">关闭其它</li>
-      <li @click="closeAllTags">关闭所有</li>
+    <context-menu ref="contextMenu" :visible.sync="visible" :left="left" :top="top">
+      <li @click="refreshTag(selectedTag)">{{ $t('tagsView.refresh') }}</li>
+      <li v-if="!isAffix(selectedTag)" @click="closeTag(selectedTag)">{{ $t('tagsView.close') }}</li>
+      <li @click="closeOtherTags(selectedTag)">{{ $t('tagsView.closeOthers') }}</li>
+      <li @click="closeAllTags">{{ $t('tagsView.closeAll') }}</li>
     </context-menu>
   </div>
 </template>
@@ -62,24 +62,27 @@ export default {
     },
 
     openContextMenu(event, tag) {
-      this.setContextMenuPosition(event)
-
       this.visible = true
       this.selectedTag = tag
+
+      this.$nextTick(() => {
+        this.setContextMenuPosition(event)
+      })
     },
 
     setContextMenuPosition(event) {
       const X = event.clientX
       const Y = event.clientY
 
-      const contextMenuWidth = 80 + 15
+      const $contextMenu = this.$refs.contextMenu.$el
+      const contextMenuWidth = $contextMenu.offsetWidth
       const rightOffset = 15
 
       const rect = this.$el.getBoundingClientRect()
       const offsetLeft = rect.left
       const offsetTop = rect.top
       const offsetWidth = this.$el.offsetWidth
-      const maxLeft = offsetWidth - contextMenuWidth
+      const maxLeft = offsetWidth - contextMenuWidth - rightOffset
       const left = X - offsetLeft + rightOffset
 
       this.left = left > maxLeft ? maxLeft : left

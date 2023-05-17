@@ -1,35 +1,35 @@
 <template>
   <drawer :visible.sync="visible">
     <div class="settings">
-      <h3 class="settings-title">系统设置</h3>
+      <h3 class="settings-title">{{ $t('settings.title') }}</h3>
 
       <div class="settings-item">
-        <span>主题色</span>
+        <span>{{ $t('settings.theme') }}</span>
         <el-color-picker />
       </div>
 
       <div class="settings-item">
-        <span>侧边栏</span>
+        <span>{{ $t('settings.sidebar') }}</span>
         <el-switch v-model="sidebar" />
       </div>
 
       <div class="settings-item">
-        <span>侧边栏图标</span>
+        <span>{{ $t('settings.sidebarLogo') }}</span>
         <el-switch v-model="sidebarLogo" />
       </div>
 
       <div class="settings-item">
-        <span>头部</span>
+        <span>{{ $t('settings.header') }}</span>
         <el-switch v-model="header" />
       </div>
 
       <div class="settings-item">
-        <span>固定头部</span>
+        <span>{{ $t('settings.fixedHeader') }}</span>
         <el-switch v-model="fixedHeader" />
       </div>
 
       <div class="settings-item">
-        <span>标签栏</span>
+        <span>{{ $t('settings.tagsView') }}</span>
         <el-switch v-model="tagsView" />
       </div>
 

@@ -3,8 +3,8 @@
     <el-breadcrumb separator="/">
       <transition-group name="fade">
         <el-breadcrumb-item v-for="(route, index) in matchedRoutes" :key="route.path">
-          <span v-if="index === matchedRoutes.length - 1">{{ route.meta.title }}</span>
-          <a v-else @click="handleLink(route)">{{ route.meta.title }}</a>
+          <span v-if="index === matchedRoutes.length - 1">{{ $t(route.meta.title) }}</span>
+          <a v-else @click="handleLink(route)">{{ $t(route.meta.title) }}</a>
         </el-breadcrumb-item>
       </transition-group>
     </el-breadcrumb>
