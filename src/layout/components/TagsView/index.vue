@@ -40,6 +40,9 @@ export default {
     }
   },
   computed: {
+    views() {
+      return this.$store.state.tagsView.views
+    },
     routes() {
       return this.$store.getters.routes
     },

@@ -1,11 +1,7 @@
 import { resolvePath } from '@/utils/path'
+import { isRootRoute } from '@/utils/route'
 
 export default {
-  computed: {
-    views() {
-      return this.$store.state.tagsView.views
-    },
-  },
   methods: {
     isActive(route) {
       return route.path === this.$route.path
@@ -85,10 +81,20 @@ export default {
     },
 
     toLastView() {
-      const [lastView] = this.views.slice(-1)
+      const views = this.$store.state.tagsView.views
 
-      if (lastView) {
+      if (views.length) {
+        const [lastView] = views.slice(-1)
+
         this.$router.push(lastView)
+      } else {
+        if (isRootRoute(this.$route)) {
+          this.$router.replace({
+            path: '/redirect' + this.$route.fullPath,
+          })
+        } else {
+          this.$router.push({ path: '/' })
+        }
       }
     },
   },

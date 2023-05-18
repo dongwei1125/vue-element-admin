@@ -3,7 +3,7 @@ import store from './store'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { getToken } from './utils/auth'
-import { getPageTitle } from './utils'
+import { getPageTitle } from './utils/page'
 
 NProgress.configure({ showSpinner: false })
 

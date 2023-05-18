@@ -28,9 +28,9 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary" class="login-btn" :loading="loading" @click="handleLogin">{{
-        $t('login.login')
-      }}</el-button>
+      <el-button type="primary" class="login-btn" :loading="loading" @click="handleLogin">
+        {{ $t('login.login') }}
+      </el-button>
     </el-form>
   </div>
 </template>

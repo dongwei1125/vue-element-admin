@@ -5,7 +5,7 @@ export default [
     name: 'Example',
     path: '/example',
     component: Layout,
-    redirect: '/example/table',
+    redirect: 'noRedirect',
     meta: {
       title: 'route.example',
       icon: 'el-icon-s-help',

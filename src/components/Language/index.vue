@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { getPageTitle } from '@/utils'
+import { getPageTitle } from '@/utils/page'
 
 export default {
   name: 'Language',
