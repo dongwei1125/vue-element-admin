@@ -57,4 +57,7 @@ export default {
     fixedHeader: 'Fixed Header',
     tagsView: 'Tags View',
   },
+  theme: {
+    tips: 'Switching theme',
+  },
 }

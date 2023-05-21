@@ -11,7 +11,7 @@ import 'normalize.css/normalize.css'
 import '@/styles/index.scss'
 
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import './styles/element-variables.scss'
 
 Vue.use(ElementUI, {
   size: store.getters.app.size,

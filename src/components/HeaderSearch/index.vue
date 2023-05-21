@@ -202,7 +202,7 @@ export default {
       padding: 0;
       border-radius: 0;
       border: none;
-      border-bottom: 1px solid #d9d9d9 !important;
+      border-bottom: 1px solid #d9d9d9;
       vertical-align: middle;
     }
 

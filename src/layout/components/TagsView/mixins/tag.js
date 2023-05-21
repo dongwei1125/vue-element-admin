@@ -1,5 +1,4 @@
 import { resolvePath } from '@/utils/path'
-import { isRootRoute } from '@/utils/route'
 
 export default {
   methods: {
@@ -88,7 +87,10 @@ export default {
 
         this.$router.push(lastView)
       } else {
-        if (isRootRoute(this.$route)) {
+        const [firstRouteRecord] = this.$route.matched
+        const isRootRoute = firstRouteRecord.path === ''
+
+        if (isRootRoute) {
           this.$router.replace({
             path: '/redirect' + this.$route.fullPath,
           })

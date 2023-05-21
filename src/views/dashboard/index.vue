@@ -1,12 +1,12 @@
 <template>
   <div>
     <el-button type="primary" @click="displaySideBarLogo">SideBar Logo 显示隐藏</el-button>
-    <el-button type="primary" @click="displaySideBar">SideBar 显示隐藏</el-button>
-    <el-button type="primary" @click="toggle">SideBar 收起展开</el-button>
+    <el-button type="warning" @click="displaySideBar">SideBar 显示隐藏</el-button>
+    <el-button type="success" @click="toggle">SideBar 收起展开</el-button>
     <br />
     <br />
-    <el-button type="primary" @click="displayHeader">Header 显示隐藏</el-button>
-    <el-button type="primary" @click="displayTagsView">TagsView 显示隐藏</el-button>
+    <el-button type="info" @click="displayHeader">Header 显示隐藏</el-button>
+    <el-button type="danger" @click="displayTagsView">TagsView 显示隐藏</el-button>
     <el-button type="primary" @click="fixedHeader">固定 Header</el-button>
     <el-button type="primary" @click="$router.push('/example/table')">跳转表格</el-button>
     <p style="width: 2000px; height: 10px; background-color: red"></p>

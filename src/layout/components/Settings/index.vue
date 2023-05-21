@@ -5,7 +5,7 @@
 
       <div class="settings-item">
         <span>{{ $t('settings.theme') }}</span>
-        <el-color-picker />
+        <theme-picker />
       </div>
 
       <div class="settings-item">
@@ -42,11 +42,12 @@
 </template>
 
 <script>
+import ThemePicker from '@/components/ThemePicker'
 import Drawer from './Drawer.vue'
 
 export default {
   name: 'Settings',
-  components: { Drawer },
+  components: { ThemePicker, Drawer },
   data() {
     return {
       visible: false,

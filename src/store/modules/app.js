@@ -20,6 +20,7 @@ const state = {
   pinyinSearch: true,
   size: getCookies('size') || 'medium',
   language: getLanguage(),
+  theme: '#1890ff',
 }
 
 const mutations = {
@@ -77,6 +78,10 @@ const mutations = {
 
     setCookies('language', language)
   },
+
+  UPDATE_THEME(state, theme) {
+    state.theme = theme
+  },
 }
 
 const actions = {
@@ -122,6 +127,10 @@ const actions = {
 
   updateLanguage({ commit }, language) {
     commit('UPDATE_LANGUAGE', language)
+  },
+
+  updateTheme({ commit }, theme) {
+    commit('UPDATE_THEME', theme)
   },
 }
 

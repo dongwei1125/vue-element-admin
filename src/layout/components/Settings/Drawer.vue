@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 $drawerWidth: 260px;
+$drawerColor: #1890ff;
 
 .drawer {
   position: fixed;
@@ -55,7 +56,7 @@ $drawerWidth: 260px;
   top: 250px;
   width: 48px;
   height: 48px;
-  background-color: #1890ff;
+  background-color: $drawerColor;
   border-radius: 6px 0 0 6px;
   color: #fff;
   text-align: center;

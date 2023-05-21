@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/variables.scss';
+$logoBackgroundColor: #2b2f3a;
 
 .sidebar-logo {
   background-color: $logoBackgroundColor;

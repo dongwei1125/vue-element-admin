@@ -30,7 +30,7 @@ const actions = {
         commit('SET_TOKEN', +new Date())
 
         resolve()
-      }, 20)
+      }, 50)
     })
   },
 
@@ -47,7 +47,7 @@ const actions = {
         commit('SET_INFO', data)
 
         resolve(data)
-      }, 20)
+      }, 50)
     })
   },
 
@@ -62,7 +62,7 @@ const actions = {
         dispatch('tagsView/removeAllViews', null, { root: true })
 
         resolve()
-      }, 20)
+      }, 50)
     })
   },
 

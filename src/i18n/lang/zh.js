@@ -57,4 +57,7 @@ export default {
     fixedHeader: '固定头部',
     tagsView: '标签栏',
   },
+  theme: {
+    tips: '正在切换主题',
+  },
 }
