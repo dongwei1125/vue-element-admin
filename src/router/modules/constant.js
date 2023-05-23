@@ -1,6 +1,7 @@
 import Layout from '@/layout'
 
 export default [
+  // 刷新中间页
   {
     path: '/redirect',
     component: Layout,
@@ -14,6 +15,8 @@ export default [
       },
     ],
   },
+
+  // 登录
   {
     path: '/login',
     component: () => import('@/views/login'),
@@ -21,6 +24,8 @@ export default [
       hidden: true,
     },
   },
+
+  // 首页
   {
     path: '/',
     component: Layout,
@@ -32,8 +37,40 @@ export default [
         component: () => import('@/views/dashboard'),
         meta: {
           title: 'route.dashboard',
-          icon: 'el-icon-pie-chart',
+          icon: 'dashboard',
           affix: true,
+        },
+      },
+    ],
+  },
+
+  // 文档
+  {
+    path: '/document',
+    component: Layout,
+    children: [
+      {
+        name: 'Document',
+        path: 'index',
+        meta: {
+          title: 'route.document',
+          icon: 'document',
+        },
+      },
+    ],
+  },
+
+  // 引导页
+  {
+    path: '/guide',
+    component: Layout,
+    children: [
+      {
+        name: 'Guide',
+        path: 'index',
+        meta: {
+          title: 'route.guide',
+          icon: 'guide',
         },
       },
     ],
