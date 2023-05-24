@@ -33,7 +33,7 @@ export default {
     dndList: '列表拖拽',
     dragKanban: '拖拽看板',
     chart: '图表',
-    keyboardChart: '键盘图标',
+    keyboardChart: '键盘图表',
     lineChart: '折线图表',
     mixChart: '混合图表',
     nested: '嵌套',

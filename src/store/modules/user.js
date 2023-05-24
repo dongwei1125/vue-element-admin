@@ -38,7 +38,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const data = {
-          roles: ['admin', 'user'],
+          roles: ['admin'],
           name: 'admin',
         }
         const { roles } = data

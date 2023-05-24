@@ -55,6 +55,7 @@ export default [
         meta: {
           title: 'route.document',
           icon: 'document',
+          affix: true,
         },
       },
     ],

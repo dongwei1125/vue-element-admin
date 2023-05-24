@@ -8,32 +8,32 @@
         <theme-picker />
       </div>
 
-      <div class="settings-item">
+      <div class="settings-item top-divider">
         <span>{{ $t('settings.sidebar') }}</span>
         <el-switch v-model="sidebar" />
       </div>
 
       <div class="settings-item">
         <span>{{ $t('settings.sidebarLogo') }}</span>
-        <el-switch v-model="sidebarLogo" />
+        <el-switch v-model="sidebarLogo" :disabled="!sidebar" />
       </div>
 
-      <div class="settings-item">
+      <div class="settings-item top-divider">
         <span>{{ $t('settings.header') }}</span>
         <el-switch v-model="header" />
       </div>
 
       <div class="settings-item">
         <span>{{ $t('settings.fixedHeader') }}</span>
-        <el-switch v-model="fixedHeader" />
+        <el-switch v-model="fixedHeader" :disabled="!header" />
       </div>
 
       <div class="settings-item">
         <span>{{ $t('settings.tagsView') }}</span>
-        <el-switch v-model="tagsView" />
+        <el-switch v-model="tagsView" :disabled="!header" />
       </div>
 
-      <div v-if="isChinese" class="settings-item">
+      <div v-if="isChinese" class="settings-item top-divider">
         <span>菜单拼音搜索</span>
         <el-switch v-model="pinyinSearch" />
       </div>
@@ -135,6 +135,21 @@ export default {
 
   > span {
     float: left;
+  }
+}
+
+.top-divider {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #f2f2f2;
   }
 }
 </style>

@@ -5,10 +5,13 @@ export default [
   {
     name: 'Permission',
     path: '/permission',
+    redirect: '/permission/directive',
     component: Layout,
     meta: {
       title: 'route.permission',
       icon: 'lock',
+      roles: ['admin', 'editor'],
+      alwaysShow: true,
     },
     children: [
       {
@@ -17,6 +20,7 @@ export default [
         meta: {
           title: 'route.pagePermission',
           icon: 'page',
+          roles: ['admin'],
         },
       },
       {
@@ -33,6 +37,7 @@ export default [
         meta: {
           title: 'route.rolePermission',
           icon: 'role',
+          roles: ['admin'],
         },
       },
     ],
@@ -59,6 +64,7 @@ export default [
     name: 'Component',
     path: '/component',
     component: Layout,
+    redirect: 'noRedirect',
     meta: {
       title: 'route.component',
       icon: 'component',
@@ -69,6 +75,7 @@ export default [
         path: 'tinymce',
         meta: {
           title: 'route.tinymce',
+          icon: 'tinymce',
         },
       },
       {
@@ -76,6 +83,7 @@ export default [
         path: 'markdown',
         meta: {
           title: 'route.markdown',
+          icon: 'markdown',
         },
       },
       {
@@ -83,6 +91,7 @@ export default [
         path: 'json-editor',
         meta: {
           title: 'route.jsonEditor',
+          icon: 'json',
         },
       },
       {
@@ -90,6 +99,7 @@ export default [
         path: 'split-pane',
         meta: {
           title: 'route.splitPane',
+          icon: 'split-pane',
         },
       },
       {
@@ -97,6 +107,7 @@ export default [
         path: 'avatar-upload',
         meta: {
           title: 'route.avatarUpload',
+          icon: 'avatar-upload',
         },
       },
       {
@@ -104,6 +115,7 @@ export default [
         path: 'dropzone',
         meta: {
           title: 'route.dropzone',
+          icon: 'drag-upload',
         },
       },
       {
@@ -111,6 +123,7 @@ export default [
         path: 'sticky',
         meta: {
           title: 'route.sticky',
+          icon: 'sticky',
         },
       },
       {
@@ -118,6 +131,7 @@ export default [
         path: 'count-to',
         meta: {
           title: 'route.countTo',
+          icon: 'count-to',
         },
       },
       {
@@ -125,6 +139,7 @@ export default [
         path: 'mixin',
         meta: {
           title: 'route.componentMixin',
+          icon: 'component-mixin',
         },
       },
       {
@@ -132,6 +147,7 @@ export default [
         path: 'back-to-top',
         meta: {
           title: 'route.backToTop',
+          icon: 'back-to-top',
         },
       },
       {
@@ -139,6 +155,7 @@ export default [
         path: 'drag-dialog',
         meta: {
           title: 'route.dragDialog',
+          icon: 'drag-dialog',
         },
       },
       {
@@ -146,6 +163,7 @@ export default [
         path: 'drag-select',
         meta: {
           title: 'route.dragSelect',
+          icon: 'drag-select',
         },
       },
       {
@@ -153,6 +171,7 @@ export default [
         path: 'dnd-list',
         meta: {
           title: 'route.dndList',
+          icon: 'dnd-list',
         },
       },
       {
@@ -160,6 +179,7 @@ export default [
         path: 'drag-kanban',
         meta: {
           title: 'route.dragKanban',
+          icon: 'drag-kanban',
         },
       },
     ],
@@ -170,6 +190,7 @@ export default [
     name: 'Chart',
     path: '/chart',
     component: Layout,
+    redirect: 'noRedirect',
     meta: {
       title: 'route.chart',
       icon: 'chart',
@@ -180,6 +201,7 @@ export default [
         path: 'keyboard',
         meta: {
           title: 'route.keyboardChart',
+          icon: 'keyboard-chart',
         },
       },
       {
@@ -187,6 +209,7 @@ export default [
         path: 'line',
         meta: {
           title: 'route.lineChart',
+          icon: 'line-chart',
         },
       },
       {
@@ -194,6 +217,7 @@ export default [
         path: 'mix',
         meta: {
           title: 'route.mixChart',
+          icon: 'mix-chart',
         },
       },
     ],
@@ -204,6 +228,7 @@ export default [
     name: 'Nested',
     path: '/nested',
     component: Layout,
+    redirect: '/nested/menu1/menu1-1',
     meta: {
       title: 'route.nested',
       icon: 'nested',
@@ -212,8 +237,10 @@ export default [
       {
         name: 'Menu1',
         path: 'menu1',
+        redirect: '/nested/menu1/menu1-1',
         meta: {
           title: 'route.menu1',
+          icon: 'menu',
         },
         children: [
           {
@@ -221,13 +248,16 @@ export default [
             path: 'menu1-1',
             meta: {
               title: 'route.menu1-1',
+              icon: 'menu',
             },
           },
           {
             name: 'Menu1-2',
             path: 'menu1-2',
+            redirect: '/nested/menu1/menu1-2/menu1-2-1',
             meta: {
               title: 'route.menu1-2',
+              icon: 'menu',
             },
             children: [
               {
@@ -235,6 +265,7 @@ export default [
                 path: 'menu1-2-1',
                 meta: {
                   title: 'route.menu1-2-1',
+                  icon: 'menu',
                 },
               },
               {
@@ -242,6 +273,7 @@ export default [
                 path: 'menu1-2-2',
                 meta: {
                   title: 'route.menu1-2-2',
+                  icon: 'menu',
                 },
               },
             ],
@@ -251,6 +283,7 @@ export default [
             path: 'menu1-3',
             meta: {
               title: 'route.menu1-3',
+              icon: 'menu',
             },
           },
         ],
@@ -260,6 +293,7 @@ export default [
         path: 'menu2',
         meta: {
           title: 'route.menu2',
+          icon: 'menu',
         },
       },
     ],
@@ -270,6 +304,7 @@ export default [
     name: 'Table',
     path: '/table',
     component: Layout,
+    redirect: '/table/complex',
     meta: {
       title: 'route.table',
       icon: 'table',
@@ -280,6 +315,7 @@ export default [
         path: 'dynamic',
         meta: {
           title: 'route.dynamicTable',
+          icon: 'dynamic-table',
         },
       },
       {
@@ -287,6 +323,7 @@ export default [
         path: 'drag',
         meta: {
           title: 'route.dragTable',
+          icon: 'drag-table',
         },
       },
       {
@@ -294,6 +331,7 @@ export default [
         path: 'inline-edit',
         meta: {
           title: 'route.inlineEditTable',
+          icon: 'inline-edit-table',
         },
       },
       {
@@ -301,6 +339,7 @@ export default [
         path: 'complex',
         meta: {
           title: 'route.complexTable',
+          icon: 'complex-table',
         },
       },
     ],
@@ -311,6 +350,7 @@ export default [
     name: 'Example',
     path: '/example',
     component: Layout,
+    redirect: '/example/list',
     meta: {
       title: 'route.example',
       icon: 'el-icon-s-help',
@@ -356,9 +396,10 @@ export default [
     name: 'ErrorPage',
     path: '/error',
     component: Layout,
+    redirect: 'noRedirect',
     meta: {
       title: 'route.errorPage',
-      icon: '404',
+      icon: 'error',
     },
     children: [
       {
@@ -366,6 +407,7 @@ export default [
         path: '401',
         meta: {
           title: 'route.page401',
+          icon: '401',
         },
       },
       {
@@ -373,6 +415,7 @@ export default [
         path: '404',
         meta: {
           title: 'route.page404',
+          icon: '404',
         },
       },
     ],
@@ -399,6 +442,7 @@ export default [
     name: 'Excel',
     path: '/excel',
     component: Layout,
+    redirect: '/excel/export',
     meta: {
       title: 'route.excel',
       icon: 'excel',
@@ -409,6 +453,7 @@ export default [
         path: 'export',
         meta: {
           title: 'route.exportExcel',
+          icon: 'export-excel',
         },
       },
       {
@@ -416,6 +461,7 @@ export default [
         path: 'export-selected',
         meta: {
           title: 'route.exportSelectedExcel',
+          icon: 'export-excel',
         },
       },
       {
@@ -423,6 +469,7 @@ export default [
         path: 'export-merge-header',
         meta: {
           title: 'route.exportMergeHeaderExcel',
+          icon: 'export-excel',
         },
       },
       {
@@ -430,6 +477,7 @@ export default [
         path: 'upload',
         meta: {
           title: 'route.uploadExcel',
+          icon: 'upload-excel',
         },
       },
     ],
@@ -440,6 +488,7 @@ export default [
     name: 'Zip',
     path: '/zip',
     component: Layout,
+    redirect: '/zip/export',
     meta: {
       title: 'route.zip',
       icon: 'zip',
@@ -451,6 +500,7 @@ export default [
         path: 'export',
         meta: {
           title: 'route.exportZip',
+          icon: 'export-zip',
         },
       },
     ],
