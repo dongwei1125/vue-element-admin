@@ -18,6 +18,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { resolvePath } from '@/utils/path'
+
 import resize from './mixins/resize'
 
 import Modal from '@/components/Modal'

@@ -3,6 +3,7 @@
     <el-form ref="form" class="login-form" :model="form" :rules="rules">
       <div class="title">
         <h3>{{ $t('login.title') }}</h3>
+
         <language />
       </div>
 
@@ -10,6 +11,7 @@
         <span class="icon">
           <svg-icon icon-class="user" />
         </span>
+
         <el-input v-model.trim="form.username" :placeholder="$t('login.username')"></el-input>
       </el-form-item>
 
@@ -17,12 +19,14 @@
         <span class="icon">
           <svg-icon icon-class="password" />
         </span>
+
         <el-input
           ref="password"
           v-model="form.password"
           :type="passwordType"
           :placeholder="$t('login.password')"
         ></el-input>
+
         <span class="password" @click="toggle">
           <svg-icon :icon-class="passwordType === 'password' ? 'eye-close' : 'eye-open'" />
         </span>

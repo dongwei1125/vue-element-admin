@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import { getCookies } from '@/utils/cookies'
+
 import messages from './lang'
 
 Vue.use(VueI18n)

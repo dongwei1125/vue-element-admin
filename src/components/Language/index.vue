@@ -43,6 +43,7 @@ export default {
   methods: {
     updateLanguage(language) {
       this.$i18n.locale = language
+
       document.title = getPageTitle(this.title)
 
       this.$store.dispatch('app/updateLanguage', language)

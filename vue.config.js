@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const { defineConfig } = require('@vue/cli-service')
+
 const createThemeColorReplacerPlugin = require('./plugins/createThemeColorReplacerPlugin')
 
 const resolve = dir => path.join(__dirname, dir)
@@ -30,5 +31,8 @@ module.exports = defineConfig({
         symbolId: 'icon-[name]',
       })
       .end()
+  },
+  devServer: {
+    setupMiddlewares: require('./mock/server.js'),
   },
 })

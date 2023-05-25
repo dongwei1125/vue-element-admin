@@ -44,6 +44,7 @@ export default {
       this.$ELEMENT.size = size
 
       this.$store.dispatch('app/updateSize', size)
+
       this.refreshView()
     },
 

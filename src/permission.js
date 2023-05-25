@@ -1,7 +1,9 @@
 import router from './router'
 import store from './store'
+
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+
 import { getToken } from './utils/auth'
 import { getPageTitle } from './utils/page'
 
@@ -15,6 +17,7 @@ NProgress.configure({ showSpinner: false })
 async function handleHasToken(to, from, next) {
   if (to.path === '/login') {
     next({ path: '/' })
+
     NProgress.done()
 
     return
@@ -39,6 +42,7 @@ async function handleHasToken(to, from, next) {
     await store.dispatch('user/removeToken')
 
     next(`/login?redirect=${to.path}`)
+
     NProgress.done()
   }
 }
@@ -53,6 +57,7 @@ function handleNoToken(to, from, next) {
     next()
   } else {
     next(`/login?redirect=${to.path}`)
+
     NProgress.done()
   }
 }

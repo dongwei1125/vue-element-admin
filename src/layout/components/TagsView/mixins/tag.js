@@ -88,7 +88,7 @@ export default {
         this.$router.push(lastView)
       } else {
         const [firstRouteRecord] = this.$route.matched
-        const isRootRoute = firstRouteRecord.path === ''
+        const isRootRoute = firstRouteRecord?.path === ''
 
         if (isRootRoute) {
           this.$router.replace({

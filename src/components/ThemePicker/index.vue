@@ -33,6 +33,7 @@ export default {
       client.changer.changeColor(options, Promise).finally(() => {
         setTimeout(() => {
           this.$store.dispatch('app/updateTheme', color)
+
           $message.close()
         }, 500)
       })
