@@ -562,6 +562,7 @@ export default [
       {
         name: 'I18n',
         path: 'index',
+        component: () => import('@/views/i18n'),
         meta: {
           title: 'route.i18n',
           icon: 'i18n',

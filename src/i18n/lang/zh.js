@@ -106,4 +106,20 @@ export default {
   theme: {
     tips: '正在切换主题',
   },
+  i18nPage: {
+    title: '切换语言',
+    tips: '本项目国际化基于 vue-i18n',
+    one: '一',
+    two: '二',
+    three: '三',
+    default: '默认按钮',
+    primary: '主要按钮',
+    success: '成功按钮',
+    info: '信息按钮',
+    warning: '警告按钮',
+    danger: '危险按钮',
+    name: '姓名',
+    date: '日期',
+    address: '地址',
+  },
 }

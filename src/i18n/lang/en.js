@@ -106,4 +106,20 @@ export default {
   theme: {
     tips: 'Switching theme',
   },
+  i18nPage: {
+    title: 'Switch Language',
+    tips: 'The internationalization of this project is based on vue-i18n',
+    one: 'One',
+    two: 'Two',
+    three: 'Three',
+    default: 'Default',
+    primary: 'Primary',
+    success: 'Success',
+    info: 'Info',
+    warning: 'Warning',
+    danger: 'Danger',
+    name: 'Name',
+    date: 'Date',
+    address: 'Address',
+  },
 }
