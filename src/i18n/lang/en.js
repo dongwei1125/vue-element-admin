@@ -122,4 +122,11 @@ export default {
     date: 'Date',
     address: 'Address',
   },
+  clipboardPage: {
+    functional: 'Functional',
+    directive: ' v-clipboard Directive',
+    copy: 'Copy',
+    successfully: 'Copy successfully',
+    failed: 'Copy failed',
+  },
 }

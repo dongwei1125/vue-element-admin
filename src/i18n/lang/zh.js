@@ -122,4 +122,11 @@ export default {
     date: '日期',
     address: '地址',
   },
+  clipboardPage: {
+    functional: '函数式',
+    directive: ' v-clipboard 指令',
+    copy: '复制',
+    successfully: '复制成功',
+    failed: '复制失败',
+  },
 }

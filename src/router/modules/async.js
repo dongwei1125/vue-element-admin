@@ -546,6 +546,7 @@ export default [
       {
         name: 'Clipboard',
         path: 'index',
+        component: () => import('@/views/clipboard'),
         meta: {
           title: 'route.clipboard',
           icon: 'clipboard',
