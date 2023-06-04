@@ -99,7 +99,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$background-color: #2d3a4b;
+$dark-gray: #889aa4;
 $light-gray: #eee;
+
+.login {
+  height: 100%;
+  background-color: $background-color;
+}
+
+.login-form {
+  width: 520px;
+  max-width: 100%;
+  padding: 160px 35px 0;
+  margin: 0 auto;
+}
 
 .el-form-item {
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -118,24 +132,6 @@ $light-gray: #eee;
       font-family: sans-serif;
     }
   }
-}
-</style>
-
-<style lang="scss" scoped>
-$background-color: #2d3a4b;
-$dark-gray: #889aa4;
-$light-gray: #eee;
-
-.login {
-  height: 100%;
-  background-color: $background-color;
-}
-
-.login-form {
-  width: 520px;
-  max-width: 100%;
-  padding: 160px 35px 0;
-  margin: 0 auto;
 }
 
 .title {

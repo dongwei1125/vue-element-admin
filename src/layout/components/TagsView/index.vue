@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .tags-view {
   height: 34px;
   border-bottom: 1px solid #d8dce5;

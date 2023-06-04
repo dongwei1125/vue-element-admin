@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .full-screen {
   display: inline-block;
 }
