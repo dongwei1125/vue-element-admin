@@ -4,5 +4,6 @@ module.exports = {
   rules: {
     quotes: ['error', 'single'],
     'vue/multi-word-component-names': 'off',
+    'vue/no-v-html': 'off',
   },
 }

@@ -147,4 +147,9 @@ export default {
     four: 'Tag 4',
     five: 'Tag 5',
   },
+  pdfPage: {
+    tips: 'window.print() download pdf',
+    download: 'Download',
+    generate: 'Generating PDF',
+  },
 }

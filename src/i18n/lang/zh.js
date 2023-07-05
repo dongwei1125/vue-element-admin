@@ -147,4 +147,9 @@ export default {
     four: '标签四',
     five: '标签五',
   },
+  pdfPage: {
+    tips: 'window.print() 下载 pdf',
+    download: '下载',
+    generate: '正在生成 PDF',
+  },
 }

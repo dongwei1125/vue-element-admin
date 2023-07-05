@@ -99,8 +99,9 @@ export default {
     margin: 20px 0 0;
     border-radius: 2px;
     font-size: 16px;
+    color: #2c3e50;
     line-height: 32px;
-    background: #eef1f6;
+    background-color: #eef1f6;
   }
 }
 

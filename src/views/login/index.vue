@@ -12,7 +12,7 @@
           <svg-icon icon-class="user" />
         </span>
 
-        <el-input v-model.trim="form.username" :placeholder="$t('login.username')"></el-input>
+        <el-input v-model.trim="form.username" :placeholder="$t('login.username')" />
       </el-form-item>
 
       <el-form-item prop="password">
@@ -25,7 +25,7 @@
           v-model="form.password"
           :type="passwordType"
           :placeholder="$t('login.password')"
-        ></el-input>
+        />
 
         <span class="eye-icon" @click="toggle">
           <svg-icon :icon-class="passwordType === 'password' ? 'eye-close' : 'eye-open'" />

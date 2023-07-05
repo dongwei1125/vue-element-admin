@@ -514,12 +514,20 @@ export default [
       {
         name: 'Pdf',
         path: 'index',
+        component: () => import('@/views/pdf'),
         meta: {
           title: 'route.pdf',
           icon: 'pdf',
         },
       },
     ],
+  },
+  {
+    path: '/pdf/download',
+    component: () => import('@/views/pdf/download'),
+    meta: {
+      hidden: true,
+    },
   },
 
   // 主题
