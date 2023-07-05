@@ -27,7 +27,7 @@
           :placeholder="$t('login.password')"
         ></el-input>
 
-        <span class="password" @click="toggle">
+        <span class="eye-icon" @click="toggle">
           <svg-icon :icon-class="passwordType === 'password' ? 'eye-close' : 'eye-open'" />
         </span>
       </el-form-item>
@@ -165,7 +165,7 @@ $light-gray: #eee;
   color: $dark-gray;
 }
 
-.password {
+.eye-icon {
   position: absolute;
   right: 10px;
   top: 50%;

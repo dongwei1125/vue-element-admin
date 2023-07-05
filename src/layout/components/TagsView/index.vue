@@ -21,11 +21,11 @@
 </template>
 
 <script>
+import tag from './mixins/tag'
+
 import Scrollbar from './Scrollbar.vue'
 import TagsViewItem from './TagsViewItem.vue'
 import ContextMenu from './ContextMenu.vue'
-
-import tag from './mixins/tag'
 
 export default {
   name: 'TagsView',

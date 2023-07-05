@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+const { ProvidePlugin } = require('webpack')
 const { defineConfig } = require('@vue/cli-service')
 
 const createThemeColorReplacerPlugin = require('./plugins/createThemeColorReplacerPlugin')
@@ -12,7 +12,7 @@ module.exports = defineConfig({
   publicPath: './',
   configureWebpack: {
     plugins: [
-      new webpack.ProvidePlugin({
+      new ProvidePlugin({
         process: 'process/browser',
       }),
       createThemeColorReplacerPlugin(),

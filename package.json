@@ -10,6 +10,7 @@
     "axios": "^1.4.0",
     "clipboard": "^2.0.11",
     "core-js": "^3.8.3",
+    "element-theme-darkplus": "^1.0.2",
     "element-ui": "^2.15.13",
     "fuse.js": "^6.6.2",
     "js-cookie": "^3.0.1",
@@ -39,6 +40,7 @@
     "sass-loader": "^12.0.0",
     "svg-sprite-loader": "^6.0.11",
     "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.86.0",
     "webpack-theme-color-replacer": "^1.4.7"
   },
   "browserslist": [

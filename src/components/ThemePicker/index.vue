@@ -1,7 +1,7 @@
 <template>
   <el-color-picker
     :value="theme"
-    :predefine="['#1890ff', '#f5222d', '#fa541c', '#13c2c2', '#52c41a', '#2f541b', '#722ed1']"
+    :predefine="['#409eff', '#f5222d', '#fa541c', '#13c2c2', '#52c41a', '#2f541b', '#722ed1']"
     class="theme-picker"
     popper-class="theme-picker-dropdown"
     @change="themeChange"

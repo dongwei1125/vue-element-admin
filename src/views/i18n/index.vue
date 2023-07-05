@@ -4,7 +4,7 @@
       <el-card>
         <template slot="header">
           <svg-icon icon-class="i18n" />
-          <span class="header-title">{{ $t('i18nPage.title') }}</span>
+          <span class="title">{{ $t('i18nPage.title') }}</span>
         </template>
 
         <el-radio-group v-model="lang">
@@ -13,7 +13,7 @@
           </el-radio>
         </el-radio-group>
 
-        <el-tag type="info" class="header-tag">{{ $t('i18nPage.tips') }}</el-tag>
+        <el-tag type="info" class="tag">{{ $t('i18nPage.tips') }}</el-tag>
       </el-card>
     </div>
 
@@ -138,11 +138,11 @@ export default {
   max-width: 100%;
   margin: 0 auto;
 
-  .header-title {
+  .title {
     margin-left: 10px;
   }
 
-  .header-tag {
+  .tag {
     display: block;
     margin-top: 15px;
   }

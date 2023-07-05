@@ -20,7 +20,7 @@ const state = {
   pinyinSearch: true,
   size: getCookies('size') || 'medium',
   language: getLanguage(),
-  theme: '#1890ff',
+  theme: '#409eff',
 }
 
 const mutations = {

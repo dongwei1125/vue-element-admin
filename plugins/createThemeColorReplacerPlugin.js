@@ -3,7 +3,7 @@ const forElementUI = require('webpack-theme-color-replacer/forElementUI')
 
 const themePluginOption = {
   fileName: 'css/theme-colors.[contenthash:8].css',
-  matchColors: forElementUI.getElementUISeries('#1890ff'),
+  matchColors: forElementUI.getElementUISeries('#409eff'),
   changeSelector: forElementUI.changeSelector,
 }
 

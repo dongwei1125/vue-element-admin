@@ -530,6 +530,7 @@ export default [
       {
         name: 'Theme',
         path: 'index',
+        component: () => import('@/views/theme'),
         meta: {
           title: 'route.theme',
           icon: 'theme',

@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 $drawerWidth: 260px;
-$drawerColor: #1890ff;
+$drawerColor: #409eff;
 
 .drawer {
   position: fixed;
