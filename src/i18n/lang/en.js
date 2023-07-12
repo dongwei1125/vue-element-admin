@@ -152,4 +152,21 @@ export default {
     download: 'Download',
     generate: 'Generating PDF',
   },
+  errorPage401: {
+    oops: 'OOPS!',
+    title: 'You do not have permission to enter this page',
+    desc: 'Please contact webmaster if you are not satisfied',
+    or: 'Or you can go:',
+    back: 'Back to home',
+    look: 'Just take a look',
+    view: 'Click on me to view the image',
+    dialog: 'Just look around',
+  },
+  errorPage404: {
+    oops: 'OOPS!',
+    right: 'All rights reserved',
+    title: 'The webmaster said that you can not enter this page...',
+    desc: 'Please check that the URL you entered is correct, or click the button below to return to the homepage.',
+    back: 'Back to home',
+  },
 }

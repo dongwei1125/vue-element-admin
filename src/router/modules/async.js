@@ -405,6 +405,7 @@ export default [
       {
         name: 'Page401',
         path: '401',
+        component: () => import('@/views/error-page/401'),
         meta: {
           title: 'route.page401',
           icon: '401',
@@ -413,6 +414,7 @@ export default [
       {
         name: 'Page404',
         path: '404',
+        component: () => import('@/views/error-page/404'),
         meta: {
           title: 'route.page404',
           icon: '404',

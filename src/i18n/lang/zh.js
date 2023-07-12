@@ -152,4 +152,21 @@ export default {
     download: '下载',
     generate: '正在生成 PDF',
   },
+  errorPage401: {
+    oops: '糟糕！',
+    title: '你没有权限去该页面',
+    desc: '如有不满请联系你领导',
+    or: '或者你可以去：',
+    back: '回首页',
+    look: '随便看看',
+    view: '点我看图',
+    dialog: '随便看',
+  },
+  errorPage404: {
+    oops: '糟糕！',
+    right: '版权所有',
+    title: '领导说你不能去该页面...',
+    desc: '请检查你输入的网址是否正确，或点击下面的按钮返回首页。',
+    back: '返回首页',
+  },
 }
