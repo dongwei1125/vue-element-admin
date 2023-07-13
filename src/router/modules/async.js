@@ -313,6 +313,7 @@ export default [
       {
         name: 'DynamicTable',
         path: 'dynamic',
+        component: () => import('@/views/table/dynamic-table'),
         meta: {
           title: 'route.dynamicTable',
           icon: 'dynamic-table',
