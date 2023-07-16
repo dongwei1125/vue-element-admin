@@ -237,6 +237,7 @@ export default [
       {
         name: 'Menu1',
         path: 'menu1',
+        component: () => import('@/views/nested/menu1'),
         redirect: '/nested/menu1/menu1-1',
         meta: {
           title: 'route.menu1',
@@ -246,6 +247,7 @@ export default [
           {
             name: 'Menu1-1',
             path: 'menu1-1',
+            component: () => import('@/views/nested/menu1/menu1-1'),
             meta: {
               title: 'route.menu1-1',
               icon: 'menu',
@@ -254,6 +256,7 @@ export default [
           {
             name: 'Menu1-2',
             path: 'menu1-2',
+            component: () => import('@/views/nested/menu1/menu1-2'),
             redirect: '/nested/menu1/menu1-2/menu1-2-1',
             meta: {
               title: 'route.menu1-2',
@@ -263,6 +266,7 @@ export default [
               {
                 name: 'Menu1-2-1',
                 path: 'menu1-2-1',
+                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
                 meta: {
                   title: 'route.menu1-2-1',
                   icon: 'menu',
@@ -271,6 +275,7 @@ export default [
               {
                 name: 'Menu1-2-2',
                 path: 'menu1-2-2',
+                component: () => import('@/views/nested/menu1/menu1-2//menu1-2-2'),
                 meta: {
                   title: 'route.menu1-2-2',
                   icon: 'menu',
@@ -281,6 +286,7 @@ export default [
           {
             name: 'Menu1-3',
             path: 'menu1-3',
+            component: () => import('@/views/nested/menu1/menu1-3'),
             meta: {
               title: 'route.menu1-3',
               icon: 'menu',
@@ -291,6 +297,7 @@ export default [
       {
         name: 'Menu2',
         path: 'menu2',
+        component: () => import('@/views/nested/menu2'),
         meta: {
           title: 'route.menu2',
           icon: 'menu',
