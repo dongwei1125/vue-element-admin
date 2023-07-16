@@ -199,6 +199,7 @@ export default [
       {
         name: 'KeyboardChart',
         path: 'keyboard',
+        component: () => import('@/views/chart/keyboard.vue'),
         meta: {
           title: 'route.keyboardChart',
           icon: 'keyboard-chart',
@@ -207,6 +208,7 @@ export default [
       {
         name: 'LineChart',
         path: 'line',
+        component: () => import('@/views/chart/line.vue'),
         meta: {
           title: 'route.lineChart',
           icon: 'line-chart',
@@ -215,6 +217,7 @@ export default [
       {
         name: 'MixChart',
         path: 'mix',
+        component: () => import('@/views/chart/mix.vue'),
         meta: {
           title: 'route.mixChart',
           icon: 'mix-chart',

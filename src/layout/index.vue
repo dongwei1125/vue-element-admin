@@ -62,7 +62,7 @@ export default {
   }
 
   + .main-view {
-    min-height: calc(100vh - 50px);
+    height: calc(100vh - 50px);
   }
 }
 
@@ -71,7 +71,7 @@ export default {
   display: none;
 
   + .main-view {
-    min-height: 100vh;
+    height: 100vh;
     padding-top: 0 !important;
   }
 }
@@ -87,7 +87,7 @@ export default {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
 
   + .main-view {
-    min-height: 100vh;
+    height: 100vh;
     padding-top: 84px;
   }
 
