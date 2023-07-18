@@ -1,27 +1,27 @@
 <template>
-  <div class="page-401">
+  <div class="error-401">
     <el-button type="primary" icon="el-icon-arrow-left" @click="backTo">返回</el-button>
 
     <el-row>
       <el-col :span="12">
-        <div class="oops">{{ $t('errorPage401.oops') }}</div>
-        <div class="title">{{ $t('errorPage401.title') }}</div>
-        <div class="desc">{{ $t('errorPage401.desc') }}</div>
+        <div class="oops">{{ $t('error401Page.oops') }}</div>
+        <div class="title">{{ $t('error401Page.title') }}</div>
+        <div class="desc">{{ $t('error401Page.desc') }}</div>
 
         <ul>
-          <li>{{ $t('errorPage401.or') }}</li>
+          <li>{{ $t('error401Page.or') }}</li>
           <li>
             <router-link to="/">
-              <el-link type="primary">{{ $t('errorPage401.back') }}</el-link>
+              <el-link type="primary">{{ $t('error401Page.back') }}</el-link>
             </router-link>
           </li>
           <li>
             <el-link type="primary" href="https://www.jd.com/" target="_blank">
-              {{ $t('errorPage401.look') }}
+              {{ $t('error401Page.look') }}
             </el-link>
           </li>
           <li>
-            <el-link type="primary" @click="visible = true">{{ $t('errorPage401.view') }}</el-link>
+            <el-link type="primary" @click="visible = true">{{ $t('error401Page.view') }}</el-link>
           </li>
         </ul>
       </el-col>
@@ -31,7 +31,7 @@
       </el-col>
     </el-row>
 
-    <el-dialog :visible.sync="visible" width="30%" :title="$t('errorPage401.dialog')" append-to-body>
+    <el-dialog :visible.sync="visible" width="30%" :title="$t('error401Page.dialog')" append-to-body>
       <img src="@/assets/error/dance.gif" />
     </el-dialog>
   </div>
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: 'Page401',
+  name: 'Error401',
   data() {
     return {
       visible: false,
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-401 {
+.error-401 {
   width: 800px;
   padding: 0 50px;
   position: absolute;

@@ -16,7 +16,7 @@ export default {
     pagePermission: '页面权限',
     directivePermission: '指令权限',
     rolePermission: '角色权限',
-    icon: '图标',
+    icons: '图标',
     component: '组件',
     tinymce: '富文本编辑器',
     markdown: 'Markdown',
@@ -53,9 +53,9 @@ export default {
     createArticle: '创建文章',
     articleList: '文章列表',
     tab: 'Tab',
-    errorPage: '错误页面',
-    page401: '401',
-    page404: '404',
+    error: '错误页面',
+    error401: '401',
+    error404: '404',
     errorLog: '错误日志',
     excel: 'Excel',
     exportExcel: '导出 Excel',
@@ -106,7 +106,27 @@ export default {
   theme: {
     tips: '正在切换主题',
   },
-  dynamicTable: {
+  chartPage: {
+    lineTitle: '请求数据',
+    cmcc: '中国移动',
+    ctcc: '中国电信',
+    cucc: '中国联通',
+    mixTitle: '统计数据',
+    famale: '女性',
+    male: '男性',
+    average: '平均',
+    month: '月',
+  },
+  nestedPage: {
+    menu1: '菜单 1',
+    'menu1-1': '菜单 1-1',
+    'menu1-2': '菜单 1-2',
+    'menu1-2-1': '菜单 1-2-1',
+    'menu1-2-2': '菜单 1-2-2',
+    'menu1-3': '菜单 1-3',
+    menu2: '菜单 2',
+  },
+  dynamicTablePage: {
     fixed: '固定表头, 按照表头顺序排序',
     unfixed: '不固定表头, 按照点击顺序排序',
     apple: '苹果',
@@ -114,7 +134,7 @@ export default {
     orange: '橙子',
     fruit: '水果',
   },
-  errorPage401: {
+  error401Page: {
     oops: '糟糕！',
     title: '你没有权限去该页面',
     desc: '如有不满请联系你领导',
@@ -124,7 +144,7 @@ export default {
     view: '点我看图',
     dialog: '随便看',
   },
-  errorPage404: {
+  error404Page: {
     oops: '糟糕！',
     right: '版权所有',
     title: '领导说你不能去该页面...',
@@ -138,9 +158,8 @@ export default {
   },
   themePage: {
     title: '主题',
-    reference: '更多参考',
     dark: '暗黑模式',
-    tips: '与 theme-picker 不同，是两种不同的换肤方法，各自有不同的应用场景。',
+    tips: '与 theme-picker 不同，是两种不同的换肤方法，各自有不同的应用场景。更多参考',
     default: '默认',
     plain: '朴素',
     primary: '主要',

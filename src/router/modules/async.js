@@ -45,14 +45,15 @@ export default [
 
   // 图标
   {
-    path: '/icon',
+    path: '/icons',
     component: Layout,
     children: [
       {
-        name: 'Icon',
+        name: 'Icons',
         path: 'index',
+        component: () => import('@/views/icons'),
         meta: {
-          title: 'route.icon',
+          title: 'route.icons',
           icon: 'icon',
         },
       },
@@ -404,30 +405,30 @@ export default [
 
   // 错误页面
   {
-    name: 'ErrorPage',
+    name: 'Error',
     path: '/error',
     component: Layout,
     redirect: 'noRedirect',
     meta: {
-      title: 'route.errorPage',
+      title: 'route.error',
       icon: 'error',
     },
     children: [
       {
-        name: 'Page401',
+        name: 'Error401',
         path: '401',
-        component: () => import('@/views/error-page/401'),
+        component: () => import('@/views/error/401'),
         meta: {
-          title: 'route.page401',
+          title: 'route.error401',
           icon: '401',
         },
       },
       {
-        name: 'Page404',
+        name: 'Error404',
         path: '404',
-        component: () => import('@/views/error-page/404'),
+        component: () => import('@/views/error/404'),
         meta: {
-          title: 'route.page404',
+          title: 'route.error404',
           icon: '404',
         },
       },

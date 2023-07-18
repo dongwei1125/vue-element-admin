@@ -1,9 +1,9 @@
 <template>
   <div class="dynamic-table">
-    <div class="title">{{ $t('dynamicTable.fixed') }}</div>
+    <div class="title">{{ $t('dynamicTablePage.fixed') }}</div>
     <fixed-thead />
 
-    <div class="title">{{ $t('dynamicTable.unfixed') }}</div>
+    <div class="title">{{ $t('dynamicTablePage.unfixed') }}</div>
     <unfixed-thead />
   </div>
 </template>

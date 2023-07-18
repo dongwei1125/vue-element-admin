@@ -7,7 +7,7 @@
     </el-checkbox-group>
 
     <el-table :key="key" :data="tableData" border>
-      <el-table-column prop="name" :label="$t('dynamicTable.fruit')" width="180" />
+      <el-table-column prop="name" :label="$t('dynamicTablePage.fruit')" width="180" />
       <el-table-column v-for="item in thead" :key="item.value" :prop="item.value" :label="$t(item.label)">
         <template slot-scope="{ row }">{{ row[item.value] }}</template>
       </el-table-column>
@@ -23,15 +23,15 @@ export default {
       checkbox: ['apple', 'banana'],
       options: [
         {
-          label: 'dynamicTable.apple',
+          label: 'dynamicTablePage.apple',
           value: 'apple',
         },
         {
-          label: 'dynamicTable.banana',
+          label: 'dynamicTablePage.banana',
           value: 'banana',
         },
         {
-          label: 'dynamicTable.orange',
+          label: 'dynamicTablePage.orange',
           value: 'orange',
         },
       ],

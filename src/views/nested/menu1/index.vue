@@ -1,6 +1,6 @@
 <template>
   <div class="menu1">
-    <el-alert :closable="false" title="menu 1">
+    <el-alert :closable="false" :title="$t('nestedPage.menu1')">
       <router-view />
     </el-alert>
   </div>

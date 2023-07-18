@@ -1,6 +1,6 @@
 <template>
   <div class="menu2">
-    <el-alert :closable="false" title="menu 2" />
+    <el-alert :closable="false" :title="$t('nestedPage.menu2')" />
   </div>
 </template>
 

@@ -16,7 +16,7 @@ export default {
     pagePermission: 'Page Permission',
     directivePermission: 'Directive Permission',
     rolePermission: 'Role Permission',
-    icon: 'Icon',
+    icons: 'Icons',
     component: 'Component',
     tinymce: 'Tinymce',
     markdown: 'Markdown',
@@ -53,9 +53,9 @@ export default {
     createArticle: 'Create Article',
     articleList: 'Article List',
     tab: 'Tab',
-    errorPage: 'Error Page',
-    page401: '401',
-    page404: '404',
+    error: 'Error Page',
+    error401: '401',
+    error404: '404',
     errorLog: 'Error Log',
     excel: 'Excel',
     exportExcel: 'Export Excel',
@@ -106,7 +106,27 @@ export default {
   theme: {
     tips: 'Switching theme',
   },
-  dynamicTable: {
+  chartPage: {
+    lineTitle: 'Requests',
+    cmcc: 'CMCC',
+    ctcc: 'CTCC',
+    cucc: 'CUCC',
+    mixTitle: 'Statistics',
+    famale: 'famale',
+    male: 'male',
+    average: 'average',
+    month: 'month',
+  },
+  nestedPage: {
+    menu1: 'Menu 1',
+    'menu1-1': 'Menu 1-1',
+    'menu1-2': 'Menu 1-2',
+    'menu1-2-1': 'Menu 1-2-1',
+    'menu1-2-2': 'Menu 1-2-2',
+    'menu1-3': 'Menu 1-3',
+    menu2: 'Menu 2',
+  },
+  dynamicTablePage: {
     fixed: 'Fixed thead, sorted in thead order',
     unfixed: 'Unfixed thead, sorted in click order',
     apple: 'Apple',
@@ -114,7 +134,7 @@ export default {
     orange: 'Orange',
     fruit: 'Fruit',
   },
-  errorPage401: {
+  error401Page: {
     oops: 'OOPS!',
     title: 'You do not have permission to enter this page',
     desc: 'Please contact webmaster if you are not satisfied',
@@ -124,7 +144,7 @@ export default {
     view: 'Click on me to view the image',
     dialog: 'Just look around',
   },
-  errorPage404: {
+  error404Page: {
     oops: 'OOPS!',
     right: 'All rights reserved',
     title: 'The webmaster said that you can not enter this page...',
@@ -138,9 +158,8 @@ export default {
   },
   themePage: {
     title: 'Theme',
-    reference: 'More reference',
     dark: 'Dark Mode',
-    tips: 'Different from the theme-picker, there are two different skinning methods, each with different application scenarios.',
+    tips: 'Different from the theme-picker, there are two different skinning methods, each with different application scenarios. More reference',
     default: 'Default',
     plain: 'Plain',
     primary: 'Primary',

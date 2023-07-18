@@ -1,12 +1,12 @@
 <template>
   <div class="menu1-3">
-    <el-alert :closable="false" title="menu 1-3" type="success" />
+    <el-alert :closable="false" :title="$t('nestedPage.menu1-3')" type="success" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Menu13',
+  name: 'Menu1-3', // eslint-disable-line
 }
 </script>
 

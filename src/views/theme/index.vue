@@ -1,15 +1,17 @@
 <template>
   <div class="theme">
     <el-card class="theme-header">
-      <template slot="header">
-        {{ $t('themePage.title') }}（{{ $t('themePage.reference') }}
-        <a href="https://dongwei1125.github.io/theme-dark" target="_blank">element-theme-darkplus</a>）
-      </template>
+      <template slot="header">{{ $t('themePage.title') }}</template>
 
       <div>
         <span class="title">{{ $t('themePage.dark') }}</span>
         <el-switch v-model="dark" />
-        <p class="tips">{{ $t('themePage.tips') }}</p>
+        <p class="tips">
+          {{ $t('themePage.tips') }}
+          <el-link href="https://dongwei1125.github.io/theme-dark" type="primary" target="_blank">
+            element-theme-darkplus
+          </el-link>
+        </p>
       </div>
     </el-card>
 
@@ -81,10 +83,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.theme {
+  padding: 20px;
+}
+
 .theme-header {
-  width: 450px;
+  width: 470px;
   max-width: 100%;
-  margin: 20px auto;
+  margin: 0 auto;
 
   a {
     color: #409eff;

@@ -1,23 +1,23 @@
 <template>
-  <div class="page-404">
-    <div class="page-404-bg">
+  <div class="error-404">
+    <div class="error-404-bg">
       <img class="bg" src="@/assets/error/404.png" alt="" />
       <img class="cloud left" src="@/assets/error/cloud.png" alt="" />
       <img class="cloud middle" src="@/assets/error/cloud.png" alt="" />
       <img class="cloud right" src="@/assets/error/cloud.png" alt="" />
     </div>
 
-    <div class="page-404-explain">
-      <div class="oops">{{ $t('errorPage404.oops') }}</div>
+    <div class="error-404-explain">
+      <div class="oops">{{ $t('error404Page.oops') }}</div>
       <div class="right">
-        {{ $t('errorPage404.right') }}
+        {{ $t('error404Page.right') }}
         <el-link type="primary" href="https://wallstreetcn.com" target="_blank">wallstreetcn</el-link>
       </div>
-      <div class="title">{{ $t('errorPage404.title') }}</div>
-      <div class="desc">{{ $t('errorPage404.desc') }}</div>
+      <div class="title">{{ $t('error404Page.title') }}</div>
+      <div class="desc">{{ $t('error404Page.desc') }}</div>
 
       <router-link to="/">
-        <el-button type="primary" round>{{ $t('errorPage404.back') }}</el-button>
+        <el-button type="primary" round>{{ $t('error404Page.back') }}</el-button>
       </router-link>
     </div>
   </div>
@@ -25,12 +25,12 @@
 
 <script>
 export default {
-  name: 'Page404',
+  name: 'Error404',
 }
 </script>
 
 <style lang="scss" scoped>
-.page-404 {
+.error-404 {
   width: 1200px;
   padding: 0 50px;
   position: absolute;
@@ -39,7 +39,7 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-.page-404-bg {
+.error-404-bg {
   width: 600px;
   float: left;
   position: relative;
@@ -76,7 +76,7 @@ export default {
   }
 }
 
-.page-404-explain {
+.error-404-explain {
   width: 300px;
   padding: 30px 0;
   float: left;
