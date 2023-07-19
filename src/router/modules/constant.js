@@ -69,6 +69,7 @@ export default [
       {
         name: 'Guide',
         path: 'index',
+        component: () => import('@/views/guide'),
         meta: {
           title: 'route.guide',
           icon: 'guide',

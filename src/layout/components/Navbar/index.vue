@@ -1,14 +1,14 @@
 <template>
   <div class="navbar">
-    <hamburger v-show="sidebar.show" :is-active="isActive" @toggle="toggleSideBar" />
+    <hamburger v-show="sidebar.show" id="hamburger" :is-active="isActive" @toggle="toggleSideBar" />
 
-    <breadcrumb />
+    <breadcrumb id="breadcrumb" />
 
     <div class="navbar-menu">
       <template v-if="!isMobile">
-        <header-search />
-        <full-screen />
-        <element-size />
+        <header-search id="header-search" />
+        <full-screen id="full-screen" />
+        <element-size id="element-size" />
         <language />
       </template>
 

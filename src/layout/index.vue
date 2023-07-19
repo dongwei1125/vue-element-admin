@@ -5,7 +5,7 @@
     <div class="main">
       <div class="header" :class="classes">
         <navbar />
-        <tags-view />
+        <tags-view id="tags-view" />
       </div>
 
       <main-view />
