@@ -32,7 +32,7 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary" class="login-btn" :loading="loading" @click="handleLogin">
+      <el-button type="primary" class="login-btn" :loading="loading" @click="login">
         {{ $t('login.login') }}
       </el-button>
     </el-form>
@@ -78,7 +78,7 @@ export default {
       })
     },
 
-    handleLogin() {
+    login() {
       this.$refs.form.validate(valid => {
         if (valid) {
           this.loading = true

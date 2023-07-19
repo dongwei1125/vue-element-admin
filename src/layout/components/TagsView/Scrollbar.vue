@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar ref="scrollbar" :vertical="false" @wheel.prevent.native="handleScroll">
+  <el-scrollbar ref="scrollbar" :vertical="false" @wheel.prevent.native="scroll">
     <slot />
   </el-scrollbar>
 </template>
@@ -21,7 +21,7 @@ export default {
     this.$scrollWrapper.removeEventListener('scroll', this.emitScroll)
   },
   methods: {
-    handleScroll(event) {
+    scroll(event) {
       const deltaY = event.deltaY
       const factor = 5
 

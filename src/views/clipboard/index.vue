@@ -3,7 +3,7 @@
     <el-tabs v-model="activeTab">
       <el-tab-pane :label="$t('clipboardPage.functional')" name="functional">
         <el-input v-model="text" />
-        <el-button type="primary" icon="el-icon-document" @click="handleCopy">
+        <el-button type="primary" icon="el-icon-document" @click="copy">
           {{ $t('clipboardPage.copy') }}
         </el-button>
       </el-tab-pane>
@@ -38,7 +38,7 @@ export default {
     }
   },
   methods: {
-    handleCopy() {
+    copy() {
       copyText(this.text)
         .then(() => {
           this.$message.success(this.$t('clipboardPage.successfully'))

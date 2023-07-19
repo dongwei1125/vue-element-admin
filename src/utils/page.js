@@ -1,5 +1,8 @@
 import i18n from '@/i18n'
 
+const $t = i18n.t.bind(i18n)
+const $te = i18n.te.bind(i18n)
+
 /**
  * @param {String} pageTitle
  * @returns {String}
@@ -7,8 +10,8 @@ import i18n from '@/i18n'
 export function getPageTitle(pageTitle) {
   const title = 'Vue Element Admin'
 
-  if (i18n.te(pageTitle)) {
-    return `${i18n.t(pageTitle)} - ${title}`
+  if ($te(pageTitle)) {
+    return `${$t(pageTitle)} - ${title}`
   } else {
     return `${title}`
   }

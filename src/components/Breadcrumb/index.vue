@@ -6,7 +6,7 @@
           <span v-if="route.redirect === 'noRedirect' || index === matchedRoutes.length - 1">
             {{ $t(route.meta.title) }}
           </span>
-          <a v-else @click="handleLink(route)">{{ $t(route.meta.title) }}</a>
+          <a v-else @click="linkTo(route)">{{ $t(route.meta.title) }}</a>
         </el-breadcrumb-item>
       </transition-group>
     </el-breadcrumb>
@@ -44,7 +44,7 @@ export default {
       this.matchedRoutes = matchedRoutes
     },
 
-    handleLink(route) {
+    linkTo(route) {
       const { path, redirect } = route
 
       if (redirect) {

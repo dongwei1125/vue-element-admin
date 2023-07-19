@@ -14,7 +14,7 @@ NProgress.configure({ showSpinner: false })
  * @param {Object} from
  * @param {Function} next
  */
-async function handleHasToken(to, from, next) {
+async function hasTokenHandler(to, from, next) {
   if (to.path === '/login') {
     next({ path: '/' })
 
@@ -52,7 +52,7 @@ async function handleHasToken(to, from, next) {
  * @param {Object} from
  * @param {Function} next
  */
-function handleNoToken(to, from, next) {
+function noTokenHandler(to, from, next) {
   if (to.path === '/login') {
     next()
   } else {
@@ -70,9 +70,9 @@ router.beforeEach(async (to, from, next) => {
   const hasToken = getToken()
 
   if (hasToken) {
-    await handleHasToken(to, from, next)
+    await hasTokenHandler(to, from, next)
   } else {
-    handleNoToken(to, from, next)
+    noTokenHandler(to, from, next)
   }
 })
 

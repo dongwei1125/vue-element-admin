@@ -1,6 +1,6 @@
 <template>
   <div class="svg-icons">
-    <div v-for="(item, index) in icons" :key="index" class="item" @click="handleCopy(generateIconCode(item))">
+    <div v-for="(item, index) in icons" :key="index" class="item" @click="copy(generateIconCode(item))">
       <el-tooltip placement="top">
         <template slot="content">{{ generateIconCode(item) }}</template>
 
@@ -29,7 +29,7 @@ export default {
       return `<svg-icon icon-class="${symbol}" />`
     },
 
-    handleCopy(text) {
+    copy(text) {
       copyText(text)
         .then(() => {
           this.$message.success(this.$t('clipboardPage.successfully'))

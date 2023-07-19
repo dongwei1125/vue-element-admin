@@ -14,7 +14,7 @@
           <el-dropdown-item>{{ $t('navbar.updatePassword') }}</el-dropdown-item>
         </router-link>
 
-        <el-dropdown-item divided @click.native="handleLogout">{{ $t('navbar.logOut') }}</el-dropdown-item>
+        <el-dropdown-item divided @click.native="logout">{{ $t('navbar.logOut') }}</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -24,7 +24,7 @@
 export default {
   name: 'Avatar',
   methods: {
-    async handleLogout() {
+    async logout() {
       try {
         await this.$confirm(this.$t('avatar.tips'), this.$t('avatar.title'), {
           confirmButtonText: this.$t('avatar.confirmButtonText'),

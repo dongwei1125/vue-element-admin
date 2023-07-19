@@ -5,7 +5,7 @@
     <el-select
       ref="select"
       v-model="keywords"
-      :remote-method="handleSearch"
+      :remote-method="remoteMethod"
       filterable
       default-first-option
       remote
@@ -136,7 +136,7 @@ export default {
       this.fuse = new Fuse(this.searchPool, { keys, threshold: 0.4 })
     },
 
-    handleSearch(text) {
+    remoteMethod(text) {
       if (text) {
         this.options = this.fuse.search(text).map(({ item }) => item)
       } else {
