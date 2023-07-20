@@ -91,9 +91,7 @@ export default {
         const isRootRoute = firstRouteRecord?.path === ''
 
         if (isRootRoute) {
-          this.$router.replace({
-            path: '/redirect' + this.$route.fullPath,
-          })
+          this.refreshTag(this.$route)
         } else {
           this.$router.push({ path: '/' })
         }

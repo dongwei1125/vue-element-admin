@@ -15,7 +15,7 @@
       </div>
     </el-card>
 
-    <div ref="body" class="theme-content">
+    <div ref="content" class="theme-content">
       <div class="item">
         <el-button>{{ $t('themePage.default') }}</el-button>
         <el-button type="primary">{{ $t('themePage.primary') }}</el-button>
@@ -68,15 +68,15 @@ export default {
   },
   methods: {
     open() {
-      const withoutDarkClassName = !hasClass(this.$refs.body, DarkClassName)
+      const withoutDarkClassName = !hasClass(this.$refs.content, DarkClassName)
 
       if (withoutDarkClassName) {
-        addClass(this.$refs.body, DarkClassName)
+        addClass(this.$refs.content, DarkClassName)
       }
     },
 
     close() {
-      removeClass(this.$refs.body, DarkClassName)
+      removeClass(this.$refs.content, DarkClassName)
     },
   },
 }

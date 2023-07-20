@@ -1,6 +1,6 @@
 <template>
   <div class="drawer" :class="{ 'drawer--hidden': !visible }">
-    <div class="drawer-button" @click="toggle">
+    <div class="drawer-btn" @click="toggle">
       <i :class="visible ? 'el-icon-close' : 'el-icon-setting'" />
     </div>
 
@@ -50,7 +50,7 @@ $drawerColor: #409eff;
   z-index: 2000;
 }
 
-.drawer-button {
+.drawer-btn {
   position: absolute;
   left: -48px;
   top: 250px;

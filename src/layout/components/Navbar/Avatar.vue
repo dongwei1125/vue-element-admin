@@ -2,7 +2,7 @@
   <div class="avatar">
     <el-dropdown trigger="click">
       <div>
-        <img src="@/assets/rock.gif" class="" />
+        <img src="@/assets/rock.gif" />
         <i class="el-icon-caret-bottom" />
       </div>
 

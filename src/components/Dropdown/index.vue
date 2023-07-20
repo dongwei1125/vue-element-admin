@@ -1,6 +1,6 @@
 <template>
   <div class="dropdown">
-    <span class="title" @click="clickTitle">{{ title }}</span>
+    <span class="dropdown-title" @click="clickTitle">{{ title }}</span>
 
     <div v-for="(item, index) in items" :key="index" class="dropdown-item" :style="style(index)">
       <router-link :to="item.path">{{ item.title }}</router-link>
@@ -55,7 +55,7 @@ export default {
   display: inline-block;
   position: relative;
 
-  .title {
+  .dropdown-title {
     display: inline-block;
     width: 250px;
     height: 60px;

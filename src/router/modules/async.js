@@ -10,7 +10,7 @@ export default [
     meta: {
       title: 'route.permission',
       icon: 'lock',
-      roles: ['admin', 'editor'],
+      roles: ['admin', 'user'],
       alwaysShow: true,
     },
     children: [

@@ -99,13 +99,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$background-color: #2d3a4b;
-$dark-gray: #889aa4;
-$light-gray: #eee;
+$pageBackgroundColor: #2d3a4b;
+$darkGray: #889aa4;
+$lightGray: #eee;
 
 .login {
   height: 100%;
-  background-color: $background-color;
+  background-color: $pageBackgroundColor;
 }
 
 .login-form {
@@ -128,7 +128,7 @@ $light-gray: #eee;
       background-color: transparent;
       border: none;
       height: inherit;
-      color: $light-gray;
+      color: $lightGray;
       font-family: sans-serif;
     }
   }
@@ -141,7 +141,7 @@ $light-gray: #eee;
   h3 {
     margin: 0;
     font-size: 26px;
-    color: $light-gray;
+    color: $lightGray;
     text-align: center;
     font-weight: bold;
   }
@@ -162,7 +162,7 @@ $light-gray: #eee;
 .icon {
   display: inline-block;
   padding: 5px 0px 4px 15px;
-  color: $dark-gray;
+  color: $darkGray;
 }
 
 .eye-icon {
@@ -171,7 +171,7 @@ $light-gray: #eee;
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
-  color: $dark-gray;
+  color: $darkGray;
   cursor: pointer;
   user-select: none;
 }

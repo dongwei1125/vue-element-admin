@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: 50px;
+$navBarHeight: 50px;
 
 %hover {
   transition: background-color 0.3s;
@@ -61,7 +61,7 @@ $height: 50px;
 }
 
 .navbar {
-  height: $height;
+  height: $navBarHeight;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 }
 
@@ -83,7 +83,7 @@ $height: 50px;
 .navbar-menu {
   float: right;
   padding-right: 10px;
-  line-height: $height;
+  line-height: $navBarHeight;
   color: #5a5e66;
   font-size: 18px;
 }

@@ -25,6 +25,7 @@
     "process": "^0.11.10",
     "screenfull": "^6.0.2",
     "vue": "^2.6.14",
+    "vue-count-to": "^1.0.13",
     "vue-i18n": "~8.28.2",
     "vue-router": "~3.0.7",
     "vuex": "^3.6.2"
