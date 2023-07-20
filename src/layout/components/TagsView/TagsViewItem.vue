@@ -68,7 +68,7 @@ export default {
       height: 8px;
       border-radius: 50%;
       background-color: #fff;
-      margin-right: 2px;
+      margin-right: 5px;
     }
   }
 

@@ -52,6 +52,7 @@ export default [
       {
         name: 'Document',
         path: 'index',
+        component: () => import('@/views/document'),
         meta: {
           title: 'route.document',
           icon: 'document',

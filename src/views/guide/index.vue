@@ -21,6 +21,7 @@ export default {
   name: 'Guide',
   methods: {
     drive() {
+      const steps = getSteps()
       const drive = driver({
         nextBtnText: this.$t('guidePage.next'),
         prevBtnText: this.$t('guidePage.prev'),
@@ -28,7 +29,7 @@ export default {
         stagePadding: 5,
         showProgress: true,
         progressText: '{{current}}/{{total}}',
-        steps: getSteps(),
+        steps,
       })
 
       drive.drive()

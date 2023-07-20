@@ -131,7 +131,7 @@ export default {
   }
 
   code {
-    background: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     padding: 3px 4px;
     margin: 0 2px;
     font-size: 16px;

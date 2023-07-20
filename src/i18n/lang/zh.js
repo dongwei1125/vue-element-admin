@@ -106,6 +106,10 @@ export default {
   theme: {
     tips: '正在切换主题',
   },
+  documentPage: {
+    github: 'Github 仓库',
+    component: '组件',
+  },
   guidePage: {
     tips: '对于第一次使用项目的人很有用，你可以简单介绍下项目的功能。更多参考',
     open: '打开引导',

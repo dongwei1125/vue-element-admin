@@ -106,6 +106,10 @@ export default {
   theme: {
     tips: 'Switching theme',
   },
+  documentPage: {
+    github: 'Github Repository',
+    component: 'Component',
+  },
   guidePage: {
     tips: 'It is very useful for first use project users, you can briefly introduce the functions of the project. More references',
     open: 'Open Guide',

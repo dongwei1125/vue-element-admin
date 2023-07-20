@@ -24,8 +24,8 @@ export default {
   computed: {
     styles() {
       return {
-        left: this.left + 'px',
-        top: this.top + 'px',
+        left: `${this.left}px`,
+        top: `${this.top}px`,
       }
     },
   },

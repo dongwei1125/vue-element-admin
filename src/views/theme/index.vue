@@ -118,7 +118,7 @@ export default {
   border-radius: 5px;
 
   &.dark {
-    background: #141414;
+    background-color: #141414;
   }
 
   .item {
