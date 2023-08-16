@@ -37,8 +37,8 @@ const actions = {
     commit('REMOVE_OTHER_VIEWS', view)
   },
 
-  removeAllViews({ commit }, view) {
-    commit('REMOVE_ALL_VIEWS', view)
+  removeAllViews({ commit }) {
+    commit('REMOVE_ALL_VIEWS')
   },
 }
 

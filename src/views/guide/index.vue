@@ -13,7 +13,7 @@
 
 <script>
 import { driver } from 'driver.js'
-import { getSteps } from './steps'
+import getSteps from './steps'
 
 import 'driver.js/dist/driver.css'
 

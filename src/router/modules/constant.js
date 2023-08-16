@@ -16,6 +16,24 @@ export default [
     ],
   },
 
+  // 401
+  {
+    path: '/401',
+    component: () => import('@/views/error/401'),
+    meta: {
+      hidden: true,
+    },
+  },
+
+  // 404
+  {
+    path: '/404',
+    component: () => import('@/views/error/404'),
+    meta: {
+      hidden: true,
+    },
+  },
+
   // 登录
   {
     path: '/login',

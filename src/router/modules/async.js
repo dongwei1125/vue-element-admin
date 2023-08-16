@@ -17,6 +17,7 @@ export default [
       {
         name: 'PagePermission',
         path: 'page',
+        component: () => import('@/views/permission/page'),
         meta: {
           title: 'route.pagePermission',
           icon: 'page',
@@ -26,6 +27,7 @@ export default [
       {
         name: 'DirectivePermission',
         path: 'directive',
+        component: () => import('@/views/permission/directive'),
         meta: {
           title: 'route.directivePermission',
           icon: 'v',
@@ -34,6 +36,7 @@ export default [
       {
         name: 'RolePermission',
         path: 'role',
+        component: () => import('@/views/permission/role'),
         meta: {
           title: 'route.rolePermission',
           icon: 'role',
@@ -601,6 +604,14 @@ export default [
     meta: {
       title: 'route.link',
       icon: 'link',
+    },
+  },
+
+  {
+    path: '*',
+    redirect: '/404',
+    meta: {
+      hidden: true,
     },
   },
 ]

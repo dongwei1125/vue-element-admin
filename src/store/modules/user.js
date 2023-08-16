@@ -1,5 +1,5 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import { resetRouter } from '@/router'
+import router, { resetRouter } from '@/router'
 
 const state = {
   token: getToken(),
@@ -74,6 +74,18 @@ const actions = {
 
       resolve()
     })
+  },
+
+  async updateRoles({ commit, dispatch }, roles) {
+    commit('SET_ROLES', roles)
+
+    resetRouter()
+
+    const accessRoutes = await dispatch('permission/generateRoutes', roles, { root: true })
+
+    router.addRoutes(accessRoutes)
+
+    dispatch('tagsView/removeAllViews', null, { root: true })
   },
 }
 
