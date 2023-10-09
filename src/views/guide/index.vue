@@ -1,11 +1,12 @@
 <template>
   <div class="guide">
-    <p>
-      {{ $t('guidePage.tips') }}
-      <el-link href="https://github.com/kamranahmedse/driver.js" type="primary" target="_blank">
-        driver.js
-      </el-link>
-    </p>
+    <i18n path="guidePage.tips" tag="p">
+      <template slot="link">
+        <el-link href="https://github.com/kamranahmedse/driver.js" type="primary" target="_blank">
+          driver.js
+        </el-link>
+      </template>
+    </i18n>
 
     <el-button icon="el-icon-question" type="primary" @click="drive">{{ $t('guidePage.open') }}</el-button>
   </div>

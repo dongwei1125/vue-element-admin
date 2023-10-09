@@ -121,12 +121,12 @@ export default {
 
 .tips {
   padding: 8px 24px;
+  margin: 0 0 20px;
   border-radius: 2px;
   font-size: 16px;
   color: #2c3e50;
   line-height: 32px;
   background-color: #eef1f6;
-  margin-bottom: 20px;
 }
 
 .el-tabs {

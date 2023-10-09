@@ -152,7 +152,7 @@ export default {
     component: 'Component',
   },
   guidePage: {
-    tips: 'It is very useful for first use project users, you can briefly introduce the functions of the project. More references',
+    tips: 'It is very useful for first use project users, you can briefly introduce the functions of the project, more reference {link}.',
     open: 'Open Guide',
     prev: 'Previous',
     next: 'Next',
@@ -198,6 +198,13 @@ export default {
     deleteSucced: 'Delete succed!',
     addSucced: 'Add succed!',
     editSucced: 'Edit succed!',
+  },
+  componentPage: {
+    tinymce:
+      'Rich text is a core feature of the management backend, but it is also a place with many pitfalls, relatively friendly is {link}.',
+    markdown: 'Markdown is based on {link}, simply wrapped with Vue.',
+    json: 'Json editor is base on {link}.',
+    splitPane: 'More reference {link}.',
   },
   chartPage: {
     lineTitle: 'Requests',
@@ -252,7 +259,7 @@ export default {
   themePage: {
     title: 'Theme',
     dark: 'Dark Mode',
-    tips: 'Different from the theme-picker, there are two different skinning methods, each with different application scenarios. More reference',
+    tips: 'Different from the theme-picker, there are two different skinning methods, each with different application scenarios, more reference {link}.',
     default: 'Default',
     plain: 'Plain',
     primary: 'Primary',

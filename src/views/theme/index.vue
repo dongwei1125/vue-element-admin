@@ -6,12 +6,13 @@
       <div>
         <span class="title">{{ $t('themePage.dark') }}</span>
         <el-switch v-model="dark" />
-        <p class="tips">
-          {{ $t('themePage.tips') }}
-          <el-link href="https://dongwei1125.github.io/theme-dark" type="primary" target="_blank">
-            element-theme-darkplus
-          </el-link>
-        </p>
+        <i18n path="themePage.tips" tag="p" class="tips">
+          <template slot="link">
+            <el-link href="https://dongwei1125.github.io/theme-dark" type="primary" target="_blank">
+              element-theme-darkplus
+            </el-link>
+          </template>
+        </i18n>
       </div>
     </el-card>
 

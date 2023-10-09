@@ -77,6 +77,7 @@ export default [
       {
         name: 'Tinymce',
         path: 'tinymce',
+        component: () => import('@/views/component/tinymce.vue'),
         meta: {
           title: 'route.tinymce',
           icon: 'tinymce',
@@ -85,6 +86,7 @@ export default [
       {
         name: 'Markdown',
         path: 'markdown',
+        component: () => import('@/views/component/markdown.vue'),
         meta: {
           title: 'route.markdown',
           icon: 'markdown',
@@ -93,6 +95,7 @@ export default [
       {
         name: 'JsonEditor',
         path: 'json-editor',
+        component: () => import('@/views/component/json.vue'),
         meta: {
           title: 'route.jsonEditor',
           icon: 'json',
@@ -101,6 +104,7 @@ export default [
       {
         name: 'SplitPane',
         path: 'split-pane',
+        component: () => import('@/views/component/splitPane.vue'),
         meta: {
           title: 'route.splitPane',
           icon: 'split-pane',

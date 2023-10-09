@@ -151,7 +151,7 @@ export default {
     component: '组件',
   },
   guidePage: {
-    tips: '对于第一次使用项目的人很有用，你可以简单介绍下项目的功能。更多参考',
+    tips: '对于第一次使用项目的人很有用，你可以简单介绍下项目的功能，更多参考 {link}。',
     open: '打开引导',
     prev: '上一步',
     next: '下一步',
@@ -196,6 +196,12 @@ export default {
     deleteSucced: '删除成功！',
     addSucced: '新增成功！',
     editSucced: '编辑成功！',
+  },
+  componentPage: {
+    tinymce: '富文本是管理后台一个核心的功能，但同时又是一个有很多坑的地方，相对好用的是 {link}。',
+    markdown: 'Markdown 基于 {link}，简单地用 Vue 包装。',
+    json: 'Json 编辑器基于 {link}。',
+    splitPane: '更多参考 {link}。',
   },
   chartPage: {
     lineTitle: '请求数据',
@@ -250,7 +256,7 @@ export default {
   themePage: {
     title: '主题',
     dark: '暗黑模式',
-    tips: '与 theme-picker 不同，是两种不同的换肤方法，各自有不同的应用场景。更多参考',
+    tips: '与 theme-picker 不同，是两种不同的换肤方法，各自有不同的应用场景，更多参考 {link}。',
     default: '默认',
     plain: '朴素',
     primary: '主要',
