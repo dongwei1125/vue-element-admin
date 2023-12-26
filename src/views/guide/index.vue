@@ -27,7 +27,7 @@ export default {
         nextBtnText: this.$t('guidePage.next'),
         prevBtnText: this.$t('guidePage.prev'),
         doneBtnText: this.$t('guidePage.done'),
-        stagePadding: 5,
+        stagePadding: 2,
         showProgress: true,
         progressText: '{{current}} / {{total}}',
         steps,

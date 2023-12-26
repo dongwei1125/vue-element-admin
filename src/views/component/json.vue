@@ -95,7 +95,7 @@ const json = `[
 ]`
 
 export default {
-  name: 'Json',
+  name: 'JsonPage',
   components: { Codemirror },
   data() {
     return {

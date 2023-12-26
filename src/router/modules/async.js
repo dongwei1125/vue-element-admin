@@ -129,6 +129,7 @@ export default [
       {
         name: 'Sticky',
         path: 'sticky',
+        component: () => import('@/views/component/sticky.vue'),
         meta: {
           title: 'route.sticky',
           icon: 'sticky',
@@ -137,6 +138,7 @@ export default [
       {
         name: 'CountTo',
         path: 'count-to',
+        component: () => import('@/views/component/countTo.vue'),
         meta: {
           title: 'route.countTo',
           icon: 'count-to',
@@ -153,6 +155,7 @@ export default [
       {
         name: 'BackToTop',
         path: 'back-to-top',
+        component: () => import('@/views/component/backToTop.vue'),
         meta: {
           title: 'route.backToTop',
           icon: 'back-to-top',

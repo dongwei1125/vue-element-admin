@@ -3,7 +3,7 @@
     <i18n path="componentPage.markdown" tag="p" class="tips">
       <template slot="link">
         <el-link href="https://github.com/hinesboy/mavonEditor" type="primary" target="_blank">
-          mavonEditor
+          mavon-editor
         </el-link>
       </template>
     </i18n>

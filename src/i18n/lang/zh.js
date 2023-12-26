@@ -202,6 +202,18 @@ export default {
     markdown: 'Markdown 基于 {link}，简单地用 Vue 包装。',
     json: 'Json 编辑器基于 {link}。',
     splitPane: '更多参考 {link}。',
+    platform: '平台',
+    platformA: '平台 A',
+    platformB: '平台 B',
+    platformC: '平台 C',
+    link: '链接',
+    inputContent: '请输入内容',
+    releaseTime: '发布时间',
+    publish: '发布',
+    sticky: '当页面滚动到预设的位置会吸附在顶部。',
+    backToTop: '页面滚动到指定位置会在右下角出现返回顶部按钮。',
+    backToTopDesc:
+      '可自定义按钮的样式、show / hide、出现的高度、返回的位置如需文字提示，可在外部使用 element-ui 的 el-tooltip 元素。',
   },
   chartPage: {
     lineTitle: '请求数据',

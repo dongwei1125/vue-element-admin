@@ -205,6 +205,19 @@ export default {
     markdown: 'Markdown is based on {link}, simply wrapped with Vue.',
     json: 'Json editor is base on {link}.',
     splitPane: 'More reference {link}.',
+    platform: 'Platform',
+    platformA: 'Platform A',
+    platformB: 'Platform B',
+    platformC: 'Platform C',
+    link: 'Link',
+    inputContent: 'Please enter the content',
+    releaseTime: 'Release Time',
+    publish: 'Publish',
+    sticky: 'When the page is scrolled to the preset position will be sticky on the top.',
+    backToTop:
+      'When the page is scrolled to the specified position, the Back to Top button appears in the lower right corner.',
+    backToTopDesc:
+      'You can customize the style of the button, show / hide, height of appearance, height of the return. If you need a text prompt, you can use element-ui el-tooltip elements externally.',
   },
   chartPage: {
     lineTitle: 'Requests',
