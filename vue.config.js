@@ -2,7 +2,7 @@ const path = require('path')
 const { ProvidePlugin } = require('webpack')
 const { defineConfig } = require('@vue/cli-service')
 
-const createThemeColorReplacerPlugin = require('./plugins/createThemeColorReplacerPlugin')
+const createThemeColorReplacerPlugin = require('./plugins/create-theme-color-replacer-plugin')
 
 const resolve = dir => path.join(__dirname, dir)
 

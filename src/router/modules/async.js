@@ -104,7 +104,7 @@ export default [
       {
         name: 'SplitPane',
         path: 'split-pane',
-        component: () => import('@/views/component/splitPane.vue'),
+        component: () => import('@/views/component/split-pane.vue'),
         meta: {
           title: 'route.splitPane',
           icon: 'split-pane',
@@ -138,7 +138,7 @@ export default [
       {
         name: 'CountTo',
         path: 'count-to',
-        component: () => import('@/views/component/countTo.vue'),
+        component: () => import('@/views/component/count-to.vue'),
         meta: {
           title: 'route.countTo',
           icon: 'count-to',
@@ -155,7 +155,7 @@ export default [
       {
         name: 'BackToTop',
         path: 'back-to-top',
-        component: () => import('@/views/component/backToTop.vue'),
+        component: () => import('@/views/component/back-to-top.vue'),
         meta: {
           title: 'route.backToTop',
           icon: 'back-to-top',
