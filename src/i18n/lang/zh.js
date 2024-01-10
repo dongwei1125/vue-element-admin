@@ -214,6 +214,12 @@ export default {
     backToTop: '页面滚动到指定位置会在右下角出现返回顶部按钮。',
     backToTopDesc:
       '可自定义按钮的样式、show / hide、出现的高度、返回的位置如需文字提示，可在外部使用 element-ui 的 el-tooltip 元素。',
+    openDialog: '打开对话框',
+    shippingAddress: '收获地址',
+    pleaseSelect: '请选择',
+    name: '姓名',
+    date: '日期',
+    address: '地址',
   },
   chartPage: {
     lineTitle: '请求数据',

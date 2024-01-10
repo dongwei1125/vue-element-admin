@@ -164,6 +164,7 @@ export default [
       {
         name: 'DragDialog',
         path: 'drag-dialog',
+        component: () => import('@/views/component/drag-dialog.vue'),
         meta: {
           title: 'route.dragDialog',
           icon: 'drag-dialog',

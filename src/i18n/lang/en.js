@@ -218,6 +218,12 @@ export default {
       'When the page is scrolled to the specified position, the Back to Top button appears in the lower right corner.',
     backToTopDesc:
       'You can customize the style of the button, show / hide, height of appearance, height of the return. If you need a text prompt, you can use element-ui el-tooltip elements externally.',
+    openDialog: 'Open dialog',
+    shippingAddress: 'Shipping Address',
+    pleaseSelect: 'Please select',
+    name: 'Name',
+    date: 'Date',
+    address: 'Address',
   },
   chartPage: {
     lineTitle: 'Requests',
