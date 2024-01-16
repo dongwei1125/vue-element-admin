@@ -232,6 +232,9 @@ export default {
     dndList: 'DndList is base on {link}.',
     list: 'List',
     articlePool: 'Article Pool',
+    todo: 'Todo',
+    working: 'Working',
+    done: 'Done',
   },
   chartPage: {
     lineTitle: 'Requests',

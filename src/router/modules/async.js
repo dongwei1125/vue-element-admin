@@ -191,6 +191,7 @@ export default [
       {
         name: 'DragKanban',
         path: 'drag-kanban',
+        component: () => import('@/views/component/drag-kanban.vue'),
         meta: {
           title: 'route.dragKanban',
           icon: 'drag-kanban',

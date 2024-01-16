@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .drag-dialog {
   padding: 20px;
 }

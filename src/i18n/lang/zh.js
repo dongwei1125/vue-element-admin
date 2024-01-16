@@ -228,6 +228,9 @@ export default {
     dndList: 'DndList 基于 {link}。',
     list: '列表',
     articlePool: '文章池',
+    todo: '待办',
+    working: '进行中',
+    done: '已完成',
   },
   chartPage: {
     lineTitle: '请求数据',
