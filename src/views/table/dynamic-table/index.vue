@@ -21,9 +21,9 @@ export default {
 <style lang="scss" scoped>
 .dynamic-table {
   padding: 20px;
+}
 
-  .title {
-    margin: 10px 0 5px 10px;
-  }
+.title {
+  margin: 10px 0 5px 10px;
 }
 </style>

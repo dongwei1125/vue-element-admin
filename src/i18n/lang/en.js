@@ -229,6 +229,9 @@ export default {
     orange: 'Orange',
     pear: 'Pear',
     strawberry: 'Strawberry',
+    dndList: 'DndList is base on {link}.',
+    list: 'List',
+    articlePool: 'Article Pool',
   },
   chartPage: {
     lineTitle: 'Requests',

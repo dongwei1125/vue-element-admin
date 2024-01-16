@@ -225,6 +225,9 @@ export default {
     orange: '橙子',
     pear: '梨',
     strawberry: '草莓',
+    dndList: 'DndList 基于 {link}。',
+    list: '列表',
+    articlePool: '文章池',
   },
   chartPage: {
     lineTitle: '请求数据',

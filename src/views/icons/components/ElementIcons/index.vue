@@ -46,22 +46,22 @@ export default {
 .element-icons {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
 
-  .item {
-    width: 100px;
-    height: 85px;
-    padding: 20px;
-    box-sizing: content-box;
-    font-size: 30px;
-    color: #24292e;
-    cursor: pointer;
-    text-align: center;
+.item {
+  width: 100px;
+  height: 85px;
+  padding: 20px;
+  box-sizing: content-box;
+  font-size: 30px;
+  color: #24292e;
+  cursor: pointer;
+  text-align: center;
 
-    span {
-      display: block;
-      font-size: 16px;
-      margin-top: 10px;
-    }
+  span {
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
   }
 }
 </style>

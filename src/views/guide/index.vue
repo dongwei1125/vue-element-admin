@@ -42,15 +42,15 @@ export default {
 <style lang="scss" scoped>
 .guide {
   padding: 20px;
+}
 
-  p {
-    background-color: #eef1f6;
-    padding: 8px 24px;
-    margin: 0 0 20px;
-    border-radius: 4px;
-    line-height: 32px;
-    font-size: 16px;
-    color: #2c3e50;
-  }
+p {
+  background-color: #eef1f6;
+  padding: 8px 24px;
+  margin: 0 0 20px;
+  border-radius: 4px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #2c3e50;
 }
 </style>

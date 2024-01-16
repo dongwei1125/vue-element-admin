@@ -182,6 +182,7 @@ export default [
       {
         name: 'DndList',
         path: 'dnd-list',
+        component: () => import('@/views/component/dnd-list.vue'),
         meta: {
           title: 'route.dndList',
           icon: 'dnd-list',
