@@ -27,6 +27,7 @@
     "pinyin": "~2.11.0",
     "process": "^0.11.10",
     "screenfull": "^6.0.2",
+    "sortablejs": "^1.15.2",
     "tinymce": "^5.10.7",
     "vue": "^2.6.14",
     "vue-codemirror": "^4.0.6",

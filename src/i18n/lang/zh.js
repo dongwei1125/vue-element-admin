@@ -220,6 +220,11 @@ export default {
     name: '姓名',
     date: '日期',
     address: '地址',
+    apple: '苹果',
+    banana: '香蕉',
+    orange: '橙子',
+    pear: '梨',
+    strawberry: '草莓',
   },
   chartPage: {
     lineTitle: '请求数据',

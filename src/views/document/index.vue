@@ -4,7 +4,9 @@
       {{ $t('documentPage.github') }}
     </a>
 
-    <dropdown :title="$t('documentPage.component')" :items="items" />
+    <dropdown :title="$t('documentPage.component')" :items="items">
+      <template slot="item" slot-scope="{ item }">{{ $t(item.title) }}</template>
+    </dropdown>
   </div>
 </template>
 
@@ -14,19 +16,19 @@ import Dropdown from '@/components/Dropdown'
 export default {
   name: 'Document',
   components: { Dropdown },
-  computed: {
-    items() {
-      return [
-        { title: this.$t('route.tinymce'), path: '/component/tinymce' },
-        { title: this.$t('route.markdown'), path: '/component/markdown' },
-        { title: this.$t('route.jsonEditor'), path: '/component/json-editor' },
-        { title: this.$t('route.splitPane'), path: '/component/split-pane' },
-        { title: this.$t('route.avatarUpload'), path: '/component/avatar-upload' },
-        { title: this.$t('route.dropzone'), path: '/component/dropzone' },
-        { title: this.$t('route.sticky'), path: '/component/sticky' },
-        { title: this.$t('route.countTo'), path: '/component/count-to' },
-      ]
-    },
+  data() {
+    return {
+      items: [
+        { title: 'route.tinymce', path: '/component/tinymce' },
+        { title: 'route.markdown', path: '/component/markdown' },
+        { title: 'route.jsonEditor', path: '/component/json-editor' },
+        { title: 'route.splitPane', path: '/component/split-pane' },
+        { title: 'route.avatarUpload', path: '/component/avatar-upload' },
+        { title: 'route.dropzone', path: '/component/dropzone' },
+        { title: 'route.sticky', path: '/component/sticky' },
+        { title: 'route.countTo', path: '/component/count-to' },
+      ],
+    }
   },
 }
 </script>

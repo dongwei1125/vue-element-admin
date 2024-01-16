@@ -69,10 +69,3 @@ export default {
   padding: 20px;
 }
 </style>
-
-<style>
-.el-dialog--draggable .el-dialog__header {
-  cursor: move;
-  user-select: none;
-}
-</style>

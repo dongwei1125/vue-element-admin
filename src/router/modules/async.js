@@ -173,6 +173,7 @@ export default [
       {
         name: 'DragSelect',
         path: 'drag-select',
+        component: () => import('@/views/component/drag-select.vue'),
         meta: {
           title: 'route.dragSelect',
           icon: 'drag-select',

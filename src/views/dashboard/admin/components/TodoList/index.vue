@@ -122,7 +122,7 @@ export default {
 
 .todo-list-header {
   border-bottom: 1px solid #e6e6e6;
-  background: rgba(0, 0, 0, 0.003);
+  background-color: rgba(0, 0, 0, 0.003);
   position: relative;
   cursor: default;
 

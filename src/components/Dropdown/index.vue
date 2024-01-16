@@ -3,7 +3,9 @@
     <span class="dropdown-title" @click="clickTitle">{{ title }}</span>
 
     <div v-for="(item, index) in items" :key="index" class="dropdown-item" :style="style(index)">
-      <router-link :to="item.path">{{ item.title }}</router-link>
+      <router-link :to="item.path">
+        <slot name="item" :item="item">{{ item.title }}</slot>
+      </router-link>
     </div>
   </div>
 </template>

@@ -224,6 +224,11 @@ export default {
     name: 'Name',
     date: 'Date',
     address: 'Address',
+    apple: 'Apple',
+    banana: 'Banana',
+    orange: 'Orange',
+    pear: 'Pear',
+    strawberry: 'Strawberry',
   },
   chartPage: {
     lineTitle: 'Requests',

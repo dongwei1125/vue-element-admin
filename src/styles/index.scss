@@ -36,3 +36,22 @@ a:active {
   color: inherit;
   text-decoration: none;
 }
+
+// drag-dialog
+.el-dialog--draggable .el-dialog__header {
+  cursor: move;
+  user-select: none;
+}
+
+// drag-select
+.el-select--draggable {
+  .el-tag {
+    cursor: pointer;
+  }
+
+  .el-tag--ghost {
+    opacity: 0.8;
+    color: #fff;
+    background-color: #42b983;
+  }
+}

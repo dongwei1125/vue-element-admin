@@ -1,4 +1,4 @@
-import { addClass } from '@/utils/dom'
+import { addClass, setStyle } from '@/utils/dom'
 
 export default {
   bind(el) {
@@ -30,7 +30,7 @@ export default {
 
         Object.assign(transform, { offsetX: translateX, offsetY: translateY })
 
-        $dialog.style.transform = `translate(${translateX}px, ${translateY}px)`
+        setStyle($dialog, 'transform', `translate(${translateX}px, ${translateY}px)`)
       }
 
       const onMouseup = () => {

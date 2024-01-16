@@ -1,1 +1,1 @@
-export { hasClass, addClass, removeClass } from 'element-ui/lib/utils/dom'
+export { hasClass, addClass, removeClass, setStyle } from 'element-ui/lib/utils/dom'

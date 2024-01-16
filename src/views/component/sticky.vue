@@ -10,7 +10,7 @@
         <el-dropdown-menu slot="dropdown">
           <el-checkbox-group v-model="platforms">
             <el-checkbox v-for="item in platformOptions" :key="item.value" :label="item.value">
-              {{ item.label }}
+              {{ $t(item.label) }}
             </el-checkbox>
           </el-checkbox-group>
         </el-dropdown-menu>
@@ -112,18 +112,14 @@ export default {
   data() {
     return {
       platforms: [],
+      platformOptions: [
+        { value: 'a', label: 'componentPage.platformA' },
+        { value: 'b', label: 'componentPage.platformB' },
+        { value: 'c', label: 'componentPage.platformC' },
+      ],
       url: '',
       datetime: '',
     }
-  },
-  computed: {
-    platformOptions() {
-      return [
-        { value: 'a', label: this.$t('componentPage.platformA') },
-        { value: 'b', label: this.$t('componentPage.platformB') },
-        { value: 'c', label: this.$t('componentPage.platformC') },
-      ]
-    },
   },
 }
 </script>
