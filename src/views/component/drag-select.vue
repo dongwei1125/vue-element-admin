@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import DragSelect from '@/directives/drag-select'
+import dragSelect from '@/directives/drag-select'
 
 export default {
   name: 'DragSelectPage',
-  directives: { DragSelect },
+  directives: { dragSelect },
   data() {
     return {
       value: ['apple', 'banana', 'orange'],

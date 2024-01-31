@@ -147,6 +147,7 @@ export default [
       {
         name: 'ComponentMixin',
         path: 'mixin',
+        component: () => import('@/views/component/component-mixin.vue'),
         meta: {
           title: 'route.componentMixin',
           icon: 'component-mixin',

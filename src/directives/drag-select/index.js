@@ -1,6 +1,8 @@
 import Sortable from 'sortablejs'
 import { addClass } from '@/utils/dom'
 
+import './index.scss'
+
 export default {
   bind(el, _, vnode) {
     addClass(el, 'el-select--draggable')

@@ -1,5 +1,7 @@
 import { addClass, setStyle } from '@/utils/dom'
 
+import './index.scss'
+
 export default {
   bind(el) {
     const $dialog = el.querySelector('.el-dialog')

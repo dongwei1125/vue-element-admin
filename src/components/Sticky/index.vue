@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky" :style="{ height: height + 'px', zIndex }">
+  <div class="sticky" :style="{ height: `${height}px`, zIndex }">
     <div :class="className" :style="styles">
       <slot />
     </div>
@@ -37,9 +37,9 @@ export default {
   computed: {
     styles() {
       return {
-        width: this.isSticky ? this.width + 'px' : 'auto',
+        width: this.isSticky ? `${this.width}px` : 'auto',
         position: this.isSticky ? 'fixed' : undefined,
-        top: this.isSticky ? this.stickyTop + 'px' : undefined,
+        top: this.isSticky ? `${this.stickyTop}px` : undefined,
         zIndex: this.zIndex,
       }
     },
