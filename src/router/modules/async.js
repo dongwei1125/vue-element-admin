@@ -113,6 +113,7 @@ export default [
       {
         name: 'AvatarUpload',
         path: 'avatar-upload',
+        component: () => import('@/views/component/avatar-upload.vue'),
         meta: {
           title: 'route.avatarUpload',
           icon: 'avatar-upload',

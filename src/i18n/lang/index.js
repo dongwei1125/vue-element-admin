@@ -1,18 +1,18 @@
-import elementEnLocale from 'element-ui/lib/locale/lang/en'
-import elementZhLocale from 'element-ui/lib/locale/lang/zh-CN'
+import elementEn from 'element-ui/lib/locale/lang/en'
+import elementZh from 'element-ui/lib/locale/lang/zh-CN'
 
-import enLocale from './en'
-import zhLocale from './zh'
+import en from './en'
+import zh from './zh'
 
-const messages = {
+const langs = {
   en: {
-    ...elementEnLocale,
-    ...enLocale,
+    ...elementEn,
+    ...en,
   },
   zh: {
-    ...elementZhLocale,
-    ...zhLocale,
+    ...elementZh,
+    ...zh,
   },
 }
 
-export default messages
+export default langs

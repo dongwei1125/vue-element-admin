@@ -1,7 +1,7 @@
 <template>
   <div class="breadcrumb">
     <el-breadcrumb separator="/">
-      <transition-group name="fade">
+      <transition-group name="breadcrumb">
         <el-breadcrumb-item v-for="(route, index) in matchedRoutes" :key="route.path">
           <span v-if="route.redirect === 'noRedirect' || index === matchedRoutes.length - 1">
             {{ $t(route.meta.title) }}
@@ -69,11 +69,11 @@ export default {
 }
 
 // transition
-.fade-enter-active {
+.breadcrumb-enter-active {
   transition: all 0.5s;
 }
 
-.fade-enter {
+.breadcrumb-enter {
   opacity: 0;
   transform: translateX(20px);
 }

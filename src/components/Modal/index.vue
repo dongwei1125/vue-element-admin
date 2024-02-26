@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="modal">
     <div v-show="visible" class="modal" @click="emitClick" />
   </transition>
 </template>
@@ -58,16 +58,13 @@ export default {
 }
 
 // transition
-.fade-leave-active,
-.fade-enter-active {
+.modal-leave-active,
+.modal-enter-active {
   transition: opacity 0.28s;
 }
 
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-leave-to {
+.modal-enter,
+.modal-leave-to {
   opacity: 0;
 }
 </style>

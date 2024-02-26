@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import initChart from './initChart'
+import chart from './chart'
 
 import GithubCorner from '@/components/GithubCorner'
 import StatsPanel from './components/StatsPanel.vue'
@@ -72,7 +72,7 @@ export default {
     TodoList,
     Languages,
   },
-  mixins: [initChart],
+  mixins: [chart],
 }
 </script>
 

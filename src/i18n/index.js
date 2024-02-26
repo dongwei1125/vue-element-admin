@@ -14,11 +14,11 @@ export function getLanguage() {
   }
 
   const browserLanguage = (navigator.language || navigator.browserLanguage).toLowerCase()
-  const locales = Object.keys(messages)
+  const langs = Object.keys(messages)
 
-  for (const locale of locales) {
-    if (browserLanguage.includes(locale)) {
-      return locale
+  for (const lang of langs) {
+    if (browserLanguage.includes(lang)) {
+      return lang
     }
   }
 

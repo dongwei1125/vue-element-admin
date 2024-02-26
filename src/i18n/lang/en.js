@@ -203,7 +203,7 @@ export default {
     tinymce:
       'Rich text is a core feature of the management backend, but it is also a place with many pitfalls, relatively friendly is {link}.',
     markdown: 'Markdown is based on {link}, simply wrapped with Vue.',
-    json: 'Json editor is base on {link}.',
+    json: 'Json editor is based on {link}.',
     splitPane: 'More reference {link}.',
     platform: 'Platform',
     platformA: 'Platform A',
@@ -229,7 +229,7 @@ export default {
     orange: 'Orange',
     pear: 'Pear',
     strawberry: 'Strawberry',
-    dndList: 'DndList is base on {link}.',
+    dndList: 'DndList is based on {link}.',
     list: 'List',
     articlePool: 'Article Pool',
     todo: 'Todo',
@@ -248,6 +248,8 @@ export default {
     hoverText: 'Hover Text',
     share: 'Share',
     lengthLimit: 'The length is between 3 and 5 characters',
+    avatar: 'Based on {link}.',
+    updateAvatar: 'Update Avatar',
   },
   chartPage: {
     lineTitle: 'Requests',

@@ -244,6 +244,8 @@ export default {
     hoverText: '文字悬浮',
     share: '分享',
     lengthLimit: '长度在 3 到 5 个字符',
+    avatar: '基于 {link}。',
+    updateAvatar: '修改头像',
   },
   chartPage: {
     lineTitle: '请求数据',
