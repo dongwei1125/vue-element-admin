@@ -250,6 +250,7 @@ export default {
     lengthLimit: 'The length is between 3 and 5 characters',
     avatar: 'Based on {link}.',
     updateAvatar: 'Update Avatar',
+    dropzone: 'Based on {link}.',
   },
   chartPage: {
     lineTitle: 'Requests',

@@ -246,6 +246,7 @@ export default {
     lengthLimit: '长度在 3 到 5 个字符',
     avatar: '基于 {link}。',
     updateAvatar: '修改头像',
+    dropzone: '基于 {link}。',
   },
   chartPage: {
     lineTitle: '请求数据',

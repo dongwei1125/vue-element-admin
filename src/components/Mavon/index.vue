@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import { getLanguage } from '@/i18n'
 import { mavonEditor } from 'mavon-editor'
-import toolbar from './toolbar'
-
 import 'mavon-editor/dist/css/index.css'
+
+import { getLanguage } from '@/i18n'
+import toolbar from './toolbar'
 
 const langs = { en: 'en', zh: 'zh-CN' }
 const lang = getLanguage()

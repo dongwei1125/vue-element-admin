@@ -122,6 +122,7 @@ export default [
       {
         name: 'Dropzone',
         path: 'dropzone',
+        component: () => import('@/views/component/dropzone.vue'),
         meta: {
           title: 'route.dropzone',
           icon: 'drag-upload',
