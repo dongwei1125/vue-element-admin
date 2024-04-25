@@ -41,7 +41,7 @@ export default {
     copy() {
       copyText(this.text)
         .then(() => {
-          this.$message.success(this.$t('clipboardPage.successfully'))
+          this.$message.success(this.$t('clipboardPage.succed'))
         })
         .catch(() => {
           this.$message.error(this.$t('clipboardPage.failed'))
@@ -49,7 +49,7 @@ export default {
     },
 
     onSuccess() {
-      this.$message.success(this.$t('clipboardPage.successfully'))
+      this.$message.success(this.$t('clipboardPage.succed'))
     },
 
     onError() {

@@ -61,10 +61,10 @@ export default {
     },
     rules() {
       return {
-        username: [{ required: true, message: this.$t('login.usernameTips'), trigger: 'blur' }],
+        username: [{ required: true, message: this.$t('login.inputUsername'), trigger: 'blur' }],
         password: [
-          { required: true, message: this.$t('login.passwordTips'), trigger: 'blur' },
-          { min: 6, message: this.$t('login.passwordMinLengthTips'), trigger: 'blur' },
+          { required: true, message: this.$t('login.inputPassword'), trigger: 'blur' },
+          { min: 6, message: this.$t('login.passwordMinLength'), trigger: 'blur' },
         ],
       }
     },

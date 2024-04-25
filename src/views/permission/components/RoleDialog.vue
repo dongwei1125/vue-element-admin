@@ -19,8 +19,8 @@
     </el-form>
 
     <template slot="footer">
-      <el-button @click="show = false">取 消</el-button>
-      <el-button type="primary" @click="submit">确 定</el-button>
+      <el-button @click="show = false">{{ $t('permissionPage.cancel') }}</el-button>
+      <el-button type="primary" @click="submit">{{ $t('permissionPage.submit') }}</el-button>
     </template>
   </el-dialog>
 </template>
@@ -42,10 +42,6 @@ export default {
     visible: {
       type: Boolean,
       default: false,
-    },
-    title: {
-      type: String,
-      default: '',
     },
     row: {
       type: Object,
@@ -69,6 +65,9 @@ export default {
       set(value) {
         this.$emit('update:visible', value)
       },
+    },
+    title() {
+      return this.isEdit ? this.$t('permissionPage.editRole') : this.$t('permissionPage.addRole')
     },
     rules() {
       return {

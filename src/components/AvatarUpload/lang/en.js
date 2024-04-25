@@ -9,7 +9,7 @@ export default {
     save: 'Save',
     close: 'Close',
     loading: 'Uploading',
-    successfully: 'Upload successfully',
-    failed: 'Upload failed',
+    succed: 'Upload successfully!',
+    failed: 'Upload failed!',
   },
 }

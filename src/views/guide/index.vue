@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .guide {
   padding: 20px;
 }

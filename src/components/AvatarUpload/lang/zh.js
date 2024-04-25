@@ -9,7 +9,7 @@ export default {
     save: '保存',
     close: '关闭',
     loading: '上传中',
-    successfully: '上传成功',
-    failed: '上传失败',
+    succed: '上传成功！',
+    failed: '上传失败！',
   },
 }

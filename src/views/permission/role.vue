@@ -3,8 +3,8 @@
     <el-button type="primary" @click="add">{{ $t('permissionPage.addRole') }}</el-button>
 
     <el-table :data="tableData" border>
-      <el-table-column prop="key" align="center" :label="$t('permissionPage.key')" width="220" />
-      <el-table-column prop="name" align="center" :label="$t('permissionPage.name')" width="220" />
+      <el-table-column prop="key" align="center" :label="$t('permissionPage.key')" width="220px" />
+      <el-table-column prop="name" align="center" :label="$t('permissionPage.name')" width="220px" />
       <el-table-column prop="desc" :label="$t('permissionPage.desc')" />
 
       <el-table-column align="center" label="操作">
@@ -21,7 +21,6 @@
 
     <role-dialog
       :visible.sync="visible"
-      :title="title"
       :row="currentRow"
       :is-edit="isEdit"
       @add="addRole"
@@ -183,11 +182,6 @@ export default {
       ],
     }
   },
-  computed: {
-    title() {
-      return this.isEdit ? this.$t('permissionPage.editRole') : this.$t('permissionPage.addRole')
-    },
-  },
   methods: {
     add() {
       this.visible = true
@@ -251,7 +245,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .role-permission {
   padding: 20px;
 }

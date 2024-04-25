@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .dynamic-table {
   padding: 20px;
 }

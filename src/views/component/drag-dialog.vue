@@ -8,8 +8,8 @@
       </el-select>
 
       <el-table :data="tableData">
-        <el-table-column prop="name" :label="$t('componentPage.name')" width="150" />
-        <el-table-column prop="date" :label="$t('componentPage.date')" width="200" />
+        <el-table-column prop="name" :label="$t('componentPage.name')" width="150px" />
+        <el-table-column prop="date" :label="$t('componentPage.date')" width="200px" />
         <el-table-column prop="address" :label="$t('componentPage.address')" />
       </el-table>
     </el-dialog>

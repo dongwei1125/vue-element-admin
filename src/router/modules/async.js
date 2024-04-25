@@ -350,6 +350,7 @@ export default [
       {
         name: 'DragTable',
         path: 'drag',
+        component: () => import('@/views/table/drag-table'),
         meta: {
           title: 'route.dragTable',
           icon: 'drag-table',
@@ -358,6 +359,7 @@ export default [
       {
         name: 'InlineEditTable',
         path: 'inline-edit',
+        component: () => import('@/views/table/inline-edit-table'),
         meta: {
           title: 'route.inlineEditTable',
           icon: 'inline-edit-table',
@@ -366,6 +368,7 @@ export default [
       {
         name: 'ComplexTable',
         path: 'complex',
+        component: () => import('@/views/table/complex-table'),
         meta: {
           title: 'route.complexTable',
           icon: 'complex-table',
@@ -482,6 +485,7 @@ export default [
       {
         name: 'ExportExcel',
         path: 'export',
+        component: () => import('@/views/excel/export-excel.vue'),
         meta: {
           title: 'route.exportExcel',
           icon: 'export-excel',
@@ -490,6 +494,7 @@ export default [
       {
         name: 'ExportSelectedExcel',
         path: 'export-selected',
+        component: () => import('@/views/excel/export-selected-excel.vue'),
         meta: {
           title: 'route.exportSelectedExcel',
           icon: 'export-excel',
@@ -498,6 +503,7 @@ export default [
       {
         name: 'ExportMergeHeaderExcel',
         path: 'export-merge-header',
+        component: () => import('@/views/excel/export-merge-header-excel.vue'),
         meta: {
           title: 'route.exportMergeHeaderExcel',
           icon: 'export-excel',

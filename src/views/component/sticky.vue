@@ -157,7 +157,7 @@ ul {
   width: 100%;
   text-align: right;
   padding-right: 20px;
-  background: linear-gradient(
+  background-image: linear-gradient(
     90deg,
     rgba(32, 182, 249, 1) 0%,
     rgba(32, 182, 249, 1) 0%,

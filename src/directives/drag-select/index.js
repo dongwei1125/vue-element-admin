@@ -13,9 +13,9 @@ export default {
     new Sortable($span, {
       ghostClass: 'el-tag--ghost',
       onEnd(evt) {
-        const [item] = context.value.splice(evt.oldIndex, 1)
+        const [targetItem] = context.value.splice(evt.oldIndex, 1)
 
-        context.value.splice(evt.newIndex, 0, item)
+        context.value.splice(evt.newIndex, 0, targetItem)
       },
     })
   },

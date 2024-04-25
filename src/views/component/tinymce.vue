@@ -26,7 +26,7 @@ import logo from '@/assets/tinymce.png'
 import Tinymce from '@/components/Tinymce'
 
 const html = `<h1 style="text-align: center;">Welcome to the TinyMCE demo!</h1>
-<p style="text-align: center; font-size: 15px;"><img title="TinyMCE Logo" src="${logo}" alt="TinyMCE Logo" width="110" height="97" />
+<p style="text-align: center; font-size: 15px;"><img style="width: 110px; height: 97px;" title="TinyMCE Logo" src="${logo}" alt="TinyMCE Logo" />
 <ul>
   <li>Our <a href="https://www.tiny.cloud/docs/tinymce/6/vue-cloud">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
   <li>Have a specific question? Visit the <a href="https://www.tiny.cloud/blog/tag/community">Community</a>.</li>

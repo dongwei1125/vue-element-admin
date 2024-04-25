@@ -47,8 +47,8 @@
 
         <el-col :span="12" :xs="24">
           <el-table :data="tableData" highlight-current-row border>
-            <el-table-column :label="$t('i18nPage.name')" prop="name" width="100" align="center" />
-            <el-table-column :label="$t('i18nPage.date')" prop="date" width="120" align="center" />
+            <el-table-column :label="$t('i18nPage.name')" prop="name" width="100px" align="center" />
+            <el-table-column :label="$t('i18nPage.date')" prop="date" width="120px" align="center" />
             <el-table-column :label="$t('i18nPage.address')" prop="address" />
           </el-table>
         </el-col>

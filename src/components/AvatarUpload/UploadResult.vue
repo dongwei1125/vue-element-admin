@@ -11,7 +11,7 @@
 
       <div v-if="status === STATUS.SUCCESS" class="success">
         <i class="el-icon-check" />
-        <span>{{ $t('avatarUpload.successfully') }}</span>
+        <span>{{ $t('avatarUpload.succed') }}</span>
       </div>
 
       <div v-if="status === STATUS.FAIL" class="fail">

@@ -1,13 +1,13 @@
 <template>
   <div class="transaction-table">
     <el-table :data="tableData">
-      <el-table-column :label="$t('dashboardPage.order')" min-width="200">
+      <el-table-column :label="$t('dashboardPage.order')" min-width="200px">
         <template slot-scope="{ row }">{{ row.orderNo | substring(0, 30) }}</template>
       </el-table-column>
       <el-table-column :label="$t('dashboardPage.price')">
         <template slot-scope="{ row }">¥{{ row.price | addThousandSeparator }}</template>
       </el-table-column>
-      <el-table-column :label="$t('dashboardPage.state')">
+      <el-table-column :label="$t('dashboardPage.status')">
         <template slot-scope="{ row }">
           <el-tag :type="row.status === 'success' ? 'success' : 'danger'">{{ row.status }}</el-tag>
         </template>

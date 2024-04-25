@@ -32,7 +32,7 @@ export default {
     copy(text) {
       copyText(text)
         .then(() => {
-          this.$message.success(this.$t('clipboardPage.successfully'))
+          this.$message.success(this.$t('clipboardPage.succed'))
         })
         .catch(() => {
           this.$message.error(this.$t('clipboardPage.failed'))

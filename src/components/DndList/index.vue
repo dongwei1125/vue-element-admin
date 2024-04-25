@@ -50,18 +50,18 @@ export default {
     /* eslint-disable */
     deleteLeftItem(item) {
       const index = this.leftList.findIndex(el => el === item)
-      const [deletedItem] = this.leftList.splice(index, 1)
+      const [targetItem] = this.leftList.splice(index, 1)
 
-      this.rightList.unshift(deletedItem)
+      this.rightList.unshift(targetItem)
     },
     /* eslint-enable */
 
     /* eslint-disable */
     addToLeft(item) {
       const index = this.rightList.findIndex(el => el === item)
-      const [addedItem] = this.rightList.splice(index, 1)
+      const [targetItem] = this.rightList.splice(index, 1)
 
-      this.leftList.push(addedItem)
+      this.leftList.push(targetItem)
     },
     /* eslint-enable */
   },
