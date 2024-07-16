@@ -28,7 +28,7 @@
     </div>
 
     <div class="complex-table-content">
-      <el-table :key="key" v-loading="loading" :data="tableData" border highlight-current-row>
+      <el-table ref="table" :key="key" v-loading="loading" :data="tableData" border highlight-current-row>
         <el-table-column :label="$t('complexTable.title')" prop="title" min-width="300px" />
         <el-table-column :label="$t('complexTable.datetime')" prop="datetime" align="center" width="200px" />
         <el-table-column
@@ -104,6 +104,8 @@
 </template>
 
 <script>
+import { listToExcel } from '@/utils/export2excel'
+
 import Rate from '@/components/Rate'
 import ArticleDialog from './components/ArticleDialog.vue'
 import PageviewsDialog from './components/PageviewsDialog.vue'
@@ -237,7 +239,51 @@ export default {
       }, 500)
     },
 
-    handleExport() {},
+    handleExport() {
+      const author = [
+        {
+          label: this.$t('complexTable.author'),
+          prop: 'author',
+        },
+      ]
+      const header = [
+        {
+          label: this.$t('complexTable.title'),
+          prop: 'title',
+        },
+        {
+          label: this.$t('complexTable.datetime'),
+          prop: 'datetime',
+        },
+        ...(this.showAuthor ? author : []),
+        {
+          label: this.$t('complexTable.importance'),
+          prop: 'importance',
+        },
+        {
+          label: this.$t('complexTable.pageviews'),
+          prop: 'pageviews',
+        },
+        {
+          label: this.$t('complexTable.status'),
+          prop: 'status',
+        },
+      ]
+
+      listToExcel({
+        header,
+        data: this.formatter(this.tableData),
+      })
+    },
+
+    formatter(list = []) {
+      return list.map(row => {
+        const status =
+          row.status === 'published' ? this.$t('complexTable.published') : this.$t('complexTable.draft')
+
+        return { ...row, status }
+      })
+    },
 
     handleAdd() {
       this.articleVisible = true
