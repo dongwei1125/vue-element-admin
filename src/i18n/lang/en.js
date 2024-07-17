@@ -380,6 +380,9 @@ export default {
     dataExport: 'Export by Data',
     inputName: 'Please input book name',
   },
+  uploadExcelPage: {
+    outOfSize: 'File exceeds size limit {size}',
+  },
   error401Page: {
     oops: 'OOPS!',
     title: 'You do not have permission to enter this page',

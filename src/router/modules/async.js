@@ -512,6 +512,7 @@ export default [
       {
         name: 'UploadExcel',
         path: 'upload',
+        component: () => import('@/views/excel/upload-excel'),
         meta: {
           title: 'route.uploadExcel',
           icon: 'upload-excel',

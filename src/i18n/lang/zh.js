@@ -376,6 +376,9 @@ export default {
     dataExport: '数据式导出',
     inputName: '请输入表名',
   },
+  uploadExcelPage: {
+    outOfSize: '单文件大小不能超过 {size}',
+  },
   error401Page: {
     oops: '糟糕！',
     title: '你没有权限去该页面',
