@@ -335,6 +335,18 @@ export default {
     deleteSucced: 'Delete successfully!',
     success: 'Success',
   },
+  articleList: {
+    index: 'Index',
+    datetime: 'DateTime',
+    title: 'Title',
+    author: 'Author',
+    importance: 'Importance',
+    status: 'Status',
+    action: 'Action',
+    published: 'Published',
+    draft: 'Draft',
+    edit: 'Edit',
+  },
   exportExcelPage: {
     index: 'Index',
     author: 'Author',

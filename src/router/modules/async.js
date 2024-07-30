@@ -399,6 +399,7 @@ export default [
       {
         name: 'ArticleList',
         path: 'list',
+        component: () => import('@/views/example/list'),
         meta: {
           title: 'route.articleList',
           icon: 'list',

@@ -331,6 +331,18 @@ export default {
     deleteSucced: '删除成功！',
     success: '成功',
   },
+  articleList: {
+    index: '序号',
+    datetime: '时间',
+    title: '标题',
+    author: '作者',
+    importance: '影响力',
+    status: '状态',
+    action: '操作',
+    published: '已出版',
+    draft: '草稿',
+    edit: '编辑',
+  },
   exportExcelPage: {
     index: '序号',
     author: '作者',

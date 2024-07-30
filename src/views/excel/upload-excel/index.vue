@@ -125,5 +125,10 @@ export default {
 <style lang="scss" scoped>
 .upload-excel-page {
   padding: 20px;
+  text-align: center;
+
+  .el-table {
+    margin-top: 20px;
+  }
 }
 </style>

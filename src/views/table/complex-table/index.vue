@@ -87,8 +87,7 @@
         layout="total, sizes, prev, pager, next, jumper"
         @size-change="handleSizeChange"
         @current-change="handleNoChange"
-      >
-      </el-pagination>
+      />
     </div>
 
     <article-dialog

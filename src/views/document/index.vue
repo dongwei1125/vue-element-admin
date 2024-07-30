@@ -45,6 +45,7 @@ export default {
     margin: 0 16px 16px 0;
     font-size: 20px;
     text-align: center;
+    text-decoration: none;
     color: #fff;
     background-color: #000;
     cursor: pointer;
