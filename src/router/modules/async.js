@@ -391,6 +391,7 @@ export default [
       {
         name: 'CreateArticle',
         path: 'create',
+        component: () => import('@/views/example/create'),
         meta: {
           title: 'route.createArticle',
           icon: 'edit',
