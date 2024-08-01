@@ -335,6 +335,14 @@ export default {
     deleteSucced: 'Delete successfully!',
     success: 'Success',
   },
+  articleCreate: {
+    author: 'Author:',
+    publishTime: 'Publish Time:',
+    importance: 'Importance:',
+    summary: 'Summary:',
+    inputSummary: 'Please input summary',
+    tips: 'Creating and editing pages cannot be cached by keep-alive because keep-alive include does not support caching based on routes, but it is cached based on component name. If you want to achieve a similar caching effect, you can use a browser caching scheme such as localStorage. Or do not use keep-alive include to cache all pages directly.',
+  },
   articleList: {
     index: 'Index',
     datetime: 'DateTime',
