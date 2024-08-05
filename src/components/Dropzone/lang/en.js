@@ -1,11 +1,10 @@
-/* eslint-disable quotes */
 export default {
   dropzone: {
     dictDefaultMessage: 'Drop files here to upload',
-    dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
+    dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.", // eslint-disable-line
     dictFallbackText: 'Please use the fallback form below to upload your files like in the olden days.',
     dictFileTooBig: 'File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.',
-    dictInvalidFileType: "You can't upload files of this type.",
+    dictInvalidFileType: "You can't upload files of this type.", // eslint-disable-line
     dictResponseError: 'Server responded with {{statusCode}} code.',
     dictCancelUpload: 'Cancel upload',
     dictUploadCanceled: 'Upload canceled.',

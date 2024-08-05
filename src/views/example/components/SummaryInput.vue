@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :maxlength="maxlength"
     />
-    <span v-show="length" class="words">{{ length }} words</span>
+    <span class="words">{{ length }}/{{ maxlength }}</span>
   </div>
 </template>
 

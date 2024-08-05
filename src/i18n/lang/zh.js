@@ -333,6 +333,7 @@ export default {
   },
   articleCreate: {
     author: '作者：',
+    authorPlaceholder: '搜索用户',
     publishTime: '发布时间：',
     importance: '影响力：',
     summary: '摘要：',

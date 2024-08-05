@@ -9,7 +9,7 @@
     :before-upload="onBeforeUpload"
   >
     <i class="el-icon-upload" />
-    <span class="upload-excel-text">将文件拖到此处，或<em>点击上传</em></span>
+    <span class="upload-excel-text" v-html="$t('uploadExcel.tips')" />
   </el-upload>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       accept: '.xlsx, .xls',
-      contentTypes: [
+      fileTypes: [
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         'application/vnd.ms-excel',
       ],
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     onBeforeUpload(file) {
-      if (!this.contentTypes.includes(file.type)) {
+      if (!this.fileTypes.includes(file.type)) {
         this.$message.warning(this.$t('uploadExcel.onlyXlsx'))
 
         return false
@@ -68,16 +68,16 @@ export default {
     font-size: 14px;
     text-align: center;
     display: block;
-
-    em {
-      color: #409eff;
-    }
   }
 }
 
 ::v-deep {
   .el-upload-dragger {
     width: 600px;
+  }
+
+  em {
+    color: #409eff;
   }
 }
 </style>

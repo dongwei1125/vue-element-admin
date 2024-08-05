@@ -337,6 +337,7 @@ export default {
   },
   articleCreate: {
     author: 'Author:',
+    authorPlaceholder: 'Search user',
     publishTime: 'Publish Time:',
     importance: 'Importance:',
     summary: 'Summary:',
