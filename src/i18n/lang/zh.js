@@ -339,6 +339,8 @@ export default {
     summary: '摘要：',
     inputSummary: '请输入摘要',
     tips: '创建和编辑页面是不能被 keep-alive 缓存的，因为keep-alive 的 include 不支持根据路由来缓存，而是根据 component name 来进行缓存的。如果你想类似的实现缓存效果，可以使用 localStorage 等浏览器缓存方案。或者不要使用 keep-alive 的 include，直接缓存所有页面。',
+    publish: '发布',
+    draft: '草稿',
   },
   articleList: {
     index: '序号',

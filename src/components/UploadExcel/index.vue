@@ -62,13 +62,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.upload-excel {
-  .upload-excel-text {
-    color: #606266;
-    font-size: 14px;
-    text-align: center;
-    display: block;
-  }
+.upload-excel-text {
+  color: #606266;
+  font-size: 14px;
+  text-align: center;
+  display: block;
 }
 
 ::v-deep {
