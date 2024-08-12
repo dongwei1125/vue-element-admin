@@ -18,7 +18,11 @@
       </el-table-column>
       <el-table-column :label="$t('articleList.title')" prop="title" min-width="300px" />
       <el-table-column :label="$t('articleList.action')" align="center" width="100px">
-        <el-button type="primary" size="small" icon="el-icon-edit">{{ $t('articleList.edit') }}</el-button>
+        <template slot-scope="{ row }">
+          <el-button type="primary" size="small" icon="el-icon-edit" @click="handleEdit(row)">
+            {{ $t('articleList.edit') }}
+          </el-button>
+        </template>
       </el-table-column>
     </el-table>
 
@@ -59,6 +63,7 @@ export default {
     getTableData() {
       const tableData = [
         {
+          id: '5cb8779d-5a82-4832-a971-033a0f4513ca',
           index: 1,
           datetime: '1991/03/31 12:03',
           author: 'Brian',
@@ -67,6 +72,7 @@ export default {
           status: 'published',
         },
         {
+          id: '7d916fed-e0da-4834-84d3-65ef5260494f',
           index: 2,
           datetime: '2005/05/09 02:21',
           author: 'Ronald',
@@ -75,6 +81,7 @@ export default {
           status: 'draft',
         },
         {
+          id: 'd4754d26-40d7-468b-afe7-ee27c4647eca',
           index: 3,
           datetime: '1979/04/11 06:23',
           author: 'Jose',
@@ -83,6 +90,7 @@ export default {
           status: 'draft',
         },
         {
+          id: 'd4c3fc77-1073-4cf3-b0b1-a5cdd4928135',
           index: 4,
           datetime: '2023/04/22 15:05',
           author: 'Jeffrey',
@@ -91,6 +99,7 @@ export default {
           status: 'draft',
         },
         {
+          id: '044081a0-d435-4f18-84c0-f688bfaf4685',
           index: 5,
           datetime: '2018/03/03 15:37',
           author: 'John',
@@ -99,6 +108,7 @@ export default {
           status: 'published',
         },
         {
+          id: '98de4225-e84f-4063-990a-180d15df4b20',
           index: 6,
           datetime: '2007/06/03 10:49',
           author: 'Joseph',
@@ -107,6 +117,7 @@ export default {
           status: 'draft',
         },
         {
+          id: 'd68e72e1-56cb-48a7-a92a-d81b878d75f4',
           index: 7,
           datetime: '2023/12/12 21:07',
           author: 'Michelle',
@@ -115,6 +126,7 @@ export default {
           status: 'published',
         },
         {
+          id: '30bed7df-9305-464d-a413-f8a509c5dad1',
           index: 8,
           datetime: '2000/12/26 07:51',
           author: 'Jessica',
@@ -123,6 +135,7 @@ export default {
           status: 'published',
         },
         {
+          id: '22f8e94b-cf12-4c08-bf63-21f13572daca',
           index: 9,
           datetime: '1972/02/08 17:43',
           author: 'Richard',
@@ -131,6 +144,7 @@ export default {
           status: 'draft',
         },
         {
+          id: 'b1b1af52-83be-44c7-bc10-d63ccd6a9585',
           index: 10,
           datetime: '2007/02/11 04:56',
           author: 'John',
@@ -143,6 +157,13 @@ export default {
       setTimeout(() => {
         this.tableData = tableData
       }, 500)
+    },
+
+    handleEdit({ id }) {
+      this.$router.push({
+        path: '/example/edit',
+        query: { id },
+      })
     },
 
     handleNoChange(pageNo) {

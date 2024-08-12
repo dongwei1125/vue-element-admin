@@ -54,7 +54,7 @@
           <div class="card-content">
             <el-form :model="form" :rules="rules">
               <el-form-item prop="title">
-                <material-input v-model="form.title">标题</material-input>
+                <material-input v-model="form.title">{{ $t('componentPage.title') }}</material-input>
               </el-form-item>
             </el-form>
           </div>
@@ -139,7 +139,7 @@ export default {
     rules() {
       return {
         title: [
-          { required: true, message: this.$t('componentPage.inputContent') },
+          { required: true, message: this.$t('componentPage.inputTitle') },
           { min: 3, max: 5, message: this.$t('componentPage.lengthLimit') },
         ],
       }

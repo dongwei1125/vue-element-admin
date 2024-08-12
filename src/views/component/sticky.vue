@@ -22,7 +22,7 @@
           <i class="el-icon-caret-bottom el-icon--right" />
         </el-button>
         <el-dropdown-menu slot="dropdown">
-          <el-input v-model="url" :placeholder="$t('componentPage.inputContent')">
+          <el-input v-model="url" :placeholder="$t('componentPage.inputLink')">
             <template slot="prepend">URL</template>
           </el-input>
         </el-dropdown-menu>

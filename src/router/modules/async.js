@@ -398,6 +398,15 @@ export default [
         },
       },
       {
+        name: 'EditArticle',
+        path: 'edit',
+        component: () => import('@/views/example/edit'),
+        meta: {
+          title: 'route.editArticle',
+          hidden: true,
+        },
+      },
+      {
         name: 'ArticleList',
         path: 'list',
         component: () => import('@/views/example/list'),
