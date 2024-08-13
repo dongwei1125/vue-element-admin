@@ -426,6 +426,7 @@ export default [
       {
         name: 'Tab',
         path: 'index',
+        component: () => import('@/views/tab'),
         meta: {
           title: 'route.tab',
           icon: 'tab',

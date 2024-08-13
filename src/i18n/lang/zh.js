@@ -373,6 +373,17 @@ export default {
     draft: '草稿',
     edit: '编辑',
   },
+  tab: {
+    mounted: '挂载次数：{times}',
+    keepAlive: '标签保活',
+    index: '序号',
+    datetime: '时间',
+    title: '标题',
+    author: '作者',
+    importance: '影响力',
+    pageviews: '浏览量',
+    status: '状态',
+  },
   exportExcelPage: {
     index: '序号',
     author: '作者',

@@ -375,6 +375,17 @@ export default {
     draft: 'Draft',
     edit: 'Edit',
   },
+  tab: {
+    mounted: 'Mounted Times：{times}',
+    keepAlive: 'Tab with KeepAlive',
+    index: 'Index',
+    datetime: 'DateTime',
+    title: 'Title',
+    author: 'Author',
+    importance: 'Importance',
+    pageviews: 'Pageviews',
+    status: 'Status',
+  },
   exportExcelPage: {
     index: 'Index',
     author: 'Author',
