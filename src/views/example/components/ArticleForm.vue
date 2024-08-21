@@ -151,7 +151,7 @@ export default {
 
             this.form.status = 'published'
             this.loading = false
-          }, 1000)
+          }, 50)
         }
       })
     },
@@ -170,7 +170,7 @@ export default {
 
             this.form.status = 'draft'
             this.loading = false
-          }, 1000)
+          }, 50)
         }
       })
     },

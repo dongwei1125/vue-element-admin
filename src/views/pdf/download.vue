@@ -39,7 +39,7 @@ export default {
         this.$nextTick(() => {
           window.print()
         })
-      }, 2000)
+      }, 50)
     },
   },
 }

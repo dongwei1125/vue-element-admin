@@ -383,6 +383,8 @@ export default {
     importance: '影响力',
     pageviews: '浏览量',
     status: '状态',
+    published: '已出版',
+    draft: '草稿',
   },
   exportExcelPage: {
     index: '序号',

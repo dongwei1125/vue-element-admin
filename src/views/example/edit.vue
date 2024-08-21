@@ -33,7 +33,7 @@ export default {
         }
 
         this.$refs.form?.init(detail)
-      }, 200)
+      }, 50)
     },
   },
 }

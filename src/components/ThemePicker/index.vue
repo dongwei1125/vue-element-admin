@@ -35,7 +35,7 @@ export default {
           this.$store.dispatch('app/updateTheme', color)
 
           $message.close()
-        }, 500)
+        }, 50)
       })
     },
   },

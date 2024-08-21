@@ -235,7 +235,7 @@ export default {
       setTimeout(() => {
         this.tableData = tableData
         this.loading = false
-      }, 500)
+      }, 50)
     },
 
     handleExport() {

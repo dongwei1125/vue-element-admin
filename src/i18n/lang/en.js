@@ -385,6 +385,8 @@ export default {
     importance: 'Importance',
     pageviews: 'Pageviews',
     status: 'Status',
+    published: 'Published',
+    draft: 'Draft',
   },
   exportExcelPage: {
     index: 'Index',

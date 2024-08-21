@@ -1,12 +1,12 @@
 <template>
   <div class="tab">
-    <el-tag>{{ $t('tab.mounted', { times: 0 }) }}</el-tag>
+    <el-tag>{{ $t('tab.mounted', { times }) }}</el-tag>
     <el-tag type="success">{{ $t('tab.keepAlive') }}</el-tag>
 
     <el-tabs v-model="activeTab" type="border-card">
       <el-tab-pane v-for="tab in tabs" :key="tab.key" :label="$t(tab.label)" :name="tab.key">
         <keep-alive>
-          <table-pane v-if="activeTab === tab.key" :type="tab.key" />
+          <table-pane v-if="activeTab === tab.key" :type="tab.key" @create="onCreate" />
         </keep-alive>
       </el-tab-pane>
     </el-tabs>
@@ -28,7 +28,21 @@ export default {
         { label: 'Eurozone', key: 'EU' },
       ],
       activeTab: 'CN',
+      times: 0,
     }
+  },
+  watch: {
+    activeTab: {
+      handler(tabKey) {
+        this.$router.push(`${this.$route.path}?tab=${tabKey}`)
+      },
+      immediate: true,
+    },
+  },
+  methods: {
+    onCreate() {
+      this.times += 1
+    },
   },
 }
 </script>

@@ -156,7 +156,7 @@ export default {
 
       setTimeout(() => {
         this.tableData = tableData
-      }, 500)
+      }, 50)
     },
 
     handleEdit({ id }) {
