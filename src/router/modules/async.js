@@ -548,6 +548,7 @@ export default [
       {
         name: 'ExportZip',
         path: 'export',
+        component: () => import('@/views/zip/export-zip'),
         meta: {
           title: 'route.exportZip',
           icon: 'export-zip',

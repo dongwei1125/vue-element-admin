@@ -8,15 +8,15 @@ export function tableToExcel(options) {
   const el = options.el || options
   const $table = typeof el === 'string' ? document.querySelector(el) : el
 
-  const bookName = options.bookName || `book_${Date.now()}.xlsx`
-  const sheetName = options.sheetName || `sheet_${Date.now()}`
+  const bookName = options.bookName || Date.now()
+  const bookType = options.bookType || 'xlsx'
+  const sheetName = options.sheetName || Date.now()
 
   const workbook = XLSX.utils.book_new()
   const worksheet = XLSX.utils.table_to_sheet($table)
 
-  XLSX.utils.book_append_sheet(workbook, worksheet, sheetName)
-
-  XLSX.writeFile(workbook, bookName)
+  XLSX.utils.book_append_sheet(workbook, worksheet, `${sheetName}`)
+  XLSX.writeFile(workbook, `${bookName}.${bookType}`)
 }
 
 /**
@@ -52,8 +52,9 @@ export function listToExcel(options) {
   const { aoa, merges, props, depth } = new MergeCell(header)
   const aoo = listToAoo(props, data)
 
-  const sheetName = options.sheetName || `sheet_${Date.now()}`
-  const bookName = options.bookName || `book_${Date.now()}.xlsx`
+  const bookName = options.bookName || Date.now()
+  const bookType = options.bookType || 'xlsx'
+  const sheetName = options.sheetName || Date.now()
 
   const workbook = XLSX.utils.book_new()
   const worksheet = XLSX.utils.aoa_to_sheet(aoa)
@@ -61,7 +62,7 @@ export function listToExcel(options) {
   worksheet['!merges'] = merges
 
   XLSX.utils.sheet_add_json(worksheet, aoo, { origin: `A${depth + 2}`, skipHeader: true })
-  XLSX.utils.book_append_sheet(workbook, worksheet, sheetName)
+  XLSX.utils.book_append_sheet(workbook, worksheet, `${sheetName}`)
 
-  XLSX.writeFile(workbook, bookName)
+  XLSX.writeFile(workbook, `${bookName}.${bookType}`)
 }

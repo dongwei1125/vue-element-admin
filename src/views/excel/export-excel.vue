@@ -156,7 +156,8 @@ export default {
 
       tableToExcel({
         el: $table,
-        bookName: `${bookName || Date.now()}.${bookType}`,
+        bookName,
+        bookType,
       })
     },
   },

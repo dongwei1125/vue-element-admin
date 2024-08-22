@@ -1,54 +1,23 @@
 <template>
-  <div class="export-selected-excel">
-    <div class="export-selected-excel-header">
-      <el-input
-        v-model="bookName"
-        prefix-icon="el-icon-document"
-        :placeholder="$t('exportSelectedExcelPage.inputName')"
-      />
+  <div class="export-zip">
+    <div class="export-zip-header">
+      <el-input v-model="filename" prefix-icon="el-icon-document" :placeholder="$t('exportZip.inputName')" />
 
-      <el-button type="primary" icon="el-icon-document" :disabled="!selections.length" @click="handleExport">
-        {{ $t('exportSelectedExcelPage.exportSelected') }}
+      <el-button type="primary" icon="el-icon-document" @click="handleExport">
+        {{ $t('exportZip.export') }}
       </el-button>
     </div>
 
-    <el-table
-      ref="table"
-      :data="tableData"
-      border
-      highlight-current-row
-      @selection-change="handleSelectionChange"
-    >
-      <el-table-column type="selection" align="center" />
-      <el-table-column
-        :label="$t('exportSelectedExcelPage.index')"
-        prop="index"
-        align="center"
-        width="80px"
-      />
-      <el-table-column :label="$t('exportSelectedExcelPage.title')" prop="title" min-width="300px" />
-      <el-table-column
-        :label="$t('exportSelectedExcelPage.author')"
-        prop="author"
-        align="center"
-        width="140px"
-      >
+    <el-table :data="tableData" border highlight-current-row>
+      <el-table-column :label="$t('exportZip.index')" prop="index" align="center" width="80px" />
+      <el-table-column :label="$t('exportZip.title')" prop="title" min-width="300px" />
+      <el-table-column :label="$t('exportZip.author')" prop="author" align="center" width="140px">
         <template slot-scope="{ row }">
           <el-tag>{{ row.author }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column
-        :label="$t('exportSelectedExcelPage.pageviews')"
-        prop="pageviews"
-        align="center"
-        width="120px"
-      />
-      <el-table-column
-        :label="$t('exportSelectedExcelPage.datetime')"
-        prop="datetime"
-        align="center"
-        width="200px"
-      >
+      <el-table-column :label="$t('exportZip.pageviews')" prop="pageviews" align="center" width="120px" />
+      <el-table-column :label="$t('exportZip.datetime')" prop="datetime" align="center" width="200px">
         <template slot-scope="{ row }">
           <i class="el-icon-time" />
           <span>{{ row.datetime }}</span>
@@ -59,15 +28,14 @@
 </template>
 
 <script>
-import { listToExcel } from '@/utils/export2excel'
+import { listToZip } from '@/utils/export2Zip'
 
 export default {
-  name: 'ExportSelectedExcel',
+  name: 'ExportZip',
   data() {
     return {
+      filename: '',
       tableData: [],
-      selections: [],
-      bookName: '',
     }
   },
   mounted() {
@@ -151,38 +119,35 @@ export default {
       this.tableData = tableData
     },
 
-    handleSelectionChange(selections) {
-      this.selections = selections
-    },
-
     handleExport() {
       const header = [
         {
-          label: this.$t('exportSelectedExcelPage.index'),
+          label: this.$t('exportZip.index'),
           prop: 'index',
         },
         {
-          label: this.$t('exportSelectedExcelPage.title'),
+          label: this.$t('exportZip.title'),
           prop: 'title',
         },
         {
-          label: this.$t('exportSelectedExcelPage.author'),
+          label: this.$t('exportZip.author'),
           prop: 'author',
         },
         {
-          label: this.$t('exportSelectedExcelPage.pageviews'),
+          label: this.$t('exportZip.pageviews'),
           prop: 'pageviews',
         },
         {
-          label: this.$t('exportSelectedExcelPage.datetime'),
+          label: this.$t('exportZip.datetime'),
           prop: 'datetime',
         },
       ]
 
-      listToExcel({
+      listToZip({
         header,
-        data: this.selections,
-        bookName: this.bookName,
+        data: this.tableData,
+        txtName: this.filename,
+        zipName: this.filename,
       })
     },
   },
@@ -190,19 +155,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.export-selected-excel {
+.export-zip {
   padding: 20px;
 }
 
-.export-selected-excel-header {
+.export-zip-header {
   margin-bottom: 20px;
 
   .el-input {
-    width: 350px;
-  }
-
-  .el-button {
-    margin-left: 20px;
+    width: 300px;
+    margin-right: 20px;
   }
 }
 

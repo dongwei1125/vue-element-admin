@@ -434,6 +434,15 @@ export default {
   uploadExcelPage: {
     outOfSize: '单文件大小不能超过 {size}',
   },
+  exportZip: {
+    inputName: '请输入文件名',
+    export: '导出',
+    index: '序号',
+    title: '标题',
+    author: '作者',
+    pageviews: '浏览量',
+    datetime: '时间',
+  },
   error401Page: {
     oops: '糟糕！',
     title: '你没有权限去该页面',

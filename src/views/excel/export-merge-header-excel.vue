@@ -308,7 +308,7 @@ export default {
 
       tableToExcel({
         el: $table,
-        bookName: `${this.bookName || Date.now()}.xlsx`,
+        bookName: this.bookName,
       })
     },
 
@@ -400,7 +400,7 @@ export default {
       listToExcel({
         header,
         data: this.tableData,
-        bookName: `${this.bookName || Date.now()}.xlsx`,
+        bookName: this.bookName,
       })
     },
   },

@@ -436,6 +436,15 @@ export default {
   uploadExcelPage: {
     outOfSize: 'File exceeds size limit {size}',
   },
+  exportZip: {
+    inputName: 'Please input file name',
+    export: 'Export',
+    index: 'Index',
+    title: 'Title',
+    author: 'Author',
+    pageviews: 'Pageviews',
+    datetime: 'DateTime',
+  },
   error401Page: {
     oops: 'OOPS!',
     title: 'You do not have permission to enter this page',
