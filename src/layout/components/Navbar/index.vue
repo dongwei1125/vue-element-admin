@@ -7,6 +7,7 @@
     <div class="navbar-menu">
       <template v-if="!isMobile">
         <header-search id="header-search" />
+        <error-log />
         <full-screen id="full-screen" />
         <element-size id="element-size" />
         <language />
@@ -23,6 +24,7 @@ import { mapGetters } from 'vuex'
 import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import HeaderSearch from '@/components/HeaderSearch'
+import ErrorLog from '@/components/ErrorLog'
 import FullScreen from '@/components/FullScreen'
 import ElementSize from '@/components/ElementSize'
 import Language from '@/components/Language'
@@ -30,7 +32,7 @@ import Avatar from './Avatar.vue'
 
 export default {
   name: 'Navbar',
-  components: { Hamburger, Breadcrumb, HeaderSearch, FullScreen, ElementSize, Language, Avatar },
+  components: { Hamburger, Breadcrumb, HeaderSearch, ErrorLog, FullScreen, ElementSize, Language, Avatar },
   computed: {
     ...mapGetters(['app', 'sidebar']),
     isActive() {
@@ -98,6 +100,12 @@ $navBarHeight: 50px;
   &.header-search--expand {
     background-color: unset;
   }
+
+  @extend %hover;
+}
+
+.error-log {
+  padding: 0 8px;
 
   @extend %hover;
 }

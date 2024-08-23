@@ -6,6 +6,7 @@ import i18n from './i18n'
 
 import './icons'
 import './permission'
+import './utils/error-log'
 
 import '@/styles/index.scss'
 

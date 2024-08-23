@@ -475,6 +475,7 @@ export default [
       {
         name: 'ErrorLog',
         path: 'index',
+        component: () => import('@/views/error-log'),
         meta: {
           title: 'route.errorLog',
           icon: 'bug',

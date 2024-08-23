@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { listToZip } from '@/utils/export2Zip'
+import { listToZip } from '@/utils/export2zip'
 
 export default {
   name: 'ExportZip',
