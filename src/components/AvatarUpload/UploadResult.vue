@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { STATUS } from './constant'
 import { http, base64ToFile, objectToFormData } from './utils'
+import { STATUS } from './constant'
 
 export default {
   name: 'UploadResult',

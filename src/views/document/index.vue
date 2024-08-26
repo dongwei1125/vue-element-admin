@@ -37,7 +37,7 @@ export default {
 .document {
   padding: 70px;
 
-  a {
+  > a {
     display: inline-block;
     height: 60px;
     line-height: 60px;

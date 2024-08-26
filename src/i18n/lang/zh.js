@@ -386,9 +386,7 @@ export default {
     published: '已出版',
     draft: '草稿',
   },
-  errorLog: {
-    message: '日志',
-    stack: '堆栈',
+  errorLogPage: {
     title: '请点击右上角 Bug 小图标',
     tips: '现在的管理后台基本都是 spa 的形式了，它增强了用户体验，但同时也会增加页面出问题的可能性，可能一个小小的疏忽就导致整个页面的死锁。好在 Vue 官网提供了一个方法来捕获处理异常，你可以在其中进行错误处理或者异常上报，{link}。',
   },

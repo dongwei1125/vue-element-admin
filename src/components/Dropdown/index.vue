@@ -86,6 +86,10 @@ export default {
     transition: transform 0.28s ease;
     cursor: pointer;
 
+    a {
+      text-decoration: none;
+    }
+
     &:hover {
       color: #fff;
       background-color: #000;

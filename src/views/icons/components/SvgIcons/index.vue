@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import icons from './icons'
 import { copyText } from '@/utils/clipboard'
+import icons from './icons'
 
 export default {
   name: 'SvgIcons',

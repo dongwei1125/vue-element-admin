@@ -2,7 +2,7 @@ import i18n from '@/i18n'
 
 const $t = i18n.t.bind(i18n)
 
-export default function getSteps() {
+function getSteps() {
   return [
     {
       element: '#hamburger',
@@ -54,3 +54,5 @@ export default function getSteps() {
     },
   ]
 }
+
+export default getSteps

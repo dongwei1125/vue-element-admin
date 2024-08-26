@@ -2,7 +2,7 @@ import i18n from '@/i18n'
 
 const $t = i18n.t.bind(i18n)
 
-export default function getMenus() {
+function getMenus() {
   return [
     {
       key: 'dashboard',
@@ -264,3 +264,5 @@ export default function getMenus() {
     },
   ]
 }
+
+export default getMenus

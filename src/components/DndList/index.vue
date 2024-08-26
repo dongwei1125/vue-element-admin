@@ -47,23 +47,31 @@ export default {
     },
   },
   methods: {
-    /* eslint-disable */
     deleteLeftItem(item) {
-      const index = this.leftList.findIndex(el => el === item)
-      const [targetItem] = this.leftList.splice(index, 1)
+      const leftList = [...this.leftList]
+      const rightList = [...this.rightList]
 
-      this.rightList.unshift(targetItem)
+      const index = leftList.findIndex(el => el === item)
+      const [targetItem] = leftList.splice(index, 1)
+
+      rightList.unshift(targetItem)
+
+      this.$emit('update:leftList', leftList)
+      this.$emit('update:rightList', rightList)
     },
-    /* eslint-enable */
 
-    /* eslint-disable */
     addToLeft(item) {
-      const index = this.rightList.findIndex(el => el === item)
-      const [targetItem] = this.rightList.splice(index, 1)
+      const leftList = [...this.leftList]
+      const rightList = [...this.rightList]
 
-      this.leftList.push(targetItem)
+      const index = rightList.findIndex(el => el === item)
+      const [targetItem] = rightList.splice(index, 1)
+
+      leftList.push(targetItem)
+
+      this.$emit('update:leftList', leftList)
+      this.$emit('update:rightList', rightList)
     },
-    /* eslint-enable */
   },
 }
 </script>

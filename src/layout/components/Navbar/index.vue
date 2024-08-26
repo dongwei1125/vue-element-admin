@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 $navBarHeight: 50px;
 
-%hover {
+@mixin hover {
   transition: background-color 0.3s;
   cursor: pointer;
 
@@ -72,7 +72,7 @@ $navBarHeight: 50px;
   height: 100%;
   padding: 14px 15px 0;
 
-  @extend %hover;
+  @include hover;
 }
 
 .breadcrumb {
@@ -100,20 +100,18 @@ $navBarHeight: 50px;
   &.header-search--expand {
     background-color: unset;
   }
-
-  @extend %hover;
 }
 
 .error-log {
   padding: 0 8px;
 
-  @extend %hover;
+  @include hover;
 }
 
 .full-screen {
   padding: 0 8px;
 
-  @extend %hover;
+  @include hover;
 }
 
 .element-size,
@@ -122,7 +120,7 @@ $navBarHeight: 50px;
     padding: 0 8px;
     font-size: 18px;
 
-    @extend %hover;
+    @include hover;
   }
 }
 
@@ -143,7 +141,7 @@ $navBarHeight: 50px;
         font-size: 12px;
       }
 
-      @extend %hover;
+      @include hover;
     }
   }
 }

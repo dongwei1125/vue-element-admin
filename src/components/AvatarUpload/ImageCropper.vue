@@ -117,6 +117,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin shade {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  background-color: rgba(241, 242, 243, 0.8);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18);
+  z-index: 1;
+}
+
 .image-cropper {
   height: 100%;
   position: relative;
@@ -141,17 +152,6 @@ export default {
     height: 180px;
     overflow: hidden;
     position: relative;
-
-    @mixin shade {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 30px;
-      height: 100%;
-      background-color: rgba(241, 242, 243, 0.8);
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18);
-      z-index: 1;
-    }
 
     &::before {
       left: 0;

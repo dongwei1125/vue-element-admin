@@ -6,7 +6,7 @@
         <i class="el-icon-caret-bottom" />
       </div>
 
-      <el-dropdown-menu slot="dropdown">
+      <el-dropdown-menu slot="dropdown" class="avatar-dropdown-menu">
         <router-link to="/profile">
           <el-dropdown-item>{{ $t('navbar.profile') }}</el-dropdown-item>
         </router-link>
@@ -62,5 +62,11 @@ export default {
     bottom: 8px;
     font-size: 12px;
   }
+}
+</style>
+
+<style>
+.avatar-dropdown-menu a {
+  text-decoration: none;
 }
 </style>

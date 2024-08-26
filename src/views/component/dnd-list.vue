@@ -8,7 +8,7 @@
       </template>
     </i18n>
 
-    <dnd-list :left-list="leftList" :right-list="rightList">
+    <dnd-list :left-list.sync="leftList" :right-list.sync="rightList">
       <h3 slot="left-header">{{ $t('componentPage.list') }}</h3>
       <h3 slot="right-header">{{ $t('componentPage.articlePool') }}</h3>
     </dnd-list>
