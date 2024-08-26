@@ -399,7 +399,7 @@ export default [
       },
       {
         name: 'EditArticle',
-        path: 'edit',
+        path: 'edit/:id',
         component: () => import('@/views/example/edit'),
         meta: {
           title: 'route.editArticle',

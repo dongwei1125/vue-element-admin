@@ -1,6 +1,6 @@
 <template>
   <div class="error-log">
-    <el-badge is-dot>
+    <el-badge :is-dot="!!logs.length">
       <el-button size="small" type="danger" @click="handleOpen">
         <svg-icon icon-class="bug" />
       </el-button>
@@ -20,6 +20,11 @@ export default {
     return {
       visible: false,
     }
+  },
+  computed: {
+    logs() {
+      return this.$store.state.errorLog.logs
+    },
   },
   methods: {
     handleOpen() {

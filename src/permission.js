@@ -41,7 +41,7 @@ async function hasTokenHandler(to, from, next) {
   } catch (error) {
     await store.dispatch('user/removeToken')
 
-    next(`/login?redirect=${to.path}`)
+    next(`/login?redirect=${to.fullPath}`)
 
     NProgress.done()
   }
@@ -56,7 +56,7 @@ function noTokenHandler(to, from, next) {
   if (to.path === '/login') {
     next()
   } else {
-    next(`/login?redirect=${to.path}`)
+    next(`/login?redirect=${to.fullPath}`)
 
     NProgress.done()
   }

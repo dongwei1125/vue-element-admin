@@ -1,6 +1,6 @@
 <template>
   <router-link
-    :to="item.path"
+    :to="{ path: item.path, query: item.query, fullPath: item.fullPath }"
     tag="span"
     class="tags-view-item"
     :class="{ 'is-active': isActive }"

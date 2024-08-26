@@ -161,8 +161,7 @@ export default {
 
     handleEdit({ id }) {
       this.$router.push({
-        path: '/example/edit',
-        query: { id },
+        path: `/example/edit/${id}`,
       })
     },
 

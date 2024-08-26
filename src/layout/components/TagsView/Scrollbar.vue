@@ -42,18 +42,18 @@ export default {
       const [firstTag] = tags
       const [lastTag] = tags.slice(-1)
 
-      if (view.fullPath === firstTag.item.fullPath) {
+      if (view.path === firstTag.item.path) {
         $scrollWrapper.scrollLeft = 0
-      } else if (view.fullPath === lastTag.item.fullPath) {
+      } else if (view.path === lastTag.item.path) {
         $scrollWrapper.scrollLeft = scrollWrapperWidth - scrollbarWidth
       } else {
-        const viewindex = tags.findIndex(tag => tag.item.fullPath === view.fullPath)
+        const viewindex = tags.findIndex(tag => tag.item.path === view.path)
         const preTag = tags[viewindex - 1]
         const nextTag = tags[viewindex + 1]
         const $preTag = preTag.$el
         const $nextTag = nextTag.$el
 
-        this.displayPreOrNextTagElement($preTag, $nextTag)
+        this.displayAroundTagElement($preTag, $nextTag)
       }
     },
 
@@ -61,7 +61,7 @@ export default {
      * @param {HTMLElement} preElement
      * @param {HTMLElement} nextElement
      */
-    displayPreOrNextTagElement(preElement, nextElement) {
+    displayAroundTagElement(preElement, nextElement) {
       const $scrollbar = this.$refs.scrollbar.$el
       const $scrollWrapper = this.$scrollWrapper
       const scrollbarWidth = $scrollbar.offsetWidth
