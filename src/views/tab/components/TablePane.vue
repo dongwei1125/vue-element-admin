@@ -33,14 +33,9 @@ export default {
     }
   },
   created() {
-    this.emitCreate()
     this.getTableData()
   },
   methods: {
-    emitCreate() {
-      this.$emit('create')
-    },
-
     getTableData() {
       setTimeout(() => {
         const tableData = [

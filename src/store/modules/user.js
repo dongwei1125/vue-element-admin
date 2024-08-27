@@ -40,6 +40,25 @@ const actions = {
         const data = {
           roles: ['admin'],
           name: 'admin',
+          education: 'JS in Computer Science from the University of Technology',
+          skills: [
+            {
+              name: 'Vue',
+              progress: 70,
+            },
+            {
+              name: 'JavaScript',
+              progress: 18,
+            },
+            {
+              name: 'Css',
+              progress: 12,
+            },
+            {
+              name: 'ESLint',
+              progress: 100,
+            },
+          ],
         }
         const { roles } = data
 

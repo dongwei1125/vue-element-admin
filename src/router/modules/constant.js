@@ -96,4 +96,23 @@ export default [
       },
     ],
   },
+
+  // 个人中心
+  {
+    path: '/profile',
+    component: Layout,
+    meta: {
+      hidden: true,
+    },
+    children: [
+      {
+        name: 'Profile',
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        meta: {
+          title: 'route.profile',
+        },
+      },
+    ],
+  },
 ]

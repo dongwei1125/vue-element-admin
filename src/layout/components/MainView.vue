@@ -1,7 +1,7 @@
 <template>
   <div class="main-view">
     <transition name="fade" mode="out-in">
-      <router-view />
+      <router-view :key="path" />
     </transition>
   </div>
 </template>
@@ -9,6 +9,11 @@
 <script>
 export default {
   name: 'MainView',
+  computed: {
+    path() {
+      return this.$route.path
+    },
+  },
 }
 </script>
 

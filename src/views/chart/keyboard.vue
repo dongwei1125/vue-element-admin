@@ -16,9 +16,9 @@ export default {
   methods: {
     init() {
       setTimeout(() => {
-        const x = [],
-          y1 = [],
-          y2 = []
+        const x = []
+        const y1 = []
+        const y2 = []
 
         for (var i = 0; i < 50; i++) {
           x.push(i)

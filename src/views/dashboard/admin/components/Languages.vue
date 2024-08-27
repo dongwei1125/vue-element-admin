@@ -91,6 +91,10 @@ export default {
   .item {
     margin-bottom: 10px;
 
+    > span {
+      font-size: 14px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

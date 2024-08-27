@@ -12,6 +12,7 @@ export default {
     dashboard: 'Dashboard',
     document: 'Document',
     guide: 'Guide',
+    profile: 'Profile',
     permission: 'Permission',
     pagePermission: 'Page Permission',
     directivePermission: 'Directive Permission',
@@ -106,6 +107,15 @@ export default {
   },
   theme: {
     tips: 'Switching theme',
+  },
+  profile: {
+    about: 'About me',
+    hello: 'Hello',
+    education: 'Education',
+    skills: 'Skills',
+    activity: 'Activity',
+    timeline: 'Timeline',
+    account: 'Account',
   },
   dashboardPage: {
     roles: 'Your roles: ',

@@ -7,7 +7,7 @@
       </div>
 
       <el-dropdown-menu slot="dropdown" class="avatar-dropdown-menu">
-        <router-link to="/profile">
+        <router-link to="/profile/index">
           <el-dropdown-item>{{ $t('navbar.profile') }}</el-dropdown-item>
         </router-link>
         <router-link to="/update">

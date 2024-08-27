@@ -1,5 +1,5 @@
 <template>
-  <el-dialog :visible.sync="show" width="80%" append-to-body>
+  <el-dialog custom-class="error-log" :visible.sync="show" width="80%" append-to-body>
     <div slot="title">
       <span class="error-log-title">{{ $t('errorLog.title') }}</span>
       <el-button size="mini" type="primary" icon="el-icon-delete" @click="handleClear">
@@ -82,10 +82,18 @@ export default {
   color: #333;
   font-size: 16px;
   font-weight: bold;
+  font-family: Consolas;
   padding-right: 8px;
 }
 
 .error-log-stack {
   white-space: pre-wrap;
+  font-size: 12px;
+  color: #2c3e50;
+  font-family: Consolas;
+}
+
+.error-log .el-tag {
+  font-family: Consolas;
 }
 </style>

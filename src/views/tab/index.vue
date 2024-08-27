@@ -6,7 +6,7 @@
     <el-tabs v-model="activeTab" type="border-card">
       <el-tab-pane v-for="tab in tabs" :key="tab.key" :label="$t(tab.label)" :name="tab.key">
         <keep-alive>
-          <table-pane v-if="activeTab === tab.key" :type="tab.key" @create="onCreate" />
+          <table-pane v-if="activeTab === tab.key" :type="tab.key" @hook:created="onCreate" />
         </keep-alive>
       </el-tab-pane>
     </el-tabs>

@@ -12,6 +12,7 @@ export default {
     dashboard: '首页',
     document: '文档',
     guide: '引导页',
+    profile: '个人中心',
     permission: '权限',
     pagePermission: '页面权限',
     directivePermission: '指令权限',
@@ -106,6 +107,15 @@ export default {
   },
   theme: {
     tips: '正在切换主题',
+  },
+  profile: {
+    about: '关于',
+    hello: '你好',
+    education: '教育',
+    skills: '技能',
+    activity: '活动',
+    timeline: '时间线',
+    account: '账户',
   },
   dashboardPage: {
     roles: '你的角色是：',
@@ -450,7 +460,7 @@ export default {
   error401Page: {
     oops: '糟糕！',
     title: '你没有权限去该页面',
-    desc: '如有不满请联系你领导',
+    desc: '如有不满请联系管理员',
     or: '或者你可以去：',
     back: '回首页',
     look: '随便看看',
@@ -460,7 +470,7 @@ export default {
   error404Page: {
     oops: '糟糕！',
     right: '版权所有',
-    title: '领导说你不能去该页面...',
+    title: '管理员说你不能去该页面...',
     desc: '请检查你输入的网址是否正确，或点击下面的按钮返回首页。',
     back: '返回首页',
   },
