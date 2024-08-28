@@ -19,7 +19,7 @@
 import { mapGetters } from 'vuex'
 import { resolvePath } from '@/utils/path'
 
-import resize from './mixins/resize'
+import resize from './resize'
 
 import Modal from '@/components/Modal'
 import Logo from './Logo.vue'

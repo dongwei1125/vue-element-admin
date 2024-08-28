@@ -2,34 +2,34 @@
   <el-card>
     <template slot="header">{{ $t('profile.about') }}</template>
 
-    <div class="user-info">
+    <div class="info">
       <pan-thumb :image="require('@/assets/rock-bg.gif')" height="100px" width="100px">
         <div>{{ $t('profile.hello') }}</div>
         <span>{{ roles }}</span>
       </pan-thumb>
 
-      <div class="user-name">{{ user.name }}</div>
-      <div class="user-role">{{ roles }}</div>
+      <div class="username">{{ user.name }}</div>
+      <div class="role">{{ roles }}</div>
     </div>
 
-    <div class="user-education">
-      <div class="user-header">
+    <div class="education">
+      <div class="header">
         <svg-icon icon-class="education" />
         <span>{{ $t('profile.education') }}</span>
       </div>
-      <div class="user-desc">{{ user.education }}</div>
+      <div class="description">{{ user.education }}</div>
     </div>
 
-    <div class="user-skills">
-      <div class="user-header">
+    <div class="skills">
+      <div class="header">
         <svg-icon icon-class="skill" />
         <span>{{ $t('profile.skills') }}</span>
       </div>
 
-      <div class="user-progress">
+      <div class="progress">
         <div v-for="(item, index) in user.skills" :key="index" class="progress-item">
           <span>{{ item.name }}</span>
-          <el-progress :percentage="item.progress" :status="item.progress == 100 ? 'success' : ''" />
+          <el-progress :percentage="item.progress" :status="item.progress == 100 ? 'success' : undefined" />
         </div>
       </div>
     </div>
@@ -57,28 +57,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.user-info {
+.info {
   padding-top: 10px;
   text-align: center;
 
-  .user-name {
+  .username {
     font-weight: bold;
     text-align: center;
     padding: 10px 0;
   }
 
-  .user-role {
+  .role {
     font-size: 14px;
     color: #777;
   }
 }
 
-.user-education {
+.education {
   margin-top: 20px;
   padding: 15px 0;
 }
 
-.user-header {
+.header {
   font-size: 14px;
   color: #606266;
   border-bottom: 1px solid #dfe6ec;
@@ -91,16 +91,16 @@ export default {
   }
 }
 
-.user-desc {
+.description {
   color: #777;
   font-size: 14px;
 }
 
-.user-skills {
+.skills {
   padding: 15px 0;
 }
 
-.user-progress {
+.progress {
   font-size: 14px;
 
   .progress-item {

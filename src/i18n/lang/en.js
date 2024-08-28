@@ -7,6 +7,7 @@ export default {
     inputUsername: 'Please input user name',
     inputPassword: 'Please input password',
     passwordMinLength: 'The length is 6 bits at least',
+    thirdparty: 'Or connect with',
   },
   route: {
     dashboard: 'Dashboard',
@@ -81,7 +82,7 @@ export default {
   },
   navbar: {
     profile: 'Profile',
-    updatePassword: 'Update Password',
+    dashboard: 'Dashboard',
     logOut: 'Log Out',
   },
   avatar: {
@@ -116,6 +117,12 @@ export default {
     activity: 'Activity',
     timeline: 'Timeline',
     account: 'Account',
+    share: 'Share',
+    like: 'Like',
+    username: 'Username',
+    email: 'Email',
+    submit: 'Submit',
+    submitSuccess: 'User information has been updated successfully',
   },
   dashboardPage: {
     roles: 'Your roles: ',

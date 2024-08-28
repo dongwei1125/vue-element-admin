@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import tag from './mixins/tag'
+import tag from './tag'
 
 import Scrollbar from './Scrollbar.vue'
 import TagsViewItem from './TagsViewItem.vue'

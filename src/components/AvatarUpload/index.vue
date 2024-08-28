@@ -45,9 +45,9 @@
 import lang from './lang'
 import { STEPS } from './constant'
 
-import ReadImage from './ReadImage.vue'
-import ImageCropper from './ImageCropper.vue'
-import UploadResult from './UploadResult.vue'
+import ReadImage from './components/ReadImage.vue'
+import ImageCropper from './components/ImageCropper.vue'
+import UploadResult from './components/UploadResult.vue'
 
 export default {
   name: 'AvatarUpload',

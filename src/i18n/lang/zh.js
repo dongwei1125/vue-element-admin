@@ -7,6 +7,7 @@ export default {
     inputUsername: '请输入用户名',
     inputPassword: '请输入密码',
     passwordMinLength: '长度至少为 6 位',
+    thirdparty: '第三方登录',
   },
   route: {
     dashboard: '首页',
@@ -81,7 +82,7 @@ export default {
   },
   navbar: {
     profile: '个人中心',
-    updatePassword: '修改密码',
+    dashboard: '首页',
     logOut: '退出登录',
   },
   avatar: {
@@ -116,6 +117,12 @@ export default {
     activity: '活动',
     timeline: '时间线',
     account: '账户',
+    share: '分享',
+    like: '收藏',
+    username: '用户名',
+    email: '邮箱',
+    submit: '提交',
+    submitSuccess: '用户信息修改成功',
   },
   dashboardPage: {
     roles: '你的角色是：',

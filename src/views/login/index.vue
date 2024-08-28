@@ -35,16 +35,21 @@
       <el-button type="primary" class="login-btn" :loading="loading" @click="login">
         {{ $t('login.login') }}
       </el-button>
+
+      <div class="login-extra">
+        <thirdparty-login />
+      </div>
     </el-form>
   </div>
 </template>
 
 <script>
 import Language from '@/components/Language'
+import ThirdpartyLogin from './ThirdpartyLogin.vue'
 
 export default {
   name: 'Login',
-  components: { Language },
+  components: { Language, ThirdpartyLogin },
   data() {
     return {
       form: {
@@ -178,5 +183,10 @@ $lightGray: #eee;
 
 .login-btn {
   width: 100%;
+}
+
+.login-extra {
+  text-align: right;
+  margin-top: 30px;
 }
 </style>

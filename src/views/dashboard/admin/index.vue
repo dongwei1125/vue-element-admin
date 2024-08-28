@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import chart from './chart'
+import chart from './mixins/chart'
 
 import GithubCorner from '@/components/GithubCorner'
 import StatsPanel from './components/StatsPanel.vue'

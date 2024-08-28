@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import TablePane from './components/TablePane.vue'
+import TablePane from './TablePane.vue'
 
 export default {
   name: 'Tab',

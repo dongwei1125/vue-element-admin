@@ -10,8 +10,8 @@
         <router-link to="/profile/index">
           <el-dropdown-item>{{ $t('navbar.profile') }}</el-dropdown-item>
         </router-link>
-        <router-link to="/update">
-          <el-dropdown-item>{{ $t('navbar.updatePassword') }}</el-dropdown-item>
+        <router-link to="/dashboard">
+          <el-dropdown-item>{{ $t('navbar.dashboard') }}</el-dropdown-item>
         </router-link>
 
         <el-dropdown-item divided @click.native="logout">{{ $t('navbar.logOut') }}</el-dropdown-item>
