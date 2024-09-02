@@ -33,6 +33,6 @@ module.exports = defineConfig({
       .end()
   },
   devServer: {
-    setupMiddlewares: require('./mock/server.js'),
+    setupMiddlewares: require('./mock/server'),
   },
 })

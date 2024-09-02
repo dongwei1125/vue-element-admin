@@ -1,9 +1,11 @@
+const mock = require('./app')
+
 module.exports = (middlewares, devServer) => {
-  devServer.app.get('/api/user/login', (request, response) => {
-    response.json({
-      xxx: 'xxx',
-    })
-  })
+  if (!devServer) {
+    throw new Error('webpack-dev-server is not defined')
+  }
+
+  mock(devServer.app)
 
   return middlewares
 }
