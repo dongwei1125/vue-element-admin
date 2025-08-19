@@ -2,12 +2,8 @@ const express = require('express')
 
 const router = express.Router()
 
-router.get('/info', (_, responce) => {
-  responce.json({
-    code: 200,
-    message: '',
-    data: null,
-  })
+router.post('/login', (_, response) => {
+  response.success(+new Date())
 })
 
 module.exports = router

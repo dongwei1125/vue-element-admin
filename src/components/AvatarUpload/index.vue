@@ -145,8 +145,8 @@ export default {
       this.show = false
     },
 
-    onUploadResultSuccess(responce) {
-      this.$emit('success', responce)
+    onUploadResultSuccess(response) {
+      this.$emit('success', response)
     },
 
     onUploadResultFail(error) {

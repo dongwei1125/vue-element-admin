@@ -1,6 +1,6 @@
 import http from './httpInstance'
 
-const login = data => http.post('/vue-element-admin/user/login', data)
+const login = data => http.post('/api/user/login', data)
 
 const getInfo = params => http.get('/vue-element-admin/user/info', { params })
 

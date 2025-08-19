@@ -1,5 +1,6 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
+import { login } from '@/api/user'
 
 const state = {
   token: getToken(),
@@ -25,12 +26,18 @@ const mutations = {
 
 const actions = {
   login({ commit }, form) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        commit('SET_TOKEN', +new Date())
+    const { username, password } = form
 
-        resolve()
-      }, 50)
+    return new Promise((resolve, reject) => {
+      login({ username, password })
+        .then(({ data }) => {
+          commit('SET_TOKEN', data)
+
+          resolve()
+        })
+        .catch(error => {
+          reject(error)
+        })
     })
   },
 

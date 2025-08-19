@@ -77,19 +77,19 @@ export default {
       const formdata = objectToFormData(data)
 
       this.request(formdata)
-        .then(responce => {
-          this.onUploadSuccess(responce)
+        .then(response => {
+          this.onUploadSuccess(response)
         })
         .catch(error => {
           this.onUploadFail(error)
         })
     },
 
-    onUploadSuccess(responce) {
+    onUploadSuccess(response) {
       this.progress = 100
       this.status = STATUS.SUCCESS
 
-      this.$emit('success', responce)
+      this.$emit('success', response)
     },
 
     onUploadFail(error) {

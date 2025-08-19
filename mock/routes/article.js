@@ -2,8 +2,8 @@ const express = require('express')
 
 const router = express.Router()
 
-router.get('/info', (_, responce) => {
-  responce.json({
+router.get('/info', (_, response) => {
+  response.json({
     code: 200,
     message: '',
     data: null,
