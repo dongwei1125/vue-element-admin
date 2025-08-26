@@ -1,6 +1,6 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
-import { login } from '@/api/user'
+import { login, logout } from '@/api/user'
 
 const state = {
   token: getToken(),
@@ -79,7 +79,7 @@ const actions = {
 
   logout({ commit, dispatch }) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
+      logout().then(() => {
         commit('SET_ROLES', [])
 
         resetRouter()
@@ -88,7 +88,7 @@ const actions = {
         dispatch('tagsView/removeAllViews', null, { root: true })
 
         resolve()
-      }, 50)
+      })
     })
   },
 

@@ -1,9 +1,16 @@
+const Mock = require('mockjs')
 const express = require('express')
 
 const router = express.Router()
 
 router.post('/login', (_, response) => {
-  response.success(+new Date())
+  const token = Mock.Random.guid()
+
+  response.success(token)
+})
+
+router.post('/logout', (_, response) => {
+  response.success()
 })
 
 module.exports = router

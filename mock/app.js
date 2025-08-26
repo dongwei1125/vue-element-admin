@@ -8,7 +8,7 @@ const dir = join(process.cwd(), 'mock')
 function unregisterRoutes(app) { }
 
 module.exports = app => {
-  app.use(responseWrapper())
+  app.use(responseWrapper)
 
   registerRoutes(app)
 

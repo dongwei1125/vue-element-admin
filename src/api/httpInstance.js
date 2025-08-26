@@ -41,6 +41,11 @@ http.interceptors.response.use(
   error => {
     console.log(error)
 
+    Message({
+      message: error.message || 'Error',
+      type: 'error',
+    })
+
     return Promise.reject(error)
   }
 )
