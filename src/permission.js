@@ -32,7 +32,7 @@ async function hasTokenHandler(to, from, next) {
   }
 
   try {
-    const { roles } = await store.dispatch('user/getInfo')
+    const { roles } = await store.dispatch('user/info')
     const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
 
     router.addRoutes(accessRoutes)

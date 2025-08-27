@@ -1,6 +1,6 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
-import { login, logout } from '@/api/user'
+import { login, info, logout } from '@/api/user'
 
 const state = {
   token: getToken(),
@@ -41,39 +41,16 @@ const actions = {
     })
   },
 
-  getInfo({ commit }) {
+  info({ commit }) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const data = {
-          roles: ['admin'],
-          name: 'admin',
-          education: 'JS in Computer Science from the University of Technology',
-          skills: [
-            {
-              name: 'Vue',
-              progress: 70,
-            },
-            {
-              name: 'JavaScript',
-              progress: 18,
-            },
-            {
-              name: 'Css',
-              progress: 12,
-            },
-            {
-              name: 'ESLint',
-              progress: 100,
-            },
-          ],
-        }
+      info().then(({ data }) => {
         const { roles } = data
 
         commit('SET_ROLES', roles)
         commit('SET_INFO', data)
 
         resolve(data)
-      }, 50)
+      })
     })
   },
 
