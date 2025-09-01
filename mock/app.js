@@ -1,7 +1,7 @@
 const chokidar = require('chokidar')
 const { join } = require('path')
 
-const responseWrapper = require('./responseWrapper')
+const wrapper = require('./wrapper')
 
 const dir = join(process.cwd(), 'mock/routes')
 
@@ -25,13 +25,16 @@ function unregisterRoutes(app) {
   app._router.stack = app._router.stack.filter(layer => layer.name !== 'router')
 }
 
-module.exports = app => {
-  app.use(responseWrapper)
-
-  registerRoutes(app)
-
+function setupHotReload(app) {
   chokidar.watch(dir).on('all', () => {
     unregisterRoutes(app)
     registerRoutes(app)
   })
+}
+
+module.exports = app => {
+  app.use(wrapper)
+
+  registerRoutes(app)
+  setupHotReload(app)
 }

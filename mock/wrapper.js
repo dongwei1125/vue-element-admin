@@ -1,4 +1,4 @@
-function responseWrapper(request, response, next) {
+function wrapper(request, response, next) {
   response.success = function (data = null, msg = 'success') {
     this.status(200).json({ code: 0, msg, data })
   }
@@ -10,4 +10,4 @@ function responseWrapper(request, response, next) {
   next()
 }
 
-module.exports = responseWrapper
+module.exports = wrapper
