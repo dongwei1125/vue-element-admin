@@ -1,3 +1,4 @@
+const express = require('express')
 const chokidar = require('chokidar')
 const { join } = require('path')
 
@@ -6,11 +7,14 @@ const wrapper = require('./wrapper')
 const dir = join(process.cwd(), 'mock/routes')
 
 function registerRoutes(app) {
-  const user = require('./routes/user')
-  const article = require('./routes/article')
+  const routes = require('./routes')
+  const router = express.Router()
 
-  app.use('/api/user', user)
-  app.use('/api/article', article)
+  routes.forEach(route => {
+    router[route.method](route.url, route.callback)
+  })
+
+  app.use(router)
 }
 
 function unregisterRoutes(app) {
