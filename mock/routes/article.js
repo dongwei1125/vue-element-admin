@@ -4,7 +4,7 @@ module.exports = [
   {
     url: '/api/article/list',
     method: 'get',
-    callback(request, response) {
+    response(config) {
       const { list } = Mock.mock({
         ['list|10']: [
           {
@@ -19,12 +19,16 @@ module.exports = [
         ],
       })
 
-      response.success({
-        list,
-        pageNo: 1,
-        pageSize: 10,
-        total: 50,
-      })
+      return {
+        code: 0,
+        msg: 'success',
+        data: {
+          list,
+          pageNo: 1,
+          pageSize: 10,
+          total: 50,
+        }
+      }
     }
   }
 ]

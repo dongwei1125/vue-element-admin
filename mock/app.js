@@ -2,8 +2,6 @@ const express = require('express')
 const chokidar = require('chokidar')
 const { join } = require('path')
 
-const wrapper = require('./wrapper')
-
 const dir = join(process.cwd(), 'mock/routes')
 
 function registerRoutes(app) {
@@ -11,7 +9,9 @@ function registerRoutes(app) {
   const router = express.Router()
 
   routes.forEach(route => {
-    router[route.method](route.url, route.callback)
+    router[route.method](route.url, (request, response) => {
+      response.json(route.response(request))
+    })
   })
 
   app.use(router)
@@ -37,7 +37,7 @@ function setupHotReload(app) {
 }
 
 module.exports = app => {
-  app.use(wrapper)
+  app.use(express.json())
 
   registerRoutes(app)
   setupHotReload(app)

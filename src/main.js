@@ -12,6 +12,12 @@ import '@/styles/index.scss'
 
 import ElementUI from 'element-ui'
 
+if (process.env.VUE_APP_MOCK_XHR) {
+  const mockXHR = require('../mock/mockXHR')
+
+  mockXHR()
+}
+
 Vue.use(ElementUI, {
   size: store.getters.app.size,
   i18n: (key, value) => i18n.t(key, value),
